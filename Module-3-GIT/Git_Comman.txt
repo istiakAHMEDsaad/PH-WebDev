@@ -16,6 +16,11 @@
     * git remote add origin https://github.com/istiakAHMEDsaad/PH-WebDev
     * git push -u origin main
 
+#Update content
+    * git add .
+    * git commit "second update"
+    * git push
+
 
 Extra:
 git status                                              --> see status
