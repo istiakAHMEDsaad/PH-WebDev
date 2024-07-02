@@ -1,0 +1,28 @@
+1. First Locate Your Project (Recommended System drive like C: Drive)
+
+2. Open terminal  and change your directory to workspace like:
+    C:\users\name>cd \Programming-Hero      --> that's how you change your directory
+    C:\Programming-Hero>                    --> now you reached your destination workspace
+    C:\Programming-Hero>cd Module-3         --> now you select your repo in workspace
+    C:\Programming-Hero\Module-3            --> currently your folder is 'Module-3'
+
+# ...or create a new repository on the command line
+    * echo "something text about repository"
+    * git init
+    * git add README.md //or
+    * git add .                             --> to upload all file
+    * git commit -m "first commit"
+    * git branch -M main
+    * git remote add origin https://github.com/istiakAHMEDsaad/PH-WebDev
+    * git push -u origin main
+
+
+Extra:
+git status                                              --> see status
+git config --global init.defaultBranch main             --> set default branch
+git config --global user.email "istik2020@gmail.com"    --> set default mail
+git config --global user.name "istiakAHMEDsaad"         --> set default username
+git config -l                                           --> see git all info
+git pull --rebase origin main                           --> merge previous commit
+
+Here I'll upload PH practice and assignment code 😀

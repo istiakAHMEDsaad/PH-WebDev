@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        .static , .relative , .absolute{
+            border: 1px solid black;
+            height: 150px;
+            width: 400px;
+            /*display: inline-block;*/
+        }
+        .stat{
+            background-color: aqua;
+            position: static;
+        }
+        p{
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            background-color: brown;
+        }
+        .rel {
+            background-color: red;
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="static">
+    <p>1</p>
+    <p class="stat">1</p>
+    <p>1</p>
+</div>
+<div class="relative">
+    <p>1</p>
+    <p class="rel">1</p>
+    <p>1</p>
+
+</div>
+<div class="absolute">
+    <p>1</p>
+    <p class="abs">2</p>
+    <p>3</p>
+</div>
+<div class="fixed">
+    <p>1</p>
+    <p class="fix"></p>
+    <p>3</p>
+</div>
+</body>
+</html>

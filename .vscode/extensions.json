@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ecmel.vscode-html-css",
+        "dbaeumer.vscode-eslint",
+        "xabikos.javascriptsnippets",
+        "esbenp.prettier-vscode",
+        "zignd.html-css-class-completion"
+    ]
+}

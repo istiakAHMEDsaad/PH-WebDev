@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic CSS</title>
+    <link rel="shortcut icon"
+        href="https://e7.pngegg.com/pngimages/893/87/png-clipart-web-development-html-cascading-style-sheets-css3-bootstrap-minimalist-resume-blue-angle.png"
+        type="image/x-icon" />
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+        }
+
+        .module {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding-left: 15px;
+        }
+
+        /* h3 {
+            color: blueviolet;
+        } */
+
+        p {
+            font-size: 18px;
+        }
+
+        #first {
+            font-size: 20px;
+            background-color: rgba(165, 42, 42, 0.5);
+        }
+
+        .fourth,
+        .second {
+            color: crimson;
+            background-color: coral;
+        }
+
+        .bold {
+            font-weight: 800;
+        }
+
+        input[type="text"] {
+            color: green;
+        }
+
+        input:nth-of-type(2) {
+            color: red;
+        }
+
+        .blog {
+            background-color: aquamarine;
+            /* border: 5px dashed tomato; */
+            border: 5px tomato;
+            border-style: dotted dashed solid double;
+            /* border-bottom: 5px dashed tomato; */
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            text-align: justify;
+        }
+
+        #box {
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+            display: block;
+        }
+
+        #box2 {
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .head {
+            border: 1px solid black;
+            height: 350px;
+            background-image: url('https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/collage-maker-25-sep-2023-02-13-pm-6396-4.jpg');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="head">
+
+    </header>
+
+    <!-- Main heading -->
+    <h1 style="color: blueviolet; text-align: center;">Module 1: Learn and Explore CSS</h1>
+
+    <!-- Video 2-2 -->
+    <p>Video 2-2</p>
+    <div class="module">
+        <h3 style="color: blueviolet;">Learning Basic CSS</h3>
+        <p>
+            CSS Meaning &rarr; Cascading Style Sheet <br>
+            <span style="background-color: aquamarine;">There are 3 types of CSS</span>
+        <ol type="i" style="margin-left: 20px;">
+            <li>Inline (with code)</li>
+            <li>Internal (in head section)</li>
+            <li>External (extra file)</li>
+        </ol>
+        </p>
+        <p>
+            CSS Unit <br>
+            <img src="unit.PNG" alt="Css all measure unit" width="800px">
+        </p>
+    </div>
+
+    <!-- Video 2-3 -->
+    <p>Video 2-3</p>
+    <div class="module">
+        <p>
+            <span style="background-color: cyan;">Basic selector tool:</span> <br>
+            Uniq ID &rarr; #(hash)<br>
+            Common Class &rarr; .(dot),
+            Class can define multiple in a single line like:
+        <pre style="font-size: 20px;">< div class = "red bold">< / div ></pre>
+        </p>
+    </div>
+
+    <!-- Video 2-4 -->
+    <p>Video 2-4</p>
+    <div class="module">
+        <div style="padding-top: 15px;">
+            <span style="background-color: crimson; color: white; font-size: 25px;">Explore Mixed Selector</span> <br>
+            <span>default font size 16px</span>
+            <p id="first">First line in css</p>
+            <p class="second bold">Second line in css</p>
+            <p class="second bold">Third line in css</p>
+            <p class="fourth">Fourth line in css</p>
+            <p>Fifth line in css</p>
+            <p>Sixth line in css</p>
+            <p>Seventh line in css</p>
+            <!-- margin: 20px 20px; -->
+            <ol type="1" style="margin-left: 20px;">
+                <li>Element selector</li>
+                <li>Id selector</li>
+                <li>Class selector</li>
+                <li>Universal selector</li>
+            </ol>
+
+            <form action="">
+                <input type="text" placeholder="Enter name">
+                <input type="password" placeholder="Enter password">
+            </form>
+        </div>
+    </div>
+
+    <!-- Video 2-5 -->
+    <p>Video 2-5</p>
+    <div class="module">
+        <div class="blog">
+            <h3>First Blog</h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae vero amet eveniet ipsam earum possimus,
+            dignissimos vitae, veniam expedita rem porro, autem impedit omnis reiciendis nobis fuga numquam voluptatum
+            totam quidem quod. Neque enim ipsa veritatis quas culpa ex aspernatur, blanditiis iste illum, doloremque ad
+            sed perferendis? Vero, unde voluptas.
+        </div>
+        <div class="blog">
+            <h3>Second Blog</h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae vero amet eveniet ipsam earum possimus,
+            dignissimos vitae, veniam expedita rem porro, autem impedit omnis reiciendis nobis fuga numquam voluptatum
+            totam quidem quod. Neque enim ipsa veritatis quas culpa ex aspernatur, blanditiis iste illum, doloremque ad
+            sed perferendis? Vero, unde voluptas.
+        </div>
+        <div class="blog">
+            <h3>Third Blog</h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae vero amet eveniet ipsam earum possimus,
+            dignissimos vitae, veniam expedita rem porro, autem impedit omnis reiciendis nobis fuga numquam voluptatum
+            totam quidem quod. Neque enim ipsa veritatis quas culpa ex aspernatur, blanditiis iste illum, doloremque ad
+            sed perferendis? Vero, unde voluptas.
+        </div>
+    </div>
+
+    <!-- Video 2-6 -->
+    <p>Video 2-6</p>
+    <div class="module">
+        <ol type="i" style="margin-left: 20px;">
+            <li>content</li>
+            <li>border</li>
+            <li>margin</li>
+            <li>padding</li>
+        </ol>
+        <p
+            style="border: 10px solid red; height: 300px; width: 300px; background-color: black; border-radius: 5px 20px 40px;">
+        </p>
+    </div>
+
+    <!-- Video 2-7 -->
+    <p>Video 2-7</p>
+    <div class="module">
+        <h2 style="text-decoration: underline; padding-bottom: 20px;">Head underline</h2>
+        <h2 style="text-decoration: overline;">Head overline</h2>
+        <p>There is some <span style="display: none;">hidden😛</span> hidden item in this paragraph</p>
+        <p>There is some thing invisible here <span style="visibility: hidden;">I'm invisible</span> guess what?</p>
+        <p
+            style="border: 5px solid tomato; height: 200px; width: 200px; box-shadow: 5px 5px 10px tomato; text-align: center;">
+            box-shadow:
+            first: x-axis <br>
+            second: y-axis <br>
+            third: shadown spread <br>
+        </p>
+        <p>
+            this is a <span id="box">block</span> box 😀
+        </p>
+        <p>
+            this is a <span id="box2">inline-block</span> box 😀
+        </p>
+    </div>
+
+    <!-- Video 2-8 -->
+    <p>Video 2-8</p>
+    <div class="module">
+        <p>
+            (..) &rarr; mean one folder up <br>
+            Exanple &rarr; ../img/picture.png
+        </p>
+    </div>
+</body>
+
+</html>
