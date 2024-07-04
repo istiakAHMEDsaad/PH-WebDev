@@ -29,6 +29,18 @@
         display: block;
         margin-bottom: 10px;
       }
+      .beton > tfoot > tr > td,
+      .beton > thead > tr > th,
+      .beton > tbody > tr > td{
+        border: 1px solid black;
+        padding: 5px 10px;
+      }
+      .beton{
+        border-collapse: collapse;
+      }
+       /* td{
+        border: 1px solid black;
+       } */
     </style>
   </head>
   <body>
@@ -171,23 +183,67 @@
           <fieldset>
             <legend>Select number</legend>
             <label for="num1">
-              <input type="checkbox" id="num1" name="NUM">1
+              <input type="checkbox" id="num1" name="NUM" />1
             </label>
             <label for="num2">
-              <input type="checkbox" id="num2" name="NUM">2
+              <input type="checkbox" id="num2" name="NUM" />2
             </label>
             <label for="num3">
-              <input type="checkbox" id="num3" name="NUM">3
+              <input type="checkbox" id="num3" name="NUM" />3
             </label>
           </fieldset>
           <textarea name="" id="" cols="30" rows="10"></textarea>
           <fieldset>
             <legend>Reset Button</legend>
-            <input type="reset" value="Reset">
+            <input type="reset" value="Reset" />
           </fieldset>
-          <input type="submit" value="submit">
+          <input type="submit" value="submit" />
         </form>
       </section>
+
+      <!-- module 4, video 4 -->
+      <table class="beton">
+        <caption>Employee Salary Data</caption>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Full Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Bill Gate</td>
+            <td>Founder Microsoft</td>
+            <td>&dollar;1000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Steve Jobs</td>
+            <td>Founder Apple</td>
+            <td>&dollar;1200</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry Page</td>
+            <td>Founder Google</td>
+            <td>&dollar;1300</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Mark Zuckeberg</td>
+            <td>Founder Facebook</td>
+            <td>&dollar;1400</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" style="text-align: center;">Total Salary: &dollar;1900</td>
+          </tr>
+        </tfoot>
+      </table>
     </main>
 
     <footer>
