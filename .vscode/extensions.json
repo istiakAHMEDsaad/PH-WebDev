@@ -4,6 +4,7 @@
         "dbaeumer.vscode-eslint",
         "xabikos.javascriptsnippets",
         "esbenp.prettier-vscode",
-        "zignd.html-css-class-completion"
+        "zignd.html-css-class-completion",
+        "zitup.classnametocss"
     ]
 }

@@ -18,7 +18,7 @@
 
 #Update content
     * git add .
-    * git commit "second update"
+    * git commit -m "second update" //-m, --M
     * git push
 
 
@@ -29,5 +29,7 @@ git config --global user.email "istik2020@gmail.com"    --> set default mail
 git config --global user.name "istiakAHMEDsaad"         --> set default username
 git config -l                                           --> see git all info
 git pull --rebase origin main                           --> merge previous commit
+git branch
+git checkout -b new-branch                              --> Create new branch
 
 Here I'll upload PH practice and assignment code 😀
