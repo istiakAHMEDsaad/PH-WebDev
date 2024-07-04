@@ -21,9 +21,13 @@
       nav > ul > li > a {
         text-decoration: none;
       }
-      footer{
+      footer {
         text-align: center;
         margin-top: 15px;
+      }
+      .drivingSchool form > label {
+        display: block;
+        margin-bottom: 10px;
       }
     </style>
   </head>
@@ -71,31 +75,123 @@
 
       <article>
         <header>
-            <h2>My Trip to Mountain</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos ipsum possimus soluta, culpa consectetur aliquam sequi deserunt dignissimos nobis, animi ea quas doloribus, nemo iusto nam dolorum? Earum aliquam velit at aut modi excepturi, officia facilis sunt suscipit assumenda illo illum voluptatum sint non. Animi laudantium ab modi explicabo assumenda.</p>
-            <p style="margin-top: 10px;">Publish on <time datetime="2019-12-7">Dec 07, 2019</time></p>
+          <h2>My Trip to Mountain</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos ipsum
+            possimus soluta, culpa consectetur aliquam sequi deserunt
+            dignissimos nobis, animi ea quas doloribus, nemo iusto nam dolorum?
+            Earum aliquam velit at aut modi excepturi, officia facilis sunt
+            suscipit assumenda illo illum voluptatum sint non. Animi laudantium
+            ab modi explicabo assumenda.
+          </p>
+          <p style="margin-top: 10px">
+            Publish on <time datetime="2019-12-7">Dec 07, 2019</time>
+          </p>
         </header>
         <figure>
-            <img src="https://cdn.ramblers.org.uk/styles/xl/s3/2023-03/mountain.jpg?itok" width="450px" alt="mountain pic">
-            <figcaption>standing on top mountain</figcaption>
+          <img
+            src="https://cdn.ramblers.org.uk/styles/xl/s3/2023-03/mountain.jpg?itok"
+            width="450px"
+            alt="mountain pic"
+          />
+          <figcaption>standing on top mountain</figcaption>
         </figure>
         <section>
-            <h3>How did i went there?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quasi!</p>
+          <h3>How did i went there?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            quasi!
+          </p>
         </section>
         <section>
-            <h3>How many night i stay there?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, magni.</p>
+          <h3>How many night i stay there?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+            magni.
+          </p>
         </section>
+        <footer>
+          <span>Tag:</span>
+          <a href="#">Location Google Map</a>
+        </footer>
       </article>
-      <footer>
-        <span>Tag:</span>
-        <a href="#">Location Google Map</a>
-    </footer>
+
+      <section class="drivingSchool">
+        <h2>Car Driving School</h2>
+        <form action="">
+          <label for="name">
+            <span>Enter name:</span>
+            <input type="text" placeholder="Nick Name" />
+          </label>
+          <label for="addr">
+            <span>Enter Address</span>
+            <input type="text" placeholder="Permanent address" />
+          </label>
+          <label for="age">
+            <span>Enter your age: </span>
+            <input type="number" placeholder="Correct Age" />
+          </label>
+          <label for="num">
+            <span>Enter cell phone number: </span>
+            <input type="number" placeholder="Phone num" />
+          </label>
+          <label for="date">
+            <span>Form fill up Date</span>
+            <input type="date" placeholder="Date" />
+          </label>
+          <label for="time">
+            <span>Enter current time</span>
+            <input type="time" placeholder="Time" />
+          </label>
+          <label for="gmail">
+            <span>Enter Gmail</span>
+            <input type="mail" placeholder="Email" />
+          </label>
+          <fieldset>
+            <legend>Enter gender</legend>
+            <label for="male">
+              <span>Male</span>
+              <input
+                id="male"
+                type="radio"
+                placeholder="male"
+                name="radioBTN"
+              />
+            </label>
+            <label for="female">
+              <span>Female</span>
+              <input
+                id="female"
+                type="radio"
+                placeholder="Emfemale"
+                name="radioBTN"
+              />
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Select number</legend>
+            <label for="num1">
+              <input type="checkbox" id="num1" name="NUM">1
+            </label>
+            <label for="num2">
+              <input type="checkbox" id="num2" name="NUM">2
+            </label>
+            <label for="num3">
+              <input type="checkbox" id="num3" name="NUM">3
+            </label>
+          </fieldset>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <fieldset>
+            <legend>Reset Button</legend>
+            <input type="reset" value="Reset">
+          </fieldset>
+          <input type="submit" value="submit">
+        </form>
+      </section>
     </main>
 
     <footer>
-        <p><small>&copy;2024. All Right Reserved</small></p>
+      <p><small>&copy;2024. All Right Reserved</small></p>
     </footer>
   </body>
 </html>
