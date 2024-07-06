@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    margin: 50px 0 0 50px;
+}
+.formOne{
+    background-color: #4c4170;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px 2px black;
+    height: 450px;
+    width: 350px;
+}
+
+.heading{
+    text-align: center;
+    background-color: #36295e;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 15px 0;
+    /* background-color: #36295e; */
+}
+.inputBox{
+    padding: 20px 35px;
+    
+}
+.inputBox > label > input{
+    padding: 10px 90px 10px 20px;
+    border-radius: 5px; 
+    margin: 0 0 10px 0;
+}
+.term{
+    padding-left: 35px;
+    margin-bottom: 20px;
+}
+.term input{
+    margin-bottom: 10px;
+}
+.term span{
+    padding-left: 10px;
+}
+
+.regBtn{
+    padding-left: 35px;
+    margin-left: 185px;
+}
+.regBtn > button{
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: lightgray;
+    color: black;
+    
+}
+.regBtn > button:hover{
+    background-color: #54e14d;
+    color: #505050;
+}
+
+.test ~ a{
+    color: red;
+}
