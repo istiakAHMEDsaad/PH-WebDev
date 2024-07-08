@@ -134,7 +134,7 @@ main{
   height: 470px;
 }
 .aboutMe{
-  /*border: 1px solid black;*/
+  border: 1px solid black;
   padding: 112px 134px;
   width: 706px;
   height: 246px;
