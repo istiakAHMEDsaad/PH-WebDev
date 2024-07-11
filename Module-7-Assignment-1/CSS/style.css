@@ -1,0 +1,625 @@
+/*Google Font API*/
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+/*font-family: "Azeret Mono", monospace;*/
+
+body {
+    max-width: 1366px;
+    margin: 0 auto;
+    background: #FFF;
+}
+
+/*Universal Selector*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Azeret Mono", monospace;
+}
+
+
+/*----------------Nav-bar Section----------------*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+nav > h2 {
+    width: 294px;
+    height: 31px;
+    font-size: 26px;
+    margin-top: 47px;
+    margin-left: 142px;
+}
+
+nav > a {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    line-height: normal;
+    color: #0D1321;
+    font-style: normal;
+    text-decoration: none;
+    padding: 16px 22px;
+    border-radius: 8px;
+    border: 1px solid #0D1321;
+    opacity: 0.8;
+    margin-top: 36px;
+    margin-right: 142px;
+    transition: 0.15s;
+}
+
+nav > a:hover {
+    opacity: 0.8;
+    background: #0D1321;
+    color: #fff;
+}
+
+
+/*----------------Background Image Section----------------*/
+.bg-image {
+    margin-top: 34px;
+    background-image: url("../assets/Hero-bg.png");
+    width: 1366px;
+    height: 618px;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.bg-image p:nth-child(1) {
+    width: 227px;
+    height: 227px;
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.bg-image h2 {
+    width: 946px;
+    height: 129px;
+    color: #0D1321;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 64px;
+    margin-bottom: 22px;
+}
+
+.bg-image p:nth-child(3) {
+    width: 808px;
+    height: 49px;
+    text-align: center;
+    font-size: 15px;
+    color: #0D1321;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.bg-image a {
+    width: 231px;
+    height: 61px;
+    text-align: center;
+    border-radius: 8px;
+    background: #0D1321;
+    color: #FFF;
+    font-size: 19px;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.15s;
+    margin-bottom: 42px;
+    border: 1px solid #0D1321;
+}
+
+.bg-image a:hover {
+    background: #FFF;
+    color: #0D1321;
+    font-weight: 600;
+}
+
+
+/* ----------------Development Section CSS---------------- */
+.development {
+    width: 1140px;
+    height: 1321px;
+    margin-left: 140px;
+    margin-right: 144px;
+    margin-bottom: 85px;
+}
+
+.sub-development {
+    height: 1169px;
+    width: 897px;
+    margin: 75px 92px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-development h2 {
+    width: 808px;
+    height: 35px;
+    color: #0D1321;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: normal;
+    margin-bottom: 23px;
+}
+
+.sub-development p {
+    color: #0D1321;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+    width: 808px;
+    height: 52px;
+    margin-bottom: 45px;
+}
+
+.sub-development .card3,
+.sub-development .card2,
+.sub-development .card1 {
+    width: 897px;
+    height: 319px;
+    padding: 45px;
+}
+
+/*Card 1*/
+.card1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 32px;
+}
+
+.card-des h3 {
+    width: 370px;
+    height: 68px;
+    color: rgba(13, 19, 33, 0.70);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+.card2 .card-des p,
+.card-des p {
+    width: 444px;
+    height: 49px;
+    color: #0D1321;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: start;
+    line-height: 24px;
+    opacity: 0.7;
+    font-style: normal;
+}
+
+.card2 .card-des a,
+.card-des a {
+    border: 1px solid #0D1321;
+    width: 165px;
+    height: 44px;
+    padding: 11px 19px;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.card2 .card-des a > span,
+.card-des a > span {
+    color: #0D1321;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+/*image*/
+.card-pic {
+    width: 260px;
+    height: 227px;
+}
+
+
+/*Card 2*/
+.card2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.card2 .card-pic {
+    width: 260px;
+    height: 227px;
+}
+
+.card2 .card-des h3 {
+    width: 452px;
+    height: 68px;
+    color: rgba(13, 19, 33, 0.70);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+
+/*----------------My inspiration section----------------*/
+.inspiration {
+    width: 1081px;
+    height: 735px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 140px;
+    margin-bottom: 143px;
+}
+
+.inspiration h2 {
+    width: 808px;
+    height: 35px;
+    color: #0D1321;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 23px;
+}
+
+.inspiration p {
+    color: #0D1321;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+    margin-bottom: 76px;
+
+}
+
+.inspiration .youtube {
+    width: 1081px;
+    height: 582px;
+}
+
+.youtube iframe {
+    padding: 30px;
+    border-radius: 50px;
+}
+
+/*----------------current target----------------*/
+
+.current-tg {
+    height: 436px;
+    width: 1081px;
+    margin: 0 142px 105px 142px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-tg .current-tg-title {
+    width: 808px;
+    height: 35px;
+    color: #0D1321;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 23px;
+}
+
+.current-tg .current-tg-para {
+    width: 808px;
+    height: 49px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.language {
+    width: 1081px;
+    height: 283px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.language .language-model {
+    width: 345px;
+    height: 283px;
+}
+
+.language .language-model > img {
+    margin: 38px 0 22px 38px;
+}
+
+.language .language-model > h3 {
+    margin: 0 0 7px 38px;
+    color: #0D1321;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 34px;
+}
+
+.language .language-model > p {
+    margin: 0 38px 23px 38px;
+    color: #0D1321;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+}
+
+.language .language-model > a {
+    margin: 0 38px 38px 38px;
+    color: #0D1321;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
+.language .language-model:nth-child(1) {
+    border-radius: 15px;
+    background: rgba(255, 76, 30, 0.05);
+}
+
+.language .language-model:nth-child(2) {
+    border-radius: 15px;
+    background: rgba(0, 76, 232, 0.05);
+}
+
+.language .language-model:nth-child(3) {
+    border-radius: 15px;
+    background: rgba(255, 223, 0, 0.05);
+}
+
+
+/*----------------My next target section----------------*/
+.next-tg {
+    width: 1081px;
+    height: 821px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 142px 46px;
+}
+
+.next-tg .next-tg-card {
+    border: 1px solid rgba(13, 19, 33, 0.15);
+    width: 1081px;
+    height: 208px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    border-radius: 15px;
+    background: #FFF;
+}
+
+.next-tg .next-tg-card #react {
+    width: 89px;
+    height: 102px;
+    object-fit: contain;
+    object-position: center;
+    margin-left: 38px;
+    margin-right: 23px;
+}
+
+.next-tg .next-tg-card #nodejs {
+    width: 143px;
+    height: 83px;
+    object-fit: contain;
+    object-position: center;
+    margin-left: 38px;
+    margin-right: 23px;
+}
+
+.next-tg .next-tg-card #monodb {
+    width: 102px;
+    height: 102px;
+    object-fit: contain;
+    object-position: center;
+    margin-left: 38px;
+    margin-right: 23px;
+}
+
+.next-tg .next-tg-card h3 {
+    color: #0D1321;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 34px;
+    margin-bottom: 7px;
+}
+
+.next-tg .next-tg-card p {
+    color: #0D1321;
+    text-align: start;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+    margin-bottom: 23px;
+}
+
+.next-tg .next-tg-card a {
+    color: #0D1321;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+
+.next-tg .next-tg-card:nth-child(4),
+.next-tg .next-tg-card:nth-child(3) {
+    margin-bottom: 23px;
+}
+
+.next-tg h2 {
+    width: 808px;
+    height: 35px;
+    color: #0D1321;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 23px;
+}
+
+.next-tg p {
+    width: 808px;
+    height: 49px;
+    color: #0D1321;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+/*----------------My Footer section----------------*/
+#myFooter {
+    border: 1px solid black;
+    width: 1081px;
+    height: 297px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url("../assets/handshake.jpg");
+    background-position: center;
+    background-size: cover;
+    margin: 0 142px 76px;
+    border-radius: 15px;
+
+}
+
+.myFooterContent {
+    height: 175px;
+    width: 990px;
+    margin: 61px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.myFooterContent h2 {
+    width: 277px;
+    height: 34px;
+    color: #FFF;
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 15px;
+}
+
+.myFooterContent p {
+    color: #FFF;
+    text-align: center;
+    opacity: 0.7;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 23px;
+}
+#myFooter .myFooterContent div > input{
+    border: 1px solid rgba(13, 19, 33, 0.15);
+    width: 520px;
+    height: 54px;
+    background: #FFF;
+    border-radius: 7px;
+    padding-left: 18px;
+    font-size: 15px;
+}
+#myFooter .myFooterContent div > input::placeholder {
+    width: 297px;
+    height: 18px;
+}
+#myFooter .myFooterContent button{
+    padding: 16px 19px;
+    border-radius: 7px;
+    background: #FFF;
+    border: none;
+    color: #0D1321;
+    text-align: center;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    transition: 0.15s;
+}
+#myFooter .myFooterContent button:hover{
+    background: #0D1321;
+    color: #fff;
+    opacity: 0.65;
+}
+
+/*----------------My Footer ICON section----------------*/
+.footer-icon {
+    background: rgba(13, 19, 33, 0.03);
+    width: 1366px;
+    height: 95px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-icon p{
+    width: 475px;
+    height: 22px;
+    color: #0D1321;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 142px;
+}
+.footer-icon .footer-social-icon{
+    margin-right: 142px;
+    width: 148px;
+    height: 34px;
+    display: flex;
+}
+.footer-icon .footer-social-icon a{
+    text-decoration: none;
+    font-style: normal;
+}
+.footer-icon .footer-social-icon img{
+    height: 34px;
+    width: 34px;
+    object-fit: contain;
+    object-position: center;
+}
+.footer-icon .footer-social-icon a:nth-child(2) img,
+.footer-icon .footer-social-icon a:nth-child(1) img{
+    margin-right: 23px;
+}
+
+.footer-icon .footer-social-icon a > img:hover{
+    opacity: 0.75;
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Element</title>
+    <style>
+        /* --------------Playing with Pesudo Class--------------  */
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: end;
+            margin-right: 20px;
+        }
+
+        .nav-list a {
+            font-size: large;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: none;
+            color: black;
+        }
+
+        .nav-list a:hover {
+            cursor: pointer;
+            color: tomato;
+        }
+
+        .input-play input:focus {
+            border: 1px solid tomato;
+            outline: 0;
+            color: #a9a065;
+        }
+
+        .input-play #google:hover {
+            color: white;
+            background-color: #e2100f;
+        }
+
+        .input-play #google:visited {
+            color: navy;
+        }
+
+        /* --------------Playing with position-------------- */
+
+        .box{
+            border: 5px dotted tomato;
+            width: 300px;
+        }
+        /* Relative Position to itself */
+        /* .position-check .pool{
+            position: relative;
+            top: 20px;
+            left: 20px;
+        } */
+        .position-check{
+            position: relative;
+        }
+         /* Absolute */
+         .position-check .pool{
+            position: absolute;
+            top: 160px;
+            left: 10px;
+         }
+         .position-check .water{
+            position: sticky;
+            top: 0;
+         }
+         .dummy{
+            border: 1px solid red;
+            height: 300px;
+            width: 300px;
+         }
+
+         /* --------------For Z-Index-------------- */
+         .box1{
+            /* border: 5px dashed cyan; */
+            width: 300px;
+            position: relative;
+         }
+         .boy1{
+            z-index: 3;
+         }
+         .pool1{
+            z-index: 2;
+            top: -170px;
+         }
+         .water1{
+            z-index: 1;
+            top: -350px;
+         }
+
+         .state h3::after{
+            content: ".pdf";
+            color: red;
+            font-size: 18px;
+            background-color: gray;
+         }
+
+         .state p::first-letter{
+            font-size: 2em;
+         }
+         .state p::first-line{
+            background-color: tomato;
+         }
+         .state p::selection{
+            background-color: aquamarine;
+         }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="input-play">
+            <h3 style="color: brown; font-size: 35px;">Playing with input element + pseudo element</h3>
+            <input style="padding: 8px 16px;" type="text" placeholder="Enter name"> <br>
+            <a id="google" style="text-decoration: none; font-size: 25px;" href="https://google.com/">Google</a>
+        </div>
+
+        <ol type="1">
+            <!-- Flow related -->
+            <li>Static</li>
+            <li>Relative</li>
+            <li>Absolute</li>
+            <!-- Scroll purpose -->
+            <li>Fixed</li>
+            <li>Sticky</li>
+        </ol>
+
+        <div style="border: 1px solid black; width: 400px; height: auto;" class="position-check">
+            <div class="box boy">
+                <img style="width: 250px;" src="./assets/boy-swimsuit.png" alt="boy wearing swimsuit">
+            </div>
+            <div class="box pool">
+                <img style="width: 250px;" src="./assets/inflatable-pool.png" alt="inflatable pool">
+            </div>
+            <div class="box water">
+                <img style="width: 250px;" src="./assets/water.png" alt="vector art water png">
+            </div>
+            <div class="dummy"></div>
+            <div class="dummy"></div>
+        </div>
+        <div class="anotherdummy">
+            <p style="font-size: 25px;">Sticky will not work here, Because it's another div</p>
+            <div class="dummy"></div>
+            <div class="dummy"></div>
+        </div>
+    </main>
+
+    <!-- ------------Z-index------------ -->
+    <div class="zIndex">
+        <h2>Playing with Z Index</h2>
+        <div class="box1 boy1">
+            <img style="width: 250px;" src="./assets/boy-swimsuit.png" alt="boy wearing swimsuit">
+        </div>
+        <div class="box1 pool1">
+            <img style="width: 250px;" src="./assets/inflatable-pool.png" alt="inflatable pool">
+        </div>
+        <div class="box1 water1">
+            <img style="width: 250px;" src="./assets/water.png" alt="vector art water png">
+        </div>
+    </div>
+
+
+    <!-- Extra Pseudo Element -->
+    <div class="state">
+        <h3>Amaron Porano Jaha Chai</h3>
+        <h3>Sodor Ghater Majhi</h3>
+        <h3>Cader Pahar</h3>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ipsam facere ducimus in repudiandae libero placeat nesciunt. Pariatur non quaerat consequatur quos magni alias quas ea. Quod quas aspernatur voluptas, repellendus odit quibusdam pariatur, ab excepturi modi dicta rem atque.</p>
+        <p>Adipisci harum nostrum libero eum, impedit maiores tempora dicta possimus enim exercitationem dignissimos nulla unde nobis et reprehenderit inventore quos. Culpa vero, consectetur voluptates obcaecati facere ea officia explicabo laboriosam accusamus alias eaque voluptatem at ex, dolorem mollitia eum quibusdam?</p>
+        <p>Inventore saepe hic cum voluptatum iure nostrum, quos fuga magnam laboriosam porro quam quaerat ab repellat ullam, odio provident dicta ratione temporibus repellendus? Nemo quas ab hic non quaerat tempora sequi odit, voluptates vero dolor, sapiente amet, necessitatibus esse quo.</p>
+    </div>
+</body>
+
+</html>
