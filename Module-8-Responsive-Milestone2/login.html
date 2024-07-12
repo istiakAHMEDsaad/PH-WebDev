@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Flex</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            /* border: 5px solid black; */
+            height: 90vh; 
+            background-color: #2b3137;
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        form label input{
+            padding: 10px 40px;
+        }
+        .frm{
+            display: block;
+            margin: 0 auto;
+            /* height: 80vh; */
+        }
+        .frm input[type="submit"]{
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px
+        }
+        .frm input[type="submit"]:hover{
+            box-shadow: 1px 1px 3px 2px #FFF;
+        }
+        .frm input[type="password"],
+        .frm input[type="email"]{
+            outline: 0;
+            font-size: 18px;
+            color: blueviolet;
+        }
+        .frm input[type="email"]:focus{
+            border: 2px solid green;
+        }
+        .frm input[type="password"]:focus{
+            border: 2px solid brown;
+        }
+    </style>
+</head>
+<body>
+    <section class="frm">
+        <form>
+            <h2 style="color: #FFF;">Please Login</h2>
+            <label for="email">
+                <input id="email" type="email" placeholder="Enter Email" required>
+            </label>
+            <label for="password">
+                <input id="password" type="password" placeholder="Enter Password" required>
+            </label>
+            <label for="button">
+                <input type="submit" value="Login">
+            </label>
+        </form>
+    </section>
+    
+</body>
+</html>

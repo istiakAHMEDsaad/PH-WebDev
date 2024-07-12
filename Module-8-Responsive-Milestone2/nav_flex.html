@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav with flex</title>
+    <style>
+        nav{
+            display: flex;
+            /* gap: 30px; */
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 20px;
+        }
+        nav > div{
+            gap: 20px;
+        }
+        nav .lnk > a{
+            font-size: 30px;
+            text-decoration: none;
+            color: black;
+        }
+        nav .lnk{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+        }
+        nav .lnk > a:hover{
+            color: #00e5e5;
+            transition: 0.15s;
+            /* text-decoration: underline; */
+            text-shadow: 1px 1px 2px #00e5e5;
+        }
+        nav #btn{
+            text-decoration: none;
+            border: 1px solid #3b5998;
+            padding: 5px 35px;
+            border-radius: 5px;
+            font-size: 30px;
+            color: #3b5998;
+            transition: 0.15s;
+        }
+        nav #btn:hover{
+            background-color: #3b5998;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="lnk">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Dashbord</a>
+        <a href="#">About</a>
+        </div>
+        <a id="btn" href="./login.html" target="_blank">Login</a>
+    </nav>
+</body>
+</html>
