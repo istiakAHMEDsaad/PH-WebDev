@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Mobile</title>
+    <link rel="shortcut icon"
+        href="https://static.vecteezy.com/system/resources/previews/000/583/708/original/online-shop-icon-vector.jpg"
+        type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .box .card>img {
+            width: 50%;
+        }
+
+        .box .card>h3 {
+            font-size: 1.8em;
+            color: #232f3e;
+        }
+
+        .box .card>p {
+            font-size: 1.13em;
+            color: gray;
+            text-align: center;
+        }
+
+        .box .card>a {
+            border: 1px solid black;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            height: 40px;
+            width: 120px;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.15s;
+        }
+
+        .box .card>a:hover {
+            background-color: #232f3e;
+            color: #FFF;
+        }
+
+        .card {
+            border: 3px solid #d4ffea;
+            border-radius: 10px;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .box {
+            background-color: #ebf685;
+            max-width: 1920px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(4, 300px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Medium Device */
+        @media screen and (min-width: 772px) and (max-width: 992px) {
+            .card {
+                width: 250px;
+                height: 250px;
+            }
+
+            .box {
+                grid-template-columns: repeat(4, 250px);
+            }
+        }
+        /* Phone */
+        @media screen and (min-width: 576px) and (max-width: 771px) {
+            .card {
+                width: 200px;
+                height: 200px;
+            }
+
+            .box {
+                grid-template-columns: repeat(3, 200px);
+            }
+
+            .box .card>img {
+                width: 40%;
+            }
+
+            .box .card>h3 {
+                font-size: 20px;
+                color: #232f3e;
+            }
+            .box .card>a{
+                font-size: 15px;
+                height: 30px;
+            width: 80px;
+            border-radius: 10px;
+            }
+            .box .card>p{
+                font-size: 16px;
+            }
+        }
+        @media screen and (min-width: 400px) and (max-width: 575px) {
+            .card {
+                width: 200px;
+                height: 200px;
+            }
+
+            .box {
+                grid-template-columns: repeat(2, 200px);
+            }
+
+            .box .card>img {
+                width: 40%;
+            }
+
+            .box .card>h3 {
+                font-size: 20px;
+                color: #232f3e;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!-- <h1 style="font-size: 35px; color: 	#ff9900; text-align: center;">Goriber Shop</h1> -->
+        <div class="box">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPNIcYe_oiV2dWpNScuUd2ERApanV4YwnkhQ&s"
+                    alt="table lamp">
+                <h3>Table lamp</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://cdn.thewirecutter.com/wp-content/media/2024/05/running-shoes-2048px-9718.jpg"
+                    alt="Shoe">
+                <h3>Shoe</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJxwmLoMvaooIUqF3Cr6kBdxeynhf44gPA_Q&s"
+                    alt="hoodie">
+                <h3>Hoodie</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://static-01.daraz.com.bd/p/6b296138dd096701faf5528ff4076f35.jpg" alt="tote bag">
+                <h3>Tote bag</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/51JpA4Olu4L._AC_UL1157_.jpg" alt="dress">
+                <h3>Dress</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://jubleelens.com/cdn/shop/files/1_80bb7689-8627-4439-b50d-4198954e8290.png?v=1694160822"
+                    alt="glasses">
+                <h3>Glasses</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/61dMS9b+JSL._AC_UF894,1000_QL80_.jpg"
+                    alt="bear water bottle">
+                <h3>Water bottle</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://smartdeal.com.bd/public/uploads/all/Azu6hg0hiKh7fPNAKikWaJBTHqgLBdJY5WvhBqHs.jpg"
+                    alt="hand watch">
+                <h3>watch</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1660073901-best-indoor-plants-zz-plant-1660073875.png?crop=1.00xw:0.802xh;0,0.168xh&resize=980:*"
+                    alt="plant">
+                <h3>watch</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://jubleelens.com/cdn/shop/files/1_80bb7689-8627-4439-b50d-4198954e8290.png?v=1694160822"
+                    alt="glasses">
+                <h3>Glasses</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPNIcYe_oiV2dWpNScuUd2ERApanV4YwnkhQ&s"
+                    alt="table lamp">
+                <h3>Table lamp</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/51JpA4Olu4L._AC_UL1157_.jpg" alt="dress">
+                <h3>Dress</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, dolorum.</p>
+                <a href="#"><span>Buy now</span></a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
