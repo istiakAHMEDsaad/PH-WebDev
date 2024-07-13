@@ -1,0 +1,76 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.box {
+    border: 1px solid black;
+    /* height: 50px;
+    width: 50px; */
+    background-color: slateblue;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.box1 {
+    border: 1px solid tomato;
+    padding: 10px 15px;
+    background-color: aquamarine;
+    width: 200px;
+    height: 100px;
+}
+
+/* Image Responsive */
+.imgRow {
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 5px;
+    /* border: 5px solid black; */
+}
+
+.imgRow img {
+    width: 100%;
+    height: 100%;
+}
+
+.collage2>img{
+    height: calc((100% - 5px) / 2);
+}
+.imgRow div{
+    flex: 1;
+}
+.imgRow .collage4{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+/* Responsive */
+@media screen and (max-width: 576px) {
+    .container1 {
+        flex-direction: column;
+    }
+    .imgRow{
+        flex-direction: column;
+        height: auto;
+    }
+    .imgRow .collage4{
+        grid-template-columns: 1fr;
+    }
+}
+@media screeen and (min-width: 576px) and (max-width: 992px){
+    
+}
