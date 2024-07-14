@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing with width</title>
+    <style>
+        /* .cat{
+            margin: 0 auto;
+            width: 600px;
+        } */
+        img{
+            max-width: 100%;
+        }
+        h3{
+            width: fit-content;
+            background-color: tomato;
+            width: 100vh;
+
+        }
+        @media screen and (max-width: 572px){
+            .cat{
+                width: auto;
+                margin: 0 auto;
+            }
+            .cat>img{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="cat">
+    </div> -->
+    <img src="https://www.rover.com/blog/wp-content/uploads/2019/11/red-chair-cat-960x540.jpg" alt="Cat picture">
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae consequuntur possimus amet ducimus illo, ratione molestiae a consectetur sit dignissimos.</h3>
+</body>
+</html>

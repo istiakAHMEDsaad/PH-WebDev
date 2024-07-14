@@ -462,3 +462,26 @@ summary button:active{
 .right-footer button:active{
   opacity: 0.5;
 }
+
+@media screen and (max-width: 576px){
+  .card-code{
+    flex-direction: column;
+  }
+  .card{
+    margin-bottom: 10px;
+  }
+  .summary > h1{
+    width: 320px;
+    font-size: 25px;
+  }
+  .dev-code > p{
+    width: 375px;
+    text-wrap: wrap;
+    margin-bottom: 65px;
+  }
+  .summary-merge{
+    flex-direction: column;
+    column-gap: 10px;
+  }
+  
+}

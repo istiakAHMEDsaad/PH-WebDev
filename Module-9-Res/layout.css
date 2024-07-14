@@ -1,0 +1,64 @@
+.header,
+.nav-bar,
+.main,
+.sidebar,
+.ads,
+.footer {
+  border: 2px solid tomato;
+  background-color: wheat;
+  border-radius: 10px;
+}
+
+/* Grid Naming */
+.header {
+  grid-area: header;
+}
+.nav-bar {
+  grid-area: nav-bar;
+}
+.main {
+  grid-area: main;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.ads {
+  grid-area: ads;
+}
+.footer {
+  grid-area: footer;
+}
+
+/* Creating Layout*/
+.container {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "header     header  header  header"
+    "nav-bar    main    main    sidebar"
+    "nav-bar    main    main    ads"
+    "footer     footer  footer  footer";
+}
+
+/* Small Device */
+@media screen and (max-width: 576px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav-bar"
+      "main"
+      "sidebar"
+      "ads"
+      "footer";
+  }
+}
+/* Medium Device */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header   header  header"
+      "nav-bar  nav-bar nav-bar"
+      "sidebar  main    main "
+      "ads      footer  footer";
+  }
+}
