@@ -14,32 +14,49 @@
             font-size: 1.2rem;
             font-weight: 500;
             margin: 40px 0 0 40px;
+            display: flex;
+            
         }
         .inner{
             border: 1px solid gray;
+            font-size: 1.5rem;
             width: 200px;
             height: 200px;
             padding: auto;
             background-color: tomato;
             transform: scale(0.7) ; /* scale(0.50, 0.75) rotate(45deg) (x-axis, y-axis)*/
             /* transform: ; */
-            transition: transform 0.15s;
+            transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out;
         }
         .inner:hover{
-            transform: scale(0.7) rotate(45deg);
+            transform: scale(0.7) rotate(45deg) translateX(100px);
+            background-color: aqua;
+        }
+        .list>li{
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <!-- div.container*3{Container $}>div.inner{Inner syntax-$} -->
     <div class="container">
-        <div class="inner">Inner syntax-1</div>
+        <div class="inner"><span>Inner syntax-1</span></div>
     </div>
     <div class="container">
-        <div class="inner">Inner syntax-2</div>
+        <div class="inner"><span>Inner syntax-2</span></div>
     </div>
     <div class="container">
-        <div class="inner">Inner syntax-3</div>
-    </div>  
+        <div class="inner"><span>Inner syntax-3</span></div>
+    </div>
+    
+    <!-- Main section -->
+    <main>
+        <ul class="list">
+            <li>Transform: Change the shape this is a style property name!</li>
+            <li>Translate:  It's the value of the transform style rule. This means you move either x, or y or both axis</li>
+            <li>Transition: How long it will take to do the change of the shape or color</li>
+        </ul>
+    </main>
 </body>
 </html>
