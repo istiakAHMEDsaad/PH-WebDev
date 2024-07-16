@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimus Prime</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: wheat;
+            font-family: Arial;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 40px 0 0 40px;
+        }
+        .inner{
+            border: 1px solid gray;
+            width: 200px;
+            height: 200px;
+            padding: auto;
+            background-color: tomato;
+            transform: scale(0.7) ; /* scale(0.50, 0.75) rotate(45deg) (x-axis, y-axis)*/
+            /* transform: ; */
+            transition: transform 0.15s;
+        }
+        .inner:hover{
+            transform: scale(0.7) rotate(45deg);
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- div.container*3{Container $}>div.inner{Inner syntax-$} -->
+    <div class="container">
+        <div class="inner">Inner syntax-1</div>
+    </div>
+    <div class="container">
+        <div class="inner">Inner syntax-2</div>
+    </div>
+    <div class="container">
+        <div class="inner">Inner syntax-3</div>
+    </div>  
 </body>
 </html>
