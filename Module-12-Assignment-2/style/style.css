@@ -1,0 +1,1063 @@
+/* -------------------------------------Disable------------------------------------- */
+.disable {
+  display: none;
+  visibility: none;
+}
+
+/* -------------------------------------Menu------------------------------------- */
+.menu {
+  display: none;
+}
+
+@font-face {
+  font-family: miamaFonts;
+  src: url(../fonts/Miama.ttf);
+}
+/* ----------------------------------Custom CSS Property---------------------------------- */
+:root {
+  --primary-color: rgba(230, 83, 60, 1);
+  --primary-font: "Inter", sans-serif;
+  --secondary-color: rgba(255, 255, 255, 0.5);
+  --font-miama: "Miama", sans-serif, Arial;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------------------------------Body---------------------------------- */
+body {
+  margin: 0 auto;
+}
+
+.underline {
+  list-style: none;
+}
+
+.texDecoration {
+  text-decoration: none;
+}
+
+.navbar {
+  padding: 0 150px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 55px;
+  margin-bottom: 2rem;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 150px;
+}
+
+footer {
+  background: #222;
+}
+.our-team,
+.calculator-title,
+.uniqe,
+.training,
+.run,
+.habit {
+  background: #111111;
+}
+
+.our-team-container,
+.calculator-title-container,
+.training-container,
+.run-container,
+.uniqe-container,
+.habit-property {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-bottom: 6.25rem;
+}
+
+/* ----------------------------------Head---------------------------------- */
+.head {
+  background: linear-gradient(360deg, #111111 0%, #282828 100%);
+}
+
+.nav-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  font-style: italic;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+}
+
+.nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  border-radius: 25px;
+  height: 45px;
+  width: 475px;
+}
+
+.nav-btn a {
+  font-size: 1.125rem;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 45px;
+  font-family: var(--primary-font);
+  transition: background-color 0.15s;
+  transition: background-color 0.15s;
+}
+
+.nav-btn a.active {
+  background-color: var(--primary-color);
+}
+.nav-btn a:hover:not(.active) {
+  background-color: var(--primary-color);
+}
+
+/* ----------------------------------Banner Section---------------------------------- */
+.banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ------------------ Banner Right */
+
+.banner-right {
+  background-image: url(../assets/Images_2.png);
+  height: 540px;
+  width: 340px;
+}
+.banner-left {
+  max-width: 580px;
+  height: 420px;
+}
+#glass2,
+#glass1 {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 12rem;
+  height: 6rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+#gol-txt {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+#glass1 {
+  position: relative;
+  top: 120px;
+  left: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#glass1 h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  font-family: var(--primary-font);
+}
+#glass1 p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--primary-font);
+  text-align: center;
+  white-space: none;
+  padding-right: 5px;
+}
+
+#glass2 {
+  position: relative;
+  top: 300px;
+  left: -100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#glass2 #gol {
+  background: var(--primary-color);
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+}
+#glass2 #gol-txt h2 {
+  font-family: var(--primary-font);
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 900;
+}
+#glass2 #gol-txt p {
+  font-family: var(--primary-font);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+/* ------------------ Banner Right */
+.banner-title {
+  font-family: var(--primary-font);
+  font-size: 4rem;
+  color: #fff;
+  font-weight: 900;
+  line-height: 70px;
+  margin-bottom: 20px;
+}
+.banner-left .banner-des {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--primary-font);
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+}
+
+.banner-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+.banner-button button:nth-child(1) {
+  width: 14rem;
+  height: 3.375rem;
+  border-radius: 1.6875rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.banner-button button:nth-child(2) {
+  width: 14rem;
+  height: 3.375rem;
+  border-radius: 1.6875rem;
+  border: none;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.banner-title #shape {
+  font-family: miamaFonts, Arial;
+  font-size: 7rem;
+  font-weight: 400;
+}
+
+.habit-property {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.habit-title {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+}
+.habit-des {
+  color: var(--secondary-color);
+  text-align: center;
+  font-weight: 25rem;
+  line-height: 1.5rem;
+  font-family: var(--primary-font);
+  margin-bottom: 55px;
+}
+
+/* Card */
+.habit-card {
+  max-width: 14.4rem;
+  height: 17.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.habit-card img {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 90px;
+}
+.habit-card h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--primary-font);
+  text-align: center;
+}
+.habit-card p {
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.habit-card-conianer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  row-gap: 30px;
+}
+
+/* ---------------------------------Uniqe Section--------------------------------- */
+.uniqe-container h3 {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-weight: 800;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.uniqe-container p {
+  color: var(--secondary-color);
+  text-align: center;
+  font-weight: 25rem;
+  line-height: 1.5rem;
+  font-family: var(--primary-font);
+  margin-bottom: 20px;
+}
+/* .our-team-card > div, */
+.uniqe-card > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .our-team-card img, */
+.uniqe-card img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.uniqe-card {
+  max-width: 75%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 18.75rem);
+  grid-template-rows: repeat(2, 18.75rem);
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+#uuu {
+  object-fit: cover;
+  object-position: right;
+}
+
+/* ----------------------------Run an extra mile section */
+/* Left Section */
+.run-container-content {
+  background: rgba(34, 34, 34, 1);
+  padding: 30px 0;
+  border-radius: 18px;
+  margin: 0 auto;
+  max-width: 68.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.run-left {
+  max-width: 443px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.run-left h1 {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: start;
+}
+.run-left p {
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  text-align: start;
+}
+.run-left button {
+  width: 14rem;
+  height: 3.375rem;
+  border-radius: 1.6875rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* Right section */
+.run-right {
+  width: 366px;
+  height: 312px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../assets/run.jpg);
+  border-radius: 18px;
+  background-position-x: 68%;
+  background-position-y: 30%;
+  background-repeat: no-repeat;
+}
+.run-right img {
+  width: 100%;
+}
+
+/* ----------------------------Trainings and Exercises */
+.training-container {
+  padding: 0 150px;
+}
+.training-top h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: start;
+  font-family: var(--primary-font);
+  margin-bottom: 14px;
+}
+.training-top p {
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: start;
+  letter-spacing: 0.3px;
+  margin-bottom: 55px;
+}
+.training-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding-bottom: 70px;
+}
+.training-bottom > div {
+  height: 201.5px;
+  background-size: cover;
+}
+#span1 {
+  background: linear-gradient(
+      0deg,
+      rgba(6, 255, 210, 0.5) 0%,
+      rgba(6, 255, 210, 0.5) 100%
+    ),
+    url(../assets/exercise1.jpg) lightgray 50% / cover no-repeat;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  background-position: top;
+}
+#span2 {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 0, 0, 0.3) 0%,
+      rgba(255, 0, 0, 0.3) 100%
+    ),
+    url(../assets/exercise2.png) lightgray -0.336px 0px / 100.125% 111.811% no-repeat;
+  grid-row: 1 / 2;
+  grid-column: 2 / 4;
+  background-position: center;
+}
+#span3 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(../assets/exercise3.png) lightgray 50% / cover no-repeat;
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+}
+#span4 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(../assets/exercise4.png) lightgray 50% / cover no-repeat;
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+  background-position: top;
+}
+#span5 {
+  background: linear-gradient(
+      0deg,
+      rgba(66, 255, 0, 0.3) 0%,
+      rgba(66, 255, 0, 0.3) 100%
+    ),
+    url(../assets/exercise5.jpg) lightgray 50% / cover no-repeat;
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+#span6 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 71, 255, 0.3) 0%,
+      rgba(0, 71, 255, 0.3) 100%
+    ),
+    url(../assets/exercise6.jpg) lightgray 50% / cover no-repeat;
+  grid-row: 2 / 3;
+  grid-column: 4 / 5;
+}
+
+/* ----------------------------BMI Calculator Section */
+.calculator-title-container {
+  padding: 0 23.75rem 85px 23.75rem;
+}
+.calculator-title-container > div h1 {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-size: 2.7rem;
+  font-weight: 900;
+  padding-bottom: 14px;
+}
+.calculator-title-container > div p {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--primary-font);
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+/* ----------------------------BMI Calculator Section---------------------------- */
+.calculator {
+  background-color: #222;
+}
+.calculator-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 3.125rem 11.56rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 175px;
+}
+
+.calculator-left h3 {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-size: 28px;
+  font-weight: 900;
+  padding-bottom: 50px;
+  text-wrap: nowrap;
+}
+
+.calculator-left table {
+  font-family: var(--primary-font);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-collapse: collapse;
+}
+.calculator-left th {
+  font-family: var(--primary-font);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-collapse: collapse;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px;
+  text-align: start;
+}
+.calculator-left td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-collapse: collapse;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+}
+
+.calculator-right h3 {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-size: 28px;
+  font-weight: 900;
+  padding-bottom: 14px;
+}
+.calculator-right p {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.3px;
+  padding-bottom: 30px;
+}
+
+.calculator-right select,
+.calculator-right input[type="text"] {
+  padding-left: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-right: 5px;
+  box-sizing: border-box;
+  border: none;
+}
+#activity {
+  width: calc(400px + (5px * 2));
+}
+#activity,
+#fsex,
+.calculator-right input[type="placeholder"] {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--primary-font);
+  font-weight: 400;
+}
+
+.calculator-right button {
+  padding: 15px 55px;
+  border-radius: 25px;
+  border: none;
+  background-color: rgba(230, 83, 60, 1);
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* ----------------------------Our Team Section---------------------------- */
+.our-team-title h3 {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.our-team-title p {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin-bottom: 55px;
+}
+
+.our-team-card > div p {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-size: 20px;
+  font-weight: 900;
+}
+.our-team-card > div span {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 400;
+}
+.our-team-card > div p {
+  padding-left: 15px;
+}
+.our-team-card > div span {
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+.our-team-card {
+  margin: 0 auto;
+  max-width: 66.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  display: grid;
+  grid-template-rows: repeat(2, 270px);
+  grid-template-columns: repeat(3, 320px);
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+.our-team-img {
+  width: 100%;
+  border-radius: 18px;
+  background-position: center;
+  background-size: cover;
+}
+
+.team1 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url(../assets/trainer1.png) lightgray 50% / cover no-repeat;
+}
+.team2 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url(../assets/trainer2.png) lightgray 50% / cover no-repeat;
+}
+.team3 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url(../assets/trainer3.png) lightgray 50% / cover no-repeat;
+}
+.team4 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url(../assets/trainer4.png) lightgray 50% / cover no-repeat;
+}
+.team5 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url(../assets/trainer5.png) lightgray 50% / cover no-repeat;
+}
+.team6 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url(../assets/trainer6.png) lightgray 50% / cover no-repeat;
+}
+.our-team-card > div {
+  width: 320px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+}
+
+/* ----------------------------Footer Section---------------------------- */
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 11.88rem;
+}
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-top-1 {
+  width: 443px;
+}
+.footer-top-1 h1 {
+  color: #e6533c;
+  font-family: var(--primary-font);
+  font-size: 3.5rem;
+  font-style: italic;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+.footer-top-1 p {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+.footer-top-3,
+.footer-top-2 {
+  width: 180px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.footer-top-3 a,
+.footer-top-2 a {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: none;
+}
+
+.footer-top-3 h3,
+.footer-top-2 h3 {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-size: 22px;
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+
+.footer-bottom {
+  padding-top: 30px;
+}
+.footer-bottom p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--primary-font);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* ----------------------------Media Query---------------------------- */
+
+@media screen and (max-width: 576px) {
+  body {
+    font-family: var(--primary-font);
+    object-fit: contain;
+    object-position: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #111111;
+    /* padding: 20px; */
+  }
+
+  .banner,
+  .navbar {
+    padding: 0;
+    flex-direction: column;
+    max-width: 100vh;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  /* .head {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  } */
+  .navbar {
+    flex-direction: row-reverse;
+    padding-top: 50px;
+    max-width: 500px;
+    height: 100%;
+    margin: 0 auto;
+    padding: calc(340px - 335px);
+  }
+  .banner-left {
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    text-wrap: wrap;
+  }
+  .banner-title {
+    margin-top: 50px;
+    font-size: 36px;
+  }
+
+  .banner-right {
+    width: 353px;
+    height: 600px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+  }
+  #glass2,
+  #glass1 {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 150px;
+    height: 70px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  #glass2 {
+    top: 370px;
+    left: -20px;
+  }
+
+  /* Habit */
+  .habit-card-conianer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Unique Section Part */
+  /* .uniqe-card > div{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } 
+  padding: 0;
+    margin: 0;  
+  */
+  .uniqe-card {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 50%;
+  }
+
+  /* Run section */
+  .run-container-content {
+    flex-direction: column;
+    align-items: center;
+    max-width: 60%;
+  }
+  .run-left p,
+  .run-left h1,
+  .run-left {
+    align-items: center;
+    text-align: center;
+  }
+  .run-left {
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  .run-right {
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* Training Section */
+  .training-container {
+    padding: 0;
+  }
+  #span3,
+  #span6 {
+    display: none;
+    visibility: none;
+  }
+  .training-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  #span1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    background-size: cover;
+    background-position: center;
+  }
+  #span2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+  #span4 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+  #span5 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  /* BMI Calculator Section */
+  .calculator-title-container {
+    padding-left: 20px;
+    padding-bottom: 30px;
+  }
+  .calculator-container {
+    padding-left: 20px;
+  }
+
+  /* Calculation Section */
+  .calculator-title-container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 350px;
+  }
+  .calculator-title {
+    padding-bottom: 30px;
+  }
+  .calculator-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    padding: 0;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .calculator-left {
+    margin-left: 20px;
+    margin-bottom: 40px;
+  }
+  .calculator-right {
+    gap: 0;
+    margin-left: 20px;
+  }
+
+  /* Our Team Section */
+  .our-team {
+    padding-top: 65px;
+  }
+
+  .our-team-img:nth-child(4),
+  .team4,
+  .our-team-img:nth-child(1),
+  .team1 {
+    display: none;
+    visibility: none;
+  }
+  .team2 {
+    order: 1;
+  }
+  .team5 {
+    order: 2;
+  }
+  .team3 {
+    order: 3;
+  }
+  .team6 {
+    order: 4;
+  }
+  .our-team-card {
+    width: 380px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .our-team-container {
+    padding-bottom: 60px;
+  }
+
+  /* Footer Section */
+  .footer-top {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        .div-container{
+            border: 3px solid black;
+            margin: 0 auto;
+            
+        }
+        .img-container>div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-container img{
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .img-container{
+            display: grid;
+            grid-template-columns: repeat(3, 18.75rem);
+            grid-template-rows: repeat(2, 18.75rem);
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        #baka{
+            object-fit: cover;
+            object-position: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-container">
+        <div class="img-container">
+            <div><img src="./assets/uniqe-pic/1_trademil.jpg" alt="pic1"></div>
+            <div><img src="./assets/uniqe-pic/2_dumbbell.jpg" alt="pic2"></div>
+            <div><img src="./assets/uniqe-pic/3_chest_exercise_machine.jpg" alt="pic3"></div>
+            <div><img src="./assets/uniqe-pic/4_abdominal-machine.jpg" alt="pic4"></div>
+            <div><img id="baka" src="./assets/uniqe-pic/5_Leg_curl_machine.jpg" alt="pic5"></div>
+            <div><img src="./assets/uniqe-pic/6_exercise_bike.jpg" alt="pic6"></div>
+        </div>
+    </div>
+</body>
+</html>

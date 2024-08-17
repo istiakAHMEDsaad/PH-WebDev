@@ -1,0 +1,376 @@
+/* .inter-<uniquifier> {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+  }   
+*/
+@font-face {
+  font-family: miamaFonts;
+  src: url(../fonts/Miama.ttf);
+}
+
+.disable {
+  display: none;
+  visibility: none;
+}
+
+.menu {
+  display: none;
+}
+
+/* ----------------------------------Custom CSS Property---------------------------------- */
+:root {
+  --primary-color: rgba(230, 83, 60, 1);
+  --primary-font: "Inter", sans-serif;
+  --secondary-color: rgba(255, 255, 255, 0.5);
+  --font-miama: "Miama", sans-serif;
+}
+
+/* ----------------------------------Universal Selector---------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.head {
+  /* border: 1px solid tomato; 
+    linear-gradient(360deg, #111111 0%, #282828 100%)
+    */
+  /* padding: calc(1440px - 50px) calc(1440px - 100px) calc(1440px - 0) calc(1440 - 100px); 
+  */
+  background: linear-gradient(360deg, #111111 0%, #282828 100%);
+  /* height: 620px; */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 50px 100px 0 100px;
+}
+.habit {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #111111;
+  padding: 50px 100px 0 100px;
+}
+
+/* -----------------------------> Nav Body Background */
+.navbar {
+  /* border: 1px solid tomato; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+/* -----------------------------> Nav Title */
+.nav-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  font-style: italic;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+}
+
+/* -----------------------------> Nav Button */
+.nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  border-radius: 30px;
+  height: 46px;
+  width: 480px;
+}
+.navbar .nav-btn li {
+  list-style: none;
+}
+.navbar .nav-btn a {
+  /* border: 1px solid black; */
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  /* font-style: none; */
+  padding: 8px 20px;
+  border-radius: 45px;
+  font-family: var(--primary-font);
+  transition: background-color 0.15s;
+}
+.nav-btn a.active {
+  background-color: var(--primary-color);
+}
+.nav-btn a:hover:not(.active) {
+  background-color: var(--primary-color);
+}
+
+/* -----------------------------> Banner Section */
+/* right */
+.banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner-right {
+  /* border: 1px solid tomato; */
+  background-image: url(../assets/Images_2.png);
+  height: 540px;
+  width: 340px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.banner-right #glass1 {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 193px;
+  height: 98px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.banner-right #glass2 {
+  width: 206px;
+  height: 96px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(48, 48, 48, 0.54);
+  backdrop-filter: blur(10px);
+}
+/* left */
+.banner-left {
+  /* border: 1px solid tomato; */
+  max-width: 580px;
+  height: 420px;
+}
+.banner-title {
+  font-family: var(--primary-font);
+  font-size: 4rem;
+  color: #fff;
+  font-weight: 900;
+  line-height: 70px;
+  margin-bottom: 20px;
+}
+.banner-left .banner-des {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--primary-font);
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+}
+.banner-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.banner-button button:nth-child(1) {
+  width: 224px;
+  height: 54px;
+  border-radius: 27px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.banner-button button:nth-child(2) {
+  width: 224px;
+  height: 54px;
+  border-radius: 27px;
+  border: none;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.banner-title #shape {
+  font-family: var(--font-miama);
+  font-size: 7rem;
+  font-weight: 400;
+}
+#glass1 {
+  position: relative;
+  top: 120px;
+  left: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#glass1 h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  font-family: var(--primary-font);
+}
+#glass1 p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  font-weight: 400;
+  font-family: var(--primary-font);
+  text-align: center;
+}
+#glass2 {
+  position: relative;
+  top: 300px;
+  left: -100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#glass2 #gol {
+  /* border: 1px solid tomato; */
+  background: var(--primary-color);
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+}
+#glass2 #gol-txt h2 {
+  font-family: var(--primary-font);
+  font-size: 24px;
+  color: #fff;
+  font-weight: 900;
+}
+#glass2 #gol-txt p {
+  font-family: var(--primary-font);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* -----------------------------> Change Habit */
+.habit-property {
+  /* border: 10px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.habit-title {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+}
+.habit-des {
+  color: var(--secondary-color);
+  text-align: center;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: var(--primary-font);
+  margin-bottom: 55px;
+}
+
+/* Card Section */
+.habit-card {
+  width: 231px;
+  height: 274px;
+  /* border: 1px solid tomato; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.habit-card img {
+  border-radius: 90px;
+}
+.habit-card h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--primary-font);
+  text-align: center;
+}
+.habit-card p {
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+/* Card Container */
+
+/* ----------------------------------Media Query---------------------------------- */
+@media screen and (max-width: 576px) {
+  .head {
+    /* border: 2px solid tomato; */
+    margin: 0 auto;
+    height: 1025px;
+    padding: 10px 20px;
+    /* padding: 10px 0 10px 0; */
+  }
+  .habit {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    .navbar {
+      flex-direction: row-reverse;
+      padding-right: 15px;
+      width: 100%;
+    }
+    .nav-btn {
+      display: none;
+      visibility: none;
+    }
+    .menu {
+      display: block;
+    }
+    .banner {
+      width: 100%;
+      /* padding: auto; */
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      /* margin-left: 15px; */
+    }
+    .banner-left {
+      max-width: 400px;
+    }
+    .banner-title {
+      font-size: 36px;
+      line-height: 50px;
+      /* padding-left: 10px; */
+    }
+    #glass1 {
+      position: relative;
+      top: 175px;
+      left: 150px;
+    }
+    #glass2 {
+      position: relative;
+      left: 0px;
+    }
+    .banner-left p {
+      padding-left: 10px;
+      width: 100%;
+    }
+    .banner-button {
+      justify-content: center;
+      /* padding-left: 10px;
+    padding-right: 20px; */
+      width: 100%;
+    }
+
+    /* ------Habit Section------ */
+    .habit-card-conianer {
+      display: grid;
+      grid-template-columns: repeat(3, 300px);
+      grid-template-rows: repeat(2, 300px);
+    }
+  }
+}

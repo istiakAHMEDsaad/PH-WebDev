@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chit Chat Card</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .chat-card{
+            /* border: 1px solid black; */
+            max-width: 20rem;
+            margin: 0 auto;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #fff;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .card-logo{
+            flex-shrink: 0;
+        }
+        .chat-icon{
+            height: 3rem;
+            width: 3rem;
+        }
+        .card-content{
+            margin-left: 1.5rem;
+        }
+        /* #1a202c */
+        .card-content h4{
+            font-size: 1.25rem;
+            line-height: 1.25;
+            color: #1a202c;
+        }
+        .card-content p{
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #718096;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="chat-card">
+        <div class="card-logo">
+            <img class="chat-icon" src="./assets/chat.png" alt="chit chat icon">
+        </div>
+        <div class="card-content">
+            <h4>ChitChat</h4>
+            <p>You have a new message!</p>
+        </div>
+    </div>
+</body>
+</html>
