@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea House</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awsome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Value -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .manrope-regular {
+            font-family: "Manrope", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3844/3844846.png" type="image/x-icon">
+</head>
+
+<body class="manrope-regular">
+    <!-- Main content -->
+    <main class="max-w-screen-xl mx-auto px-7 py-9 md:px-20 lg:px-16">
+
+        <!-- Header Section -->
+        <header class="lg:flex lg:pt-10">
+            <!-- Header left text content -->
+            <div>
+                <h2 class="text-[#1C1C1C] text-3xl md:text-5xl lg:text-7xl md:leading-[55px] font-bold">
+                    It's good <br>
+                    tea time at The <br>Tea House
+                </h2>
+                <br>
+                <p class="text-base md:text-lg lg:text-lg text-[#777777] w-3/4 lg:w-3/4">
+                    Tea and Botanical Solutions Supplier Give Optimum
+                    Satisfaction To Your Taste Buds.
+                </p>
+                <br>
+                <button
+                    class="font-semibold text-white bg-gradient-to-r from-[#FF0000] to-[#FF8938] py-2 px-4
+                    lg:py-3 lg:px-5 lg:text-lg rounded-lg hover:opacity-85 mb-3">
+                    <a href="#">Explore More</a> <i class="fa-solid fa-arrow-right text-base lg:text-lg -rotate-45"></i>
+                </button>
+            </div>
+
+            <!-- Header right image -->
+            <div class="relative">
+                <!-- image -->
+                <div class="">
+                    <img class="w-full" src="./assets/banner.png" alt="">
+                </div>
+
+                <!-- card -->
+                <div class="flex items-center px-4 py-1 md:px-9 md:py-2 lg:px-10 lg:py-3 bg-white shadow-xl rounded-lg absolute top-52 md:top-80 md:left-20">
+                    <!-- icon -->
+                    <div>
+                        <i class="fa-solid fa-star text-amber-400 lg:text-xl mr-2"></i>
+                    </div>
+
+                    <!-- card text -->
+                    <div class="">
+                        <h2 class="text-[#1C1C1C] text-xl lg:text-2xl lg:font-extrabold font-bold">5.00</h2>
+                        <p class="text-[#777777] font-semibold">Trust Pilot Ratings</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Our Featured Products -->
+         
+    </main>
+</body>
+
+</html>
