@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy UI test</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<h1>Hola</h1>
+<button class="btn btn-outline btn-primary">Hover Me</button>
+<div class="card bg-base-100 w-96 shadow-xl mb-4">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod quos magni, nulla nesciunt ratione non dolor delectus
+    hic similique velit. Hic recusandae alias error amet, rem pariatur beatae. At, praesentium.
+</div>
+
+<!-- Open the modal using ID.showModal() method -->
+<button class="btn btn-outline btn-accent" onclick="my_modal_1.showModal()">Don't Open</button>
+<dialog id="my_modal_1" class="modal">
+    <div class="modal-box">
+        <h3 class="text-lg font-bold">Just a Prank Bro 😂</h3>
+        <p class="py-4">Press ESC key or click the button below to close</p>
+        <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+            </form>
+        </div>
+    </div>
+</dialog>
+
+<body>
+
+</body>
+
+</html>
