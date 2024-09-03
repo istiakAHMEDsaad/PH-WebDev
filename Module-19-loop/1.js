@@ -176,3 +176,12 @@ while(i8<=20){
   }
   console.log(i8);
 }
+
+
+console.log("do loop");
+let num1 = 0;
+do{
+  console.log(num1);
+  num1++;
+}
+while(num1<=10);
