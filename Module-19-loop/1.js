@@ -74,7 +74,6 @@ while (l1 <= 10) {
   l1++;
 }
 
-
 // While loop
 console.log(`---------------------------- \n`);
 let a1 = 0;
@@ -93,7 +92,6 @@ while (a1 <= 5) {
 }
 console.log(`Sum of the even: ${b1}`);
 console.log(`Sum of the odd: ${c1}`);
-
 
 // For Loop
 console.log(`---------------------------- \n`);
@@ -117,24 +115,64 @@ console.log(`---------------------------- \n`);
 // 200 to 250
 let i3 = 200;
 let sum4 = 0;
-while(i3<=250){
-  sum4+=i3;
+while (i3 <= 250) {
+  sum4 += i3;
   i3++;
 }
-console.log('Sum of 200 to 250 is:',sum4);
-
+console.log("Sum of 200 to 250 is:", sum4);
 
 // Decrement
 console.log(`---------------------------- \n`);
 let i4 = 10;
 let sum5 = 0;
 console.log(`Reverse value 10:`);
-while(i4>=0){
+while (i4 >= 0) {
   console.log(i4);
-  sum5+=i4;
+  sum5 += i4;
   i4--;
 }
-console.log('Reverse value sum:',sum5);
+console.log("Reverse value sum:", sum5);
 
 // 20 - 11
+console.log("\ndivisibale 3 & 5:");
 let i5 = 0;
+let sum6 = 0;
+for (i5; i5 <= 50; i5++) {
+  if (i5 % 3 === 0 && i5 % 5 === 0) {
+    console.log(i5);
+    sum6 += i5;
+  }
+}
+console.log(`Sum: ${sum6}\n\n`);
+
+let i6 = 54;
+let n = 0;
+while (i6 >= 20) {
+  console.log(i6);
+  if (i6 <= 30) {
+    break;
+  }
+  i6--;
+}
+
+// continue
+let i7 = 1;
+console.log("using continue -->");
+while (i7 <= 20) {
+  i7++;
+  if (i7 % 2 != 0) {
+    continue;
+  }
+  console.log(i7);
+}
+
+
+let i8=0;
+console.log("odd value-->")
+while(i8<=20){
+  i8++;
+  if(i8%2==0){
+    continue;
+  }
+  console.log(i8);
+}
