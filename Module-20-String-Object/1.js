@@ -45,3 +45,11 @@ for(const lett of var3){
     reVer = lett+reVer;
 }
 console.log(reVer);
+let reVerr="";
+for(let i=0;i<var3.length;i++){
+    let letter = var3[i];
+    reVerr=letter+reVerr;
+}
+console.log(reVerr);
+const moiraJa = reVer.split("").reverse();
+console.log(moiraJa);
