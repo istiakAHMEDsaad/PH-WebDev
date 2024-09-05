@@ -5,7 +5,3 @@ for(let i=0; i<heros.length; i++){
         console.log(`Heros: ${heros[i][j]}`);
     }
 }
-
-for(char of "saad"){
-    console.log(char);
-}
