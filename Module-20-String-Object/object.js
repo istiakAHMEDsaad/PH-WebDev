@@ -6,6 +6,7 @@ let myName = {
   "gosto khai": ["goru", "mohish", "vera", "chagol"],
 };
 console.log(myName.name);
+console.log(myName.name.length);
 console.log(myName["adds"]);
 console.log(myName["gosto khai"]);
 

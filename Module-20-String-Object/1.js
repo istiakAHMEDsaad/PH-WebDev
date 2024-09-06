@@ -53,3 +53,17 @@ for(let i=0;i<var3.length;i++){
 console.log(reVerr);
 const moiraJa = reVer.split("").reverse();
 console.log(moiraJa);
+
+let str="My Name Saad";
+let revVal = "";
+for(const reverseVal of str){
+  revVal = reverseVal + revVal;
+}
+console.log(revVal);
+
+let i9=0;
+let revVal2 = "";
+for(i9;i9<str.length;i9++){
+  revVal2 = str[i9] + revVal2;
+}
+console.log(revVal2);
