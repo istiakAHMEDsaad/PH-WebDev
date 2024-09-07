@@ -2,3 +2,5 @@
 .vscode
 #vs code workspace config
 PH-WebDev.code-workspace
+#
+.idea
