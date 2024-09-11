@@ -1,9 +1,9 @@
-/* function calculateTax(income, expenses) {
+function calculateTax(income, expenses) {
   if (income < expenses || (income && expenses) < 0) {
     return "Invalid Input";
   } else {
     const diffVal = income - expenses;
-    return (diffVal * 0.2).toFixed(2);
+    return (diffVal * 0.2);
   }
 }
 
@@ -17,8 +17,8 @@ function sendNotification(email) {
     return `${userName} sent you an email from ${domainName}`;
   }
 }
- */
-/* function checkDigitsInName(name) {
+
+function checkDigitsInName(name) {
   if (typeof name !== "string") {
     return "Invalid Input";
   }
@@ -28,15 +28,38 @@ function sendNotification(email) {
     }
   }
   return false;
-} */
-let finalResult = {
-  name: "Rajib",
-  testScore: 45,
-  schoolGrade: 25,
-  isFFamily: true,
-};
-for(const some of finalResult){
-  console.log(some);
-  console.log(finalResult[some]);
 }
-// hoi na
+
+function calculateFinalScore(obj) {
+  let sum = 0;
+  if (typeof obj !== "object") {
+    return "Invalid Input";
+  }
+  if (obj.isFFamily === true) {
+    obj.isFFamily = 20;
+  } else if (obj.isFFamily === false) {
+    obj.isFFamily = 0;
+  }
+  sum = obj.testScore + obj.schoolGrade + obj.isFFamily;
+  if (sum > 80) {
+    return true;
+  } else if (sum < 80) {
+    return false;
+  }
+}
+
+function waitingTime(waitingTimes, serialNumber) {
+  let avgSum = 0;
+  const waitingLength = waitingTimes.length;
+  const isratCount = serialNumber-1;
+  const isratStand = isratCount - waitingLength;
+
+  if((Array.isArray(waitingTimes) === false) || (typeof serialNumber !== "number")){
+    return "Invalid Input";
+  }
+  for(const waitTime in waitingTimes){
+    avgSum += waitingTimes[waitTime];
+  }
+  let avgVal = Math.round(avgSum / waitingLength);
+  return avgVal * isratStand;
+}
