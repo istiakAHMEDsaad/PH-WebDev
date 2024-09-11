@@ -1,9 +1,8 @@
-const pencil = new Object();
-console.log(pencil);
+const arrOne = Object.keys(mobile);
+console.log(arrOne);
+const arrTwo = Object.values(mobile);
+console.log(arrTwo);
 
-const rubber = Object.create({});
-console.log(rubber);
-
-// Random value generator between 1 to 10
-let random = Math.floor(Math.random() * 10)+1;
-console.log(random);
+for (const lebu of arrOne) {
+  console.log(lebu, ":", mobile[lebu]);
+}
