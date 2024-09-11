@@ -39,3 +39,4 @@ for(const some of finalResult){
   console.log(some);
   console.log(finalResult[some]);
 }
+// hoi na
