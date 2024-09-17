@@ -3,9 +3,9 @@
 const maTitle = document.getElementById("heading1");
 maTitle.setAttribute("title", "this is me bal");
 
-document.getElementById("heading1").style.backgroundColor = "aqua";
-document.getElementById("heading1").style.color = "tomato";
-document.getElementById("heading1").style.textAlign = "center";
+maTitle.style.backgroundColor = "aqua";
+maTitle.style.color = "tomato";
+maTitle.style.textAlign = "center";
 
 const changeMe = document.getElementById("cng-maro");
 

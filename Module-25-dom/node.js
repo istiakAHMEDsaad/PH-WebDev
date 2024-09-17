@@ -1,7 +1,7 @@
 const fruits = document.getElementsByClassName("fruit-section");
 console.log(fruits[0].childNodes[3]);
 // set image
-document.getElementsByClassName("fruit-section")[0].childNodes[3].style.width =
+fruits[0].childNodes[3].style.width =
   "400px";
 
 for (const fruit of fruits) {
