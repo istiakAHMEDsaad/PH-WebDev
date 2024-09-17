@@ -29,7 +29,7 @@ for (const heads of headerDekha) {
 const changeMe = document.getElementById("change-me");
 changeMe.innerText = "Noo! JS bastard change my text!";
 
-// query selector
+// query selector -----------Sub Class Select kora jai------------
 const amraKori = document.querySelectorAll(".amra-kori span");
 for (const amras of amraKori) {
   console.log(amras);
