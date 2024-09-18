@@ -38,3 +38,29 @@ document.getElementById("orange-me").addEventListener("click", function () {
 document
   .getElementById("black-me")
   .addEventListener("click", () => (document.body.style.background = "black"));
+
+// Common use case
+
+const pressButton = document.getElementById("press-button");
+function changeToYou() {
+  const yourName = prompt("enter your name");
+  if (yourName.toLowerCase() === "saad") {
+    pressButton.innerText = `Hi ${yourName} 🙋‍♂️`;
+  } else if (yourName.toLowerCase() === "tajrin") {
+    pressButton.innerText = `Hi ${yourName} 🙋‍♀️`;
+  } else {
+    pressButton.innerText = `Hi ${yourName} 😀`;
+  }
+}
+
+document.getElementById("button-image").addEventListener("click", function () {
+  document.getElementById("show-image").innerHTML =
+    '<img style="width: 300px; object-fit: cover; object-position: center;" src="https://instagram.fspd5-1.fna.fbcdn.net/v/t39.30808-6/406482633_916139479870233_5810829202165924109_n.jpg?stp=dst-jpg_e35_s640x640_sh0.08&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4yMDQ4eDIwNDguc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fspd5-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=Mug2-m43ZvUQ7kNvgHksgvk&edm=ANTKIIoAAAAA&ccb=7-5&oh=00_AYB93VvgLQDo7rJhQclKNuBjWT5dodude33NoRoOEQv_Qw&oe=66F0A11E&_nc_sid=d885a2" alt="Online Random Picture">';
+});
+
+// take input from input
+document.getElementById("input-Take").addEventListener("click", function () {
+  const inputDhoro = document.getElementById('input-input').value;
+  document.getElementById('input-text').innerText = `${inputDhoro} 😁`;
+  inputDhoro.value = '';
+});
