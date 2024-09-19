@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>More events</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        li{
+            border: 2px solid tomato;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>More about JavaScript event 😮</h1>
+    <div>
+        <p>Hover me</p>
+        <input id="text-field" type="text">
+        <button class="click-me">Click me</button>
+    </div>
+
+    <div>
+        <h2 id="delete-me">Delete my by click delete button 😢</h2>
+        <button id="delete-button">Delete</button>
+    </div>
+
+    <div>
+        <h2 id="delete-per">Secret Delete</h2>
+        <input id="confirm-delete" style="width: 12rem; padding: 5px 10px; border-radius: 4px;" type="text"
+            placeholder="type 'delete' to delete this post">
+        <button id="secret-delete" disabled>delete😿</button>
+    </div>
+
+    <!-- bubble -->
+    <div id="bubble">
+        <h2>Bubble</h2>
+        <div id="list-container">
+            <ul id="list-ul">
+                <!-- li#item-$*6>lorem2 -->
+                <li id="item-1">Lorem, ipsum.</li>
+                <li id="item-2">Maiores, pariatur?</li>
+                <li id="item-3">Quis, inventore!</li>
+                <li id="item-4">Dicta, eaque!</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="delegate">
+        <ul id="delegate-ul">
+            <li class="item-5 five-ul">Lorem, ipsum.</li>
+            <li class="item-6 five-ul">Eaque, quam?</li>
+            <li class="item-7 five-ul">Eos, eius.</li>
+            <li class="item-8 five-ul">Repellat, minus?</li>
+        </ul>
+        <button id="add-more">Add item📃</button>
+    </div>
+    <script src="./js_css/third.js"></script>
+</body>
+
+</html>
