@@ -2,6 +2,8 @@
 .vscode
 #vs code workspace config
 PH-WebDev.code-workspace
-#
+#web storm
 .idea
 node_modules
+#Module 27
+./Module-27-payoo-app/node_modules

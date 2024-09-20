@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payooo | Home</title>
+    <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/2355/PNG/512/payment_app_finger_icon_143258.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/index-DYAxZkaW.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="font-outfit md:px-44 lg:mx-80">
+    <header class="md:container mx-auto">
+        <div class="flex flex-row px-4 pt-10 pb-3 justify-between">
+            <!-- logo -->
+            <div class="flex flex-row">
+                <img class="h-auto max-w-12" src="./assets/Group.svg" alt="">
+                <div class="flex flex-col">
+                    <div id="present-money" style="color: rgba(8, 8, 8, 0.9);" class="text-lg font-extrabold">$100.00</div>
+                    <p style="color: rgba(8, 8, 8, 0.5);" class="text-sm ">Available Balance</p>
+                </div>
+            </div>
+            <button id="log-out" style="color: rgba(8, 8, 8, 0.5);" class="px-3 border rounded-lg">
+                <i style="color: rgba(102, 103, 104, 1);" class="ri-logout-box-line"></i>
+                Log Out
+            </button>
+        </div>
+        <div class="divider"></div>
+    </header>
+
+    <main class="md:container mx-auto">
+        <!-- text & button -->
+        <div class="flex flex-col gap-y-6  px-4">
+            <!-- Text containt -->
+            <div class="flex flex-col gap-y-3">
+                <h2 class="text-[#080808] text-2xl font-bold">🔥 Welcome to Payooo!</h2>
+                <p style="color: rgba(8, 8, 8, 0.5);" class="text-base">
+                    Enjoy easy and convenient financial services with us. Cashout charge is low
+                </p>
+            </div>
+
+            <!-- Button -->
+            <div class="grid grid-cols-3 grid-rows-2 gap-3 justify-center">
+                <button id="button-one"
+                    class="hover:border-[#0874F2] active:border-[#0874F2] flex flex-col items-center justify-center border rounded-lg pay-button">
+                    <img src="./assets/wallet1.svg" alt="">
+                    Add Money
+                </button>
+                <button id="button-two"
+                    class="hover:border-[#0874F2] active:border-[#0874F2] flex flex-col items-center justify-center border rounded-lg pay-button">
+                    <img src="./assets/send2.svg" alt="">
+                    Cashout
+                </button>
+                <button id="button-three"
+                    class="hover:border-[#0874F2] active:border-[#0874F2] flex flex-col items-center justify-center border rounded-lg pay-button">
+                    <img src="./assets/money3.svg" alt="">
+                    Transfer Money
+                </button>
+                <button id="button-four"
+                    class="hover:border-[#0874F2] active:border-[#0874F2] flex flex-col items-center justify-center border rounded-lg pay-button">
+                    <img src="./assets/financial4.svg" alt="">
+                    Get Bonus
+                </button>
+                <button id="button-five"
+                    class="hover:border-[#0874F2] active:border-[#0874F2] flex flex-col items-center justify-center border rounded-lg pay-button">
+                    <img src="./assets/purse5.svg" alt="">
+                    Pay Bill
+                </button>
+                <button id="button-six"
+                    class="hover:border-[#0874F2] active:border-[#0874F2] flex flex-col items-center justify-center border rounded-lg pay-button">
+                    <img src="./assets/transaction6.svg" alt="">
+                    Transactions
+                </button>
+            </div>
+        </div>
+        <div></div>
+        <div class="divider"></div>
+
+        <!-- Add money -->
+        <div id="add-mony-section" class="hidden px-3 flex flex-col gap-y-3">
+            <h2 class="text-[#080808E5] text-lg font-extrabold">Add Money</h2>
+            <div class="rounded-2xl bg-white shadow-xl">
+                <div class="flex flex-col gap-y-3 px-4 py-4">
+                    <p style="color: rgba(8, 8, 8, 0.7);" class="text-base font-medium">Amount to Add</p>
+                    <input id="add-money-input" type="text" placeholder="Add amount to deposit" autocomplete="on"
+                        class="input input-bordered w-full rounded-full bg-[#F4F5F7]" />
+                    <p style="color: rgba(8, 8, 8, 0.7);" class="text-base font-medium">Pin Number</p>
+                    <input id="pin-input" type="text" placeholder="Enter 4 Digit Pin" autocomplete="on"
+                        class="input input-bordered w-full rounded-full bg-[#F4F5F7]" />
+                    <button id="add-mony-button" style="background-color: rgba(8, 116, 242, 1);"
+                        class="btn text-[#FFF] text-lg font-semibold rounded-full">Add Money</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cash out -->
+        <div id="cashout-section" class="hidden px-3 flex flex-col gap-y-3">
+            <h2 class="text-[#080808E5] text-lg font-extrabold">Cash Out</h2>
+            <div class="rounded-2xl bg-white shadow-xl">
+                <div class="flex flex-col gap-y-3 px-4 py-4">
+                    <p style="color: rgba(8, 8, 8, 0.7);" class="text-base font-medium">Amount</p>
+                    <input id="cashout-input" type="text" placeholder="Add amount to withdraw" autocomplete="on"
+                        class="input input-bordered w-full rounded-full bg-[#F4F5F7]" />
+                    <p style="color: rgba(8, 8, 8, 0.7);" class="text-base font-medium">Pin Number</p>
+                    <input id="cashout-pin" type="text" placeholder="Enter 4 Digit Pin" autocomplete="on"
+                        class="input input-bordered w-full rounded-full bg-[#F4F5F7]" />
+                    <button id="cashout-button" style="background-color: rgba(8, 116, 242, 1);"
+                        class="btn text-[#FFF] text-lg font-semibold rounded-full">Withdraw Money</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coming Soon -->
+        <div id="coming-soon" class="hidden flex justify-center py-4">
+            <img src="https://cdn.pixabay.com/animation/2023/07/19/01/41/01-41-18-281_512.gif" alt="">
+        </div>
+
+        <!-- Default -->
+         <div id="default-pic" class="">
+            <img src="https://cdn.dribbble.com/users/623324/screenshots/3903784/simple_bank_-_login.gif" alt="">
+         </div>
+    </main>
+    <script src="./JAVASCRIPT/features.js"></script>
+    <script src="./JAVASCRIPT/calculation.js"></script>
+</body>
+
+</html>

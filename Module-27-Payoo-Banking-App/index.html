@@ -1,0 +1,42 @@
+<!-- http://localhost:5173/ -->
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payooo</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/2355/PNG/512/payment_app_finger_icon_143258.png"
+        type="image/x-icon">
+</head>
+
+<body class="h-screen font-outfit flex flex-col items-center justify-center"
+    style="background-color: rgba(244, 245, 247, 1);">
+    <main class="my-auto">
+        <section class="md:container mx-auto my-auto">
+            <div class="flex flex-col items-center gap-y-5">
+                <!-- logo -->
+                <div>
+                    <img src="./assets/Group.svg" alt="">
+                </div>
+                <!-- name & pass -->
+                <div class="rounded-2xl bg-white p-5 shadow-xl">
+                    <div class="flex flex-col gap-y-3">
+                        <p class="text-[#080808] text-base font-medium">Mobile Number</p>
+                        <input id="mobile-input" type="text" placeholder="Enter your number" autocomplete="on"
+                            class="input input-bordered w-72 rounded-full bg-[#F4F5F7]" />
+                        <p class="text-[#080808] text-base font-medium">4 Digit Pin</p>
+                        <input id="pin-input" type="text" placeholder="Enter 4 Digit Pin" autocomplete="on"
+                            class="input input-bordered w-72 rounded-full bg-[#F4F5F7]" />
+                        <button id="login-button" style="background-color: rgba(8, 116, 242, 1);"
+                            class="btn text-[#FFF] text-lg font-semibold rounded-full">Login</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./Script/login.js"></script>
+</body>
+
+</html>
