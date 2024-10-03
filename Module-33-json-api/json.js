@@ -1,4 +1,4 @@
-console.log('----------Task 1----------\n')
+console.log('----------Task 1----------\n');
 const user = {
   id: 1,
   name: 'jobbar ali',
@@ -7,7 +7,6 @@ const user = {
 const userStringify = JSON.stringify(user);
 console.log(user);
 console.log(userStringify);
-
 
 console.log('\n----------Task 2----------\n');
 const shop = {
@@ -24,7 +23,6 @@ const shop = {
 };
 const shopStringify = JSON.stringify(shop);
 console.log(shopStringify);
-
 
 console.log('\n----------Task 3----------\n');
 const userTurnParse = JSON.parse(userStringify);
