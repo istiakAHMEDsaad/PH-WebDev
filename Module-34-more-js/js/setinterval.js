@@ -1,8 +1,11 @@
 console.log('first');
 console.log('second');
+
+// clearTimeout
 setTimeout(() => {
   console.log(3);
 }, 3000);
+
 console.log('fourth');
 console.log('fifth');
 

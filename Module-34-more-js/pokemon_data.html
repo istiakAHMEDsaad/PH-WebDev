@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke API</title>
+    <link rel="shortcut icon"
+        href="https://static.wikia.nocookie.net/pokemon-fano/images/6/6f/Poke_Ball.png/revision/latest/scale-to-width-down/767?cb=20140520015336"
+        type="image/x-icon">
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: bisque;
+            /* box-sizing: border-box; */
+        }
+
+        #pokemon-name-input {
+            height: 2rem;
+            width: 16rem;
+            border: 1px solid black;
+            padding: 0.2rem 1rem;
+            border-radius: 1.5rem;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+
+        #pokemon-fetch-data {
+            background-color: cornflowerblue;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: 0.20s;
+        }
+
+        #pokemon-fetch-data:hover {
+            background-color: aqua;
+            color: black;
+        }
+
+        #pokemon-sprite {
+            margin-top: 1rem;
+            display: none;
+            width: 12rem;
+        }
+
+        .pokemon-section {
+            display: flex;
+            flex-direction: row;
+            justify-items: center;
+            row-gap: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="pokemon-section">
+        <input id="pokemon-name-input" type="text" placeholder="Enter pokemon name">
+        <button onclick="fetchPokemonData()" id="pokemon-fetch-data">Fetch Data</button>
+    </section>
+    <img id="pokemon-sprite" src="" alt="Pokemon sprite">
+    <script src="./js/poke.js"></script>
+</body>
+
+</html>
