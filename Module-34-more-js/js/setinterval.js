@@ -11,9 +11,9 @@ console.log('fifth');
 
 let num = 0;
 const intervalId = setInterval(() => {
-    num++;
-    console.log(`countdown: ${num}`);
-    if(num>=60){
-        clearInterval(intervalId)
-    }
-}, 1000)
+  num++;
+  console.log(`countdown: ${num}`);
+  if (num >= 60) {
+    clearInterval(intervalId);
+  }
+}, 1000);
