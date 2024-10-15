@@ -22,6 +22,9 @@
     * git push
 
 
+# clone specific commit with zip file
+https://github.com/{username}/{projectname}/archive/{sha}.zip
+
 Extra:
 git status                                              --> see status
 git config --global init.defaultBranch main             --> set default branch
