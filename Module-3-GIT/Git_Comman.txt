@@ -22,6 +22,12 @@
     * git push
 
 
+#Switch branch
+git branch --{check main branch}
+git branch [branch-name]
+git checkout [branch-name]
+git branch -d [branch-name]  --{first Switch to main or another branch then delete it}
+
 # clone specific commit with zip file
 https://github.com/{username}/{projectname}/archive/{sha}.zip
 
