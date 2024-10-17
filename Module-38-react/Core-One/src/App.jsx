@@ -1,10 +1,48 @@
 import './App.css';
 import './index.css';
+import './Todo';
+import Todo from './Todo';
+import { Todo2 } from './Todo';
+import { Todo3 } from './Todo';
+import { Todo4 } from './Todo';
+import { Todo5 } from './Todo';
+import { Todo6 } from './Todo';
+import Actor from './Actor';
+import Singer from './Singer';
 
 function App() {
+  const actors = ['Enaa', 'Meena', 'Tina', 'Rina'];
+  const singers = [
+    {
+      name: 'Dr Mahfuzur Rahman',
+      age: 68,
+    },
+    {
+      name: 'Eva Rahman',
+      age: 46,
+    },
+    {
+      name: 'Shuvro Dev',
+      age: 55,
+    },
+    {
+      name: 'Pritom Biswas',
+      age: 28,
+    },
+  ];
+
   return (
     <>
       <h1 className="text-5xl font-bold">Learning React</h1>
+      <Actor name="Holiciya"></Actor>
+      {actors.map((actor) => (
+        <Actor name={actor}></Actor>
+      ))}
+      <Singer name="Johurul Islam"></Singer>
+
+      {
+        singers.map(singer => <Singer singer={singer}></Singer>)
+      }
       {/* 1 */}
       <Person></Person>
       {/* 2 */}
@@ -31,6 +69,26 @@ function App() {
       <Device name="1992 computer 😥" price="13000"></Device>
       {/* 7 */}
       <Device name="mac 2019 " price="13000"></Device>
+      {/* 8 */}
+      <Todo task="learn react" isDone={true}></Todo>
+      <Todo task="exploare core concept" isDone={false}></Todo>
+      <Todo task="Playing game" isDone={false}></Todo>
+      <Todo task="Pet a cat" isDone={true}></Todo>
+
+      <Todo2 task="Vaat khai" isDone={true}></Todo2>
+      <Todo2 task="Home work kori" isDone={false}></Todo2>
+
+      <Todo3 task="Ghor porishkar" isDone={false}></Todo3>
+      <Todo3 task="Bashon maja" isDone={false}></Todo3>
+      <Todo3 task="Khabar khawa" isDone={true}></Todo3>
+
+      <Todo4 task="Ghurte gechilam" isDone={true}></Todo4>
+
+      <Todo5 task="Delivery the knife" isDone={false}></Todo5>
+      <Todo5 task="Delivery the paper" isDone={true}></Todo5>
+
+      <Todo6 task="Help mom" isDone={true}></Todo6>
+      <Todo6 task="Help sister" isDone={false}></Todo6>
     </>
   );
 }
@@ -68,7 +126,12 @@ function Student({ grade, department }) {
 }
 
 // Developer
-function Developer({ quality1='modarate', quality2='ok level', problemsolve1=500, problemsolve2=200 }) {
+function Developer({
+  quality1 = 'modarate',
+  quality2 = 'ok level',
+  problemsolve1 = 500,
+  problemsolve2 = 200,
+}) {
   const developerStyle = {
     border: '2px solid purple',
     padding: '1.25rem',
