@@ -9,31 +9,45 @@ import { Todo5 } from './Todo';
 import { Todo6 } from './Todo';
 import Actor from './Actor';
 import Singer from './Singer';
+import BookStore from './BookStore';
 
 function App() {
   const actors = ['Enaa', 'Meena', 'Tina', 'Rina'];
   const singers = [
     {
+      id: 1,
       name: 'Dr Mahfuzur',
       age: 68,
     },
     {
+      id: 2,
       name: 'Eva Rahman',
       age: 46,
     },
     {
+      id: 3,
       name: 'Shuvro Dev',
       age: 55,
     },
     {
+      id: 4,
       name: 'Pritom Biswas',
       age: 28,
     },
   ];
 
+  const books = [
+    { id: 1, name: 'Physics', price: 240 },
+    { id: 2, name: 'Chemistry', price: 220 },
+    { id: 3, name: 'Biology', price: 270 },
+    { id: 4, name: 'Math', price: 180 },
+  ];
+
   return (
     <>
       <h1 className="text-5xl font-bold">Learning React</h1>
+      <BookStore books={books}></BookStore>
+
       <Actor name="Holiciya"></Actor>
       {actors.map((actor) => (
         <Actor name={actor}></Actor>
