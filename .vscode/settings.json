@@ -1,9 +1,14 @@
 {
-    "tailwindCSS.includeLanguages": {
-        "javascript": "javascript",
-        "html": "HTML"
-    },
-   "editor.quickSuggestions": {
-       "strings": true
-    }
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "autoimport.showNotifications": true,
+  "emmet.preferences": {},
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }
