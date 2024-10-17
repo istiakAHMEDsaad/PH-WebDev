@@ -14,7 +14,7 @@ function App() {
   const actors = ['Enaa', 'Meena', 'Tina', 'Rina'];
   const singers = [
     {
-      name: 'Dr Mahfuzur Rahman',
+      name: 'Dr Mahfuzur',
       age: 68,
     },
     {
@@ -40,9 +40,9 @@ function App() {
       ))}
       <Singer name="Johurul Islam"></Singer>
 
-      {
-        singers.map(singer => <Singer singer={singer}></Singer>)
-      }
+      {singers.map((singer) => (
+        <Singer singer={singer}></Singer>
+      ))}
       {/* 1 */}
       <Person></Person>
       {/* 2 */}
