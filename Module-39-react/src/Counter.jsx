@@ -1,5 +1,5 @@
-import './index.css';
-import { useState } from 'react';
+import "./index.css";
+import { useState } from "react";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
@@ -15,7 +15,7 @@ export default function Counter() {
     if (count > 0) {
       const newCount = count - 1;
       setCount(newCount);
-    } else if(count <= 0){
+    } else if (count <= 0) {
       const newCount = count - 0;
       setCount(newCount);
     }
@@ -24,7 +24,7 @@ export default function Counter() {
     <>
       <div className="mt-4 border-4 border-dotted border-orange-500 p-5">
         <h3 className="text-3xl underline pb-5 text-pink-500 text-center">
-          Counter: <span className='text-amber-500'>{count}</span>
+          Counter: <span className="text-amber-500">{count}</span>
         </h3>
 
         <div className="flex">
