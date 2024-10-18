@@ -17,7 +17,9 @@ export default function Friends() {
         Total Employee: {friends.length}
       </h3>
 
-      {friends.map(friend => <Friend friend={friend}></Friend>)}
+      {friends.map((friend) => (
+        <Friend friend={friend}></Friend>
+      ))}
     </div>
   );
 }
