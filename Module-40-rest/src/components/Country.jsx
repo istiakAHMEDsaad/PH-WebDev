@@ -3,17 +3,28 @@
 import { useState } from 'react';
 
 const Country = ({ country, handleVisitedCountries }) => {
+  //TODO1: for Country
   const { name, flags, area, population, capital, cca3 } = country;
 
+  //TODO2: for Countires
   const [visited, setVisited] = useState(false);
 
+  //TODO3: for Country
   const handleVisited = () => {
     setVisited(!visited);
   };
-  console.log(handleVisitedCountries);
+
+  //TODO4: for Countires
+  const passWithParams = () => {
+    handleVisitedCountries(country); // () => handleVisitedCountries(country); -->pass this value
+  };
+
+  //   TODO5: return
   return (
     <div className='py-3'>
-      <div className={`lg:h-[425px] flex flex-col items-center justify-center border border-teal-500 rounded-md p-4 space-y-2 ${visited ? 'bg-slate-500 text-black' : ''}`}>
+      <div
+        className={`lg:h-[450px] flex flex-col items-center justify-center border border-teal-500 rounded-md p-4 space-y-2 ${visited ? 'bg-slate-500 text-black' : ''}`}
+      >
         <h2 className='text-xl text-yellow-500'>
           Name: <span>{name?.common}</span>
         </h2>
@@ -44,7 +55,7 @@ const Country = ({ country, handleVisitedCountries }) => {
         </p>
 
         <button
-          onClick={handleVisited}
+          onClick={passWithParams}
           className={`border border-stone-500 px-4 py-2 rounded-md hover:bg-gray-600 transition-all ${visited ? 'bg-red-500' : ''}`}
         >
           {visited ? 'Added' : 'Add to Visited'}
@@ -56,7 +67,7 @@ const Country = ({ country, handleVisitedCountries }) => {
         >
           {visited ? 'Visited' : 'Not visit'}
         </button>
-        
+
         {visited ? 'I already visited this country' : 'I want to visit'}
       </div>
     </div>
