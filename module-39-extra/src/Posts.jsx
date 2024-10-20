@@ -25,7 +25,7 @@ export default function Posts() {
       </div>
 
       <div className='border border-stone-500 rounded-lg w-3/4 mx-auto my-5 p-5'>
-        <h1 className='text-3xl text-cyan-500 text-center underline'>
+        <h1 className='text-3xl text-cyan-500 text-center underline mb-3'>
           Post Count: {post.length}
         </h1>
         {post.map((post) => (
