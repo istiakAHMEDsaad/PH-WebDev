@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "model": "Apple Watch Series 8",
+    "features": [
+      "Always-On Retina display",
+      "Blood Oxygen app",
+      "ECG app",
+      "Fall Detection",
+      "Crash Detection"
+    ],
+    "price": 399
+  },
+  {
+    "id": 2,
+    "model": "Samsung Galaxy Watch 6 Classic",
+    "features": [
+      "Super AMOLED display",
+      "Blood Pressure monitoring",
+      "Body Composition",
+      "Sleep tracking",
+      "GPS"
+    ],
+    "price": 429
+  },
+  {
+    "id": 3,
+    "model": "Fitbit Sense 2",
+    "features": [
+      "AMOLED display",
+      "ECG app",
+      "EDA sensor",
+      "Temperature sensor",
+      "GPS"
+    ],
+    "price": 299
+  },
+  {
+    "id": 4,
+    "model": "Garmin Forerunner 955",
+    "features": [
+      "AMOLED display",
+      "Multi-sport GPS",
+      "Performance metrics",
+      "Battery life up to 30 hours",
+      "Music storage"
+    ],
+    "price": 599
+  },
+  {
+    "id": 5,
+    "model": "Amazfit GTR 4",
+    "features": [
+      "AMOLED display",
+      "Blood Oxygen monitoring",
+      "Heart rate monitoring",
+      "Stress tracking",
+      "GPS"
+    ],
+    "price": 169
+  }
+]
