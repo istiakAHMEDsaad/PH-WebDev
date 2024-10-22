@@ -6,9 +6,9 @@ import Header from './components/Header';
 function App() {
   return (
     <>
-      <div className='md:container mx-auto mt-4'>
+      <div className='md:mx-32 mt-4'>
         <Header></Header>
-        <div className='md:flex md:flex-row items-center justify-between'>
+        <div className='md:flex md:flex-row gap-x-5'>
           <Blogs></Blogs>
           <Bookmarks></Bookmarks>
         </div>
