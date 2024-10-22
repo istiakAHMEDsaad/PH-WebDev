@@ -1,7 +1,6 @@
-# Memorable Water Bottle
+# React + Vite
 
-## BitBucket Repo Link->
-[BitBucket](https://bitbucket.org/istiakahmedsaad/memorable-water-bottle/src/main/)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
