@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaRegBookmark } from 'react-icons/fa6';
+import { FaBookmark } from 'react-icons/fa6';
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
   const {
     id,
     cover,
@@ -12,6 +14,12 @@ const Blog = ({ blog }) => {
     reading_time,
     hashtags,
   } = blog;
+
+  const [press, setPress] = useState(false);
+  const handlePress = () => {
+    setPress(!press);
+  };
+
   return (
     <div>
       <div className=''>
@@ -37,7 +45,13 @@ const Blog = ({ blog }) => {
         </div>
         <div className='flex items-center'>
           <p>{reading_time} min read</p>
-          <i className='ri-bookmark-line'></i>
+          <button onClick={() => handleAddToBookmark(blog)}>
+            {press ? (
+              <FaBookmark onClick={handlePress}></FaBookmark>
+            ) : (
+              <FaRegBookmark onClick={handlePress}></FaRegBookmark>
+            )}
+          </button>
         </div>
       </div>
 
@@ -50,13 +64,16 @@ const Blog = ({ blog }) => {
         {hashtags[1] ? <p>#{hashtags[1]}</p> : ''}
         {hashtags[2] ? <p>#{hashtags[2]}</p> : ''}
       </div>
-      <a href="#" className='underline'>Marked as read</a>
+      <a href='#' className='underline'>
+        Marked as read
+      </a>
     </div>
   );
 };
 
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
+  handleAddToBookmark: PropTypes.func.isRequired,
 };
 
 export default Blog;
