@@ -15,10 +15,17 @@ const Blogs = ({ handleAddToBookmark, handleMarkAsRead }) => {
 
   return (
     <div className='md:basis-[65%]'>
-      <p className='text-xl '>Total blogs: {blogs.length}</p>
-      {blogs.map((blog) => (
-        <Blog key={blog.id} blog={blog} handleAddToBookmark={handleAddToBookmark} handleMarkAsRead={handleMarkAsRead}></Blog>
-      ))}
+      {/* <p className='text-xl '>Total blogs: {blogs.length}</p> */}
+      <div className='space-y-5'>
+        {blogs.map((blog) => (
+          <Blog
+            key={blog.id}
+            blog={blog}
+            handleAddToBookmark={handleAddToBookmark}
+            handleMarkAsRead={handleMarkAsRead}
+          ></Blog>
+        ))}
+      </div>
     </div>
   );
 };
