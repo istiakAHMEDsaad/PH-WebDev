@@ -1,11 +1,12 @@
 import './App.css';
-import Test from './components/Test';
+import MyNav from './components/MyNav';
+
 
 function App() {
   return (
     <>
       <div>
-        <Test></Test>
+        <MyNav></MyNav>
       </div>
     </>
   );
