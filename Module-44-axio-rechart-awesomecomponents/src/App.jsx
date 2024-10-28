@@ -1,6 +1,6 @@
 import './App.css';
 import MyNav from './components/MyNav';
-
+import PriceOptions from './components/PriceOptions';
 
 function App() {
   return (
@@ -8,6 +8,9 @@ function App() {
       <div>
         <MyNav></MyNav>
       </div>
+      <main>
+        <PriceOptions></PriceOptions>
+      </main>
     </>
   );
 }

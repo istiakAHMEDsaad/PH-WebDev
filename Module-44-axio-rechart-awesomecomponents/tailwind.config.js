@@ -7,7 +7,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/flowbite/**/*.js",
     flowbite.content(),
-    
+
   ],
   theme: {
     extend: {},
@@ -17,7 +17,7 @@ export default {
     require('flowbite/plugin'),
     flowbite.plugin(),
   ],
- daisyui: {
-    themes: ["light", "dark", "cupcake"],
+  daisyui: {
+    themes: ["light", "dark", "cupcake, business"],
   },
-}
+};
