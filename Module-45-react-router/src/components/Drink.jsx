@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 const Drink = ({ drink }) => {
   const { strDrink, strDrinkThumb, idDrink } = drink;
@@ -11,7 +12,8 @@ const Drink = ({ drink }) => {
   };
 
   return (
-    <div className='border-2 rounded-md shadow-md flex flex-col justify-between p-4  hover:-translate-y-1 transition-all hover:shadow-lg hover:outline hover:outline-offset-1 hover:outline-1 cursor-pointer'>
+    <>
+      <div className='border-2 rounded-md shadow-md flex flex-col justify-between p-4  hover:-translate-y-1 transition-all hover:shadow-lg hover:outline hover:outline-offset-1 hover:outline-1 cursor-pointer'>
       <div>
         <img
           className='rounded-lg'
@@ -32,6 +34,8 @@ const Drink = ({ drink }) => {
         <button onClick={handleShowDetails}>ℹ</button>
       </div>
     </div>
+
+    </>
   );
 };
 

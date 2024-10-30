@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Footer from './Footer';
 
 const UserDetails = () => {
   const user = useLoaderData();
@@ -10,7 +11,8 @@ const UserDetails = () => {
   };
 
   return (
-    <div className='border-2 border-gray-400 p-5 '>
+    <>
+      <div className='border-2 border-gray-400 p-5 '>
       <div className='border border-emerald-400 p-2 rounded-md bg-lime-100 text-lg text-red-500'>
         <h2 className='font-bold'>
           Name: <span className='font-normal text-gray-500'>{name}</span>
@@ -51,6 +53,8 @@ const UserDetails = () => {
         Go back
       </button>
     </div>
+    <Footer></Footer>
+    </>
   );
 };
 

@@ -10,6 +10,12 @@
 }
 */
 
+@layer components {
+  .customButtonOne{
+    @apply border py-1 px-3 rounded-[4px] md:bg-white md:border-2 md:border-red-500 md:text-red-500 md:hover:bg-red-500 md:hover:text-white transition-all bg-red-500 md:w-auto w-[30%] text-center hover:bg-white hover:text-red-500
+  }
+}
+
 /*
 background-color: #1a1a1a;
 background-color: #242424;
