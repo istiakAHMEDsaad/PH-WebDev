@@ -7,14 +7,17 @@ const Header = () => {
         <Link className='hover:text-rose-500' to={'/home'}>
           Home
         </Link>
+        <Link className='hover:text-rose-500' to={'/users'}>
+          Users
+        </Link>
+        <Link className='hover:text-rose-500' to={'/drinks'}>
+          Drinks
+        </Link>
         <Link className='hover:text-rose-500' to={'/about'}>
           About
         </Link>
         <Link className='hover:text-rose-500' to={'/contact'}>
           Contact
-        </Link>
-        <Link className='hover:text-rose-500' to={'/users'}>
-          Users
         </Link>
         <Link className='hover:text-rose-500' to={'/test'}>
           Test

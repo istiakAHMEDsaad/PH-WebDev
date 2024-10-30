@@ -6,7 +6,7 @@ const Users = () => {
   const users = useLoaderData();
   // console.log(users);
   return (
-    <div>
+    <div >
       <h2 className='underline text-3xl text-center font-bold'>Toatl Employee: {users.length}</h2>
       <p className='text-2xl text-orange-800 font-bold'>Meet our Employee  --&gt;</p>
       <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2'>
