@@ -15,11 +15,18 @@ const MyNav = () => {
 
   return (
     <nav className='md:container mx-auto md:py-4'>
-      <div onClick={() => setOpenMenu(!openMenu)} className='md:hidden text-xl bg-amber-300 p-4 md:p-0'>
+      <div
+        onClick={() => setOpenMenu(!openMenu)}
+        className='md:hidden text-xl bg-amber-300 p-4 md:p-0'
+      >
         {openMenu === true ? <FaX></FaX> : <FaBars></FaBars>}
       </div>
-      
-      <ul className={`${openMenu ? '' : 'hidden '} md:flex md:flex-row md:gap-y-0 gap-y-3 md:gap-x-4 absolute md:static bg-white/90 md:w-0 md:p-0 p-5 text-center w-full rounded-md md:bg-white`}>
+
+      <ul
+        className={`${
+          openMenu ? '' : 'hidden '
+        } md:flex md:flex-row md:gap-y-0 gap-y-3 md:gap-x-4 absolute md:static bg-white/90 md:w-0 md:p-0 p-5 text-center w-full rounded-md md:bg-white`}
+      >
         {routes.map((route) => (
           <Link key={route.id} route={route}></Link>
         ))}

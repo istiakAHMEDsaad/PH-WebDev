@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const DrinksDetails = () => {
   const details = useLoaderData();
@@ -15,6 +15,11 @@ const DrinksDetails = () => {
     strInstructions,
     dateModified,
   } = detailsArr;
+
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   return (
     <div className='p-8 border  rounded-md shadow-sm bg-gray-100'>
       <div className='w-60 h-60'>
@@ -50,6 +55,13 @@ const DrinksDetails = () => {
         Date:{' '}
         <span className='font-normal italic text-gray-500'>{dateModified}</span>
       </p>
+
+      <button
+        onClick={handleGoBack}
+        className='border px-3 py-1 rounded-md bg-blue-600 hover:bg-blue-500 transition-all'
+      >
+        Go back
+      </button>
     </div>
   );
 };

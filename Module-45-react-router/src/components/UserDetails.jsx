@@ -1,9 +1,14 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const UserDetails = () => {
   const user = useLoaderData();
   const { name, username, email, address, phone, website, company } = user;
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className='border-2 border-gray-400 p-5 '>
       <div className='border border-emerald-400 p-2 rounded-md bg-lime-100 text-lg text-red-500'>
@@ -39,12 +44,18 @@ const UserDetails = () => {
           <span className='font-normal text-gray-500'>{company.name}</span>
         </p>
       </div>
+      <button
+        onClick={handleGoBack}
+        className='px-3 py-1 bg-green-600 hover:bg-green-500 transition-all rounded-[4px]'
+      >
+        Go back
+      </button>
     </div>
   );
 };
 
-  UserDetails.propTypes = {
-    name: PropTypes.string.isRequired,
-  };
+UserDetails.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 export default UserDetails;
