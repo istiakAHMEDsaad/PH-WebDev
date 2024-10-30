@@ -4,7 +4,7 @@ import User from './User';
 
 const Users = () => {
   const users = useLoaderData();
-  console.log(users);
+  // console.log(users);
   return (
     <div>
       <h2 className='underline text-3xl text-center font-bold'>Toatl Employee: {users.length}</h2>
