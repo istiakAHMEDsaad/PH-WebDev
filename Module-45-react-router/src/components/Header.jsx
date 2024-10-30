@@ -12,22 +12,22 @@ const Header = () => {
 
       {/* md:static md:block */}
       <nav className={`${menuOpen ? '' : 'hidden md:block'} text-xl md:static flex flex-col md:flex-row space-y-1 md:space-x-2 md:items-center`}>
-        <Link className='customButtonOne' to={'/home'}>
+        <Link className={`customButtonOne`} to={'/home'}>
           Home
         </Link>
-        <Link className='customButtonOne' to={'/users'}>
+        <Link className={`customButtonOne`} to={'/users'}>
           Users
         </Link>
-        <Link className='customButtonOne' to={'/drinks'}>
+        <Link className={`customButtonOne`} to={'/drinks'}>
           Drinks
         </Link>
-        <Link className='customButtonOne' to={'/about'}>
+        <Link className={`customButtonOne`} to={'/about'}>
           About
         </Link>
-        <Link className='customButtonOne' to={'/contact'}>
+        <Link className={`customButtonOne`} to={'/contact'}>
           Contact
         </Link>
-        <Link className='customButtonOne' to={'/test'}>
+        <Link className={`customButtonOne`} to={'/test'}>
           Test
         </Link>
       </nav>

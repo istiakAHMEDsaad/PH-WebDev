@@ -1,14 +1,17 @@
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Footer from './Footer';
 
 const UserDetails = () => {
-  const user = useLoaderData();
+  const {userId} = useParams();
+  const user = useLoaderData(); //destructing the link variable /users/:userId from main.jsx
   const { name, username, email, address, phone, website, company } = user;
   const navigate = useNavigate();
   const handleGoBack = () => {
     navigate(-1);
   };
+
+console.log(userId);
 
   return (
     <>
