@@ -1,9 +1,19 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Legend, Tooltip } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Legend,
+  Tooltip,
+} from 'recharts';
+import { ColorRing } from 'react-loader-spinner';
 
 const BrokenPhone = () => {
   const [phones, setPhones] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -19,15 +29,28 @@ const BrokenPhone = () => {
         });
         console.log(phoneData);
         setPhones(allPhoneData);
+        setLoading(false);
       });
   }, []);
   return (
     <div>
+      {loading && (
+        <div>
+          <ColorRing
+            visible={true}
+            height='80'
+            width='80'
+            ariaLabel='color-ring-loading'
+            wrapperStyle={{}}
+            wrapperClass='color-ring-wrapper'
+            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+          />
+        </div>
+      )}
       <h2 className='text-2xl font-bold'>Total Phone: {phones.length}</h2>
-
       <BarChart width={800} height={400} data={phones}>
-        <CartesianGrid strokeDasharray="3 3"></CartesianGrid>
-        <XAxis dataKey="name"></XAxis>
+        <CartesianGrid strokeDasharray='3 3'></CartesianGrid>
+        <XAxis dataKey='name'></XAxis>
         <YAxis></YAxis>
         <Tooltip></Tooltip>
         <Legend></Legend>

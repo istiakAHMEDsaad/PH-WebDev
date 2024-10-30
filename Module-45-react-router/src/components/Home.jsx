@@ -1,10 +1,7 @@
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
 const Home = () => {
   return (
     <div>
-      <Header></Header>
-      <Outlet></Outlet>
+      <h2 className="text-3xl text-red-400">This is Hero home</h2>
     </div>
   );
 };
