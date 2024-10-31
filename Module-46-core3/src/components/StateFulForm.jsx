@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 
 const StateFulForm = () => {
-    const [err, setErr] = useState('');
+  const [err, setErr] = useState('');
+  const [email, setEmail] = useState(null);
+  const [name, setName] = useState(null);
+  const [pass, setPass] = useState(null);
+
   const handleSubmited = (event) => {
     event.preventDefault();
-    if(pass.length < 6){
-        setErr('Character must be 6 characters');
-    }else{
-        setErr('');
+    
+    if (pass.length < 6) {
+      setErr('Character must be 6 characters');
+    } else {
+      setErr('');
+      console.log(email, name, pass);
     }
   };
 
-  const [email, setEmail] = useState(null);
   const handleEmailChange = (event) => {
-    event.preventDefault();
     setEmail(event.target.value);
   };
 
-  const [name, setName] = useState(null);
   const handleNameChange = (event) => {
-    event.preventDefault();
     setName(event.target.value);
   };
 
-  const [pass, setPass] = useState(null);
   const handlePassCng = (event) => {
-    event.preventDefault();
     setPass(event.target.value);
   };
 
@@ -40,27 +40,25 @@ const StateFulForm = () => {
             onChange={handleEmailChange}
             type='email'
             name='username'
-            placeholder='Your username'
+            placeholder='Email'
           />
           <input
             className='border block px-6 py-1 rounded-[4px]'
-            onSubmit={handleNameChange}
+            onChange={handleNameChange}
             type='number'
             name='phonenumber'
-            placeholder='Phone numbers'
+            placeholder='Number'
           />
           <input
             className='border block px-6 py-1 rounded-[4px]'
-            onSubmit={handlePassCng}
+            onChange={handlePassCng}
             type='password'
             name='password'
-            placeholder='Enter number'
+            placeholder='Password'
             required
           />
           <input type='submit' value='Submit' className='block normal-btn' />
-          {
-            err && <p>{err}</p>
-          }
+          {err && <p>{err}</p>}
         </form>
       </div>
     </div>
