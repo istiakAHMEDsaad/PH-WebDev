@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .normal-btn {
+    @apply border px-4 py-2 rounded-md bg-[#535bf2] hover:bg-[#646cff] transition-colors cursor-pointer;
+  }
+}
+/*
+#f9f9f9
+#747bff
+#ffffff
+#213547
+#646cff
+#1a1a1a
+#535bf2
+#646cff
+#242424
+rgba(255, 255, 255, 0.87)
+*/

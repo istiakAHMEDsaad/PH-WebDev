@@ -1,4 +1,7 @@
-
+nav a.active {
+  background-color: rgba(239, 68, 68, 0.80);
+  color: white;
+}
 /*  
 color: #888;
 filter: drop-shadow(0 0 2em #61dafbaa);

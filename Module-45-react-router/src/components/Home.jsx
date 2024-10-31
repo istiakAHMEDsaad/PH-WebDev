@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 
 const Home = () => {
+
   return (
     <>
       <div className="flex w-screen h-screen items-center justify-center bg-neutral-200">
