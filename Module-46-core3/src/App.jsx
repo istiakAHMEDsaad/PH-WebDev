@@ -17,6 +17,7 @@ function App() {
   return (
     <>
       <div>
+        <h2 className='text-4xl underline italic text-teal-600 mb-5'>Sexy form 🥵</h2>
         {/* <SimpleForm></SimpleForm> */}
         {/* <StateFulForm></StateFulForm> */}
         {/* <RefRorm></RefRorm> */}
