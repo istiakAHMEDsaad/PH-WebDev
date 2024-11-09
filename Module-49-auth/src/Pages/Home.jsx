@@ -7,3 +7,5 @@ const Home = () => {
 };
 
 export default Home;
+
+// commit mono, fira code, maple, noto mono

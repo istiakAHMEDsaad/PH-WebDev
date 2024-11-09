@@ -62,6 +62,18 @@ const Navbar = () => {
             >
               <a>Contact Us</a>
             </NavLink>
+            <NavLink
+              to='./login'
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? 'btn btn-info'
+                  : isPending
+                  ? 'pending'
+                  : 'btn btn-ghost'
+              }
+            >
+              <a>Log in</a>
+            </NavLink>
           </ul>
         </div>
         <a className='btn btn-ghost text-xl'>Authentication</a>
@@ -105,6 +117,18 @@ const Navbar = () => {
           >
             <a>Contact Us</a>
           </NavLink>
+          <NavLink
+              to='/login'
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? 'btn btn-info'
+                  : isPending
+                  ? 'pending'
+                  : 'btn btn-ghost'
+              }
+            >
+              <a>Log in</a>
+            </NavLink>
         </ul>
       </div>
       <div className='navbar-end'>
