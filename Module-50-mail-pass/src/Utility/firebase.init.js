@@ -1,5 +1,4 @@
 import { getAuth } from "firebase/auth";
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -7,17 +6,16 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAgvQdP16LaYgVvC0A7vW04-IqoYkDEhFw",
-  authDomain: "first-firebase-14bba.firebaseapp.com",
-  projectId: "first-firebase-14bba",
-  storageBucket: "first-firebase-14bba.firebasestorage.app",
-  messagingSenderId: "1013948336004",
-  appId: "1:1013948336004:web:504041bc55147ac20c7fd1"
+  apiKey: "AIzaSyAFCDI2HCz5NYgLzGzR3HpzAdWnpPVXwXo",
+  authDomain: "custom-routes-react.firebaseapp.com",
+  projectId: "custom-routes-react",
+  storageBucket: "custom-routes-react.firebasestorage.app",
+  messagingSenderId: "935290536545",
+  appId: "1:935290536545:web:163ae2b56688653a5fe020"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app);
 
 export default auth;
