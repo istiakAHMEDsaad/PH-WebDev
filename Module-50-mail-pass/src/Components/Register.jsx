@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { LiaEyeSolid, LiaEyeSlashSolid  } from 'react-icons/lia';
 
 import { toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,14 +12,14 @@ import { useState } from 'react';
 const Register = () => {
   const [erroR, setErroR] = useState('');
   const [success, setSuccess] = useState(false);
+  const [showPass, setShowPass] = useState(false);
 
   const handleRegister = (event) => {
     event.preventDefault();
-    /* console.log(event.target.email.value);
-        console.log(event.target.password.value); */
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email, password);
+    const terms = event.target.terms.checked;
+    console.log(email, password, terms);
 
     // Reset error
     setErroR('');
@@ -26,6 +27,11 @@ const Register = () => {
 
     if (password.length > 6) {
       setErroR('Password need at least');
+      return;
+    }
+
+    if(!terms){
+      setErroR('Please accept our terms & conditions');
       return;
     }
 
@@ -93,17 +99,21 @@ const Register = () => {
           shadow
         />
       </div>
-      <div>
+      <div className='relative'>
         <div className='mb-2 block'>
           <Label htmlFor='password2' value='Your password' />
         </div>
         <TextInput
           id='password2'
-          type='password'
+          type={showPass ? 'text' : 'password'}
           name='password'
           required
           shadow
         />
+        <button onClick={() => setShowPass(!showPass)} className='btn btn-ghost btn-sm absolute right-2 top-9'>
+          {/* <LiaEyeSolid></LiaEyeSolid> */}
+          {showPass ? <LiaEyeSlashSolid></LiaEyeSlashSolid> : <LiaEyeSolid></LiaEyeSolid>}
+        </button>
       </div>
       <div>
         <div className='mb-2 block'>
@@ -112,7 +122,7 @@ const Register = () => {
         <TextInput id='repeat-password' type='password' required shadow />
       </div>
       <div className='flex items-center gap-2'>
-        <Checkbox id='agree' />
+        <Checkbox id='agree' name='terms' />
         <Label htmlFor='agree' className='flex'>
           I agree with the&nbsp;
           <Link
