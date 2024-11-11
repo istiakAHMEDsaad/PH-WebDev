@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { LiaEyeSolid, LiaEyeSlashSolid  } from 'react-icons/lia';
+import { LiaEyeSolid, LiaEyeSlashSolid } from 'react-icons/lia';
 
 import { toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -30,7 +30,7 @@ const Register = () => {
       return;
     }
 
-    if(!terms){
+    if (!terms) {
       setErroR('Please accept our terms & conditions');
       return;
     }
@@ -85,6 +85,9 @@ const Register = () => {
       className='flex max-w-md flex-col gap-4'
       autoComplete='off'
     >
+      <Helmet>
+        <title>Firebase Auth | Register</title>
+      </Helmet>
       <div>
         <div className='mb-2 block'>
           <Label htmlFor='email2' value='Your email' />
@@ -110,9 +113,16 @@ const Register = () => {
           required
           shadow
         />
-        <button onClick={() => setShowPass(!showPass)} className='btn btn-ghost btn-sm absolute right-2 top-9'>
+        <button
+          onClick={() => setShowPass(!showPass)}
+          className='btn btn-ghost btn-sm absolute right-2 top-9'
+        >
           {/* <LiaEyeSolid></LiaEyeSolid> */}
-          {showPass ? <LiaEyeSlashSolid></LiaEyeSlashSolid> : <LiaEyeSolid></LiaEyeSolid>}
+          {showPass ? (
+            <LiaEyeSlashSolid></LiaEyeSlashSolid>
+          ) : (
+            <LiaEyeSolid></LiaEyeSolid>
+          )}
         </button>
       </div>
       <div>
