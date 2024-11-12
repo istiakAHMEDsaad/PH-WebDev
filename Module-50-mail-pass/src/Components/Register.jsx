@@ -25,7 +25,7 @@ const Register = () => {
     setErroR('');
     setSuccess(false);
 
-    if (password.length > 6) {
+    if (password.length < 6) {
       setErroR('Password need at least');
       return;
     }
@@ -36,8 +36,9 @@ const Register = () => {
     }
 
     // Conditional Password
-    const passwordRegEx =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    /* const passwordRegEx =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/; */
+      const passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     if (!passwordRegEx.test(password)) {
       setErroR(
         'At lest 1 Capital Letter, 1 Small Letter, 1 Number, 1 Special Character'
@@ -149,8 +150,11 @@ const Register = () => {
         <p className='text-xl text-red-500'>This email already taken</p>
       )} */}
       {success && <p className='text-lg text-green-500'>Success</p>}
+      <p>Already have account? <Link to='/login' className='text-blue-500 font-semibold'>Log In</Link></p>
     </form>
   );
 };
 
 export default Register;
+
+// testSubject1@doodle.com Abc@1234
