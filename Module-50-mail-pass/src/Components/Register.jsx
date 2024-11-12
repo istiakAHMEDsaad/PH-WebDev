@@ -1,19 +1,25 @@
 import { Helmet } from 'react-helmet-async';
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { Link } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from 'firebase/auth';
 import { LiaEyeSolid, LiaEyeSlashSolid } from 'react-icons/lia';
-
 import { toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../Utility/firebase.init';
 import { useState } from 'react';
 
 const Register = () => {
+  // Use State for Error message
   const [erroR, setErroR] = useState('');
+  // Use State for success message
   const [success, setSuccess] = useState(false);
+  // Use State for show password message
   const [showPass, setShowPass] = useState(false);
 
+  // Handle login form function
   const handleRegister = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -21,24 +27,25 @@ const Register = () => {
     const terms = event.target.terms.checked;
     console.log(email, password, terms);
 
-    // Reset error
+    // Reset error default
     setErroR('');
     setSuccess(false);
 
+    // Minimum password length 6
     if (password.length < 6) {
       setErroR('Password need at least');
       return;
     }
 
+    // For accept website terms & polici
     if (!terms) {
       setErroR('Please accept our terms & conditions');
       return;
     }
 
-    // Conditional Password
-    /* const passwordRegEx =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/; */
-      const passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    // Conditional Password for strong unbreakable password
+    const passwordRegEx =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     if (!passwordRegEx.test(password)) {
       setErroR(
         'At lest 1 Capital Letter, 1 Small Letter, 1 Number, 1 Special Character'
@@ -46,24 +53,29 @@ const Register = () => {
       return;
     }
 
+    // Create user function
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        toast.success('Sign Up', {
-          position: 'top-center',
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'colored',
-          transition: Bounce,
+        sendEmailVerification(auth.currentUser).then(() => {
+          toast.success('Verification mail sent!', {
+            position: 'top-center',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+            transition: Bounce,
+          });
         });
+
         setSuccess(true);
         console.log(userCredential.user);
       })
       .catch((error) => {
-        toast.success('Sign Out', {
+        // sign out toast
+        toast.error('Email not create', {
           position: 'top-center',
           autoClose: 2000,
           hideProgressBar: false,
@@ -81,6 +93,7 @@ const Register = () => {
   };
 
   return (
+    // onSubmit form
     <form
       onSubmit={handleRegister}
       className='flex max-w-md flex-col gap-4'
@@ -114,6 +127,8 @@ const Register = () => {
           required
           shadow
         />
+
+        {/* show password conditional rendering */}
         <button
           onClick={() => setShowPass(!showPass)}
           className='btn btn-ghost btn-sm absolute right-2 top-9'
@@ -145,12 +160,19 @@ const Register = () => {
         </Label>
       </div>
       <Button type='submit'>Register new account</Button>
+
+      {/* Error paragraph message */}
       {erroR && <p className='text-lg text-red-600'>{erroR}</p>}
       {/* {erroR && (
         <p className='text-xl text-red-500'>This email already taken</p>
       )} */}
       {success && <p className='text-lg text-green-500'>Success</p>}
-      <p>Already have account? <Link to='/login' className='text-blue-500 font-semibold'>Log In</Link></p>
+      <p>
+        Already have account?{' '}
+        <Link to='/login' className='text-blue-500 font-semibold'>
+          Log In
+        </Link>
+      </p>
     </form>
   );
 };
@@ -158,3 +180,4 @@ const Register = () => {
 export default Register;
 
 // testSubject1@doodle.com Abc@1234
+// s12a12saadabir@gmail.com Old: Abc@1234 New: Cba@4321
