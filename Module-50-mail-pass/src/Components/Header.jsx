@@ -27,6 +27,14 @@ const Header = () => {
       >
         Register
       </NavLink>
+      <NavLink
+        to='/signup'
+        className={({ isActive, isPending }) =>
+          isActive ? 'btn btn-info' : isPending ? 'pending' : 'btn  btn-ghost'
+        }
+      >
+        Sign Up
+      </NavLink>
     </>
   );
 
