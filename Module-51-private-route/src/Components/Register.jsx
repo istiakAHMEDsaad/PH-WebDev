@@ -1,19 +1,85 @@
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
+import { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Routes/RouteProvider';
+import { toast, Slide } from 'react-toastify';
 
 const Register = () => {
-    const handleRegister = (e) => {
-        e.preventDefault();
-        
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        console.log('info', name, email, password);
-    }
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    // const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result);
+        toast.success('Account Created!', {
+          position: 'top-center',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+          transition: Slide,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error('Somethins wrong!', {
+          position: 'top-center',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+          transition: Slide,
+        });
+      });
+    /* createUser(email, password).then(result => {
+          console.log(result)
+          toast.success('Account Created!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Slide,
+            });
+        }).catch(error => {
+          console.log(error)
+          toast.error('Somethins wrong!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Slide,
+            });
+        }) */
+    // console.log('info', name, email, password);
+  };
 
   return (
-    <form onSubmit={handleRegister} className='flex max-w-md flex-col gap-4 mb-5' autoComplete='off'>
+    <form
+      onSubmit={handleRegister}
+      className='flex max-w-md flex-col gap-4 mb-5'
+      autoComplete='off'
+    >
       <Helmet>
         <title>Private Route | Register</title>
       </Helmet>
@@ -31,7 +97,7 @@ const Register = () => {
           shadow
         />
       </div>
-      
+
       {/* ---------- Email ---------- */}
       <div>
         <div className='mb-2 block'>
@@ -52,7 +118,14 @@ const Register = () => {
         <div className='mb-2 block'>
           <Label htmlFor='password2' value='Your password' />
         </div>
-        <TextInput id='password2' type='password' placeholder='Password' name='password' required shadow />
+        <TextInput
+          id='password2'
+          type='password'
+          placeholder='Password'
+          name='password'
+          required
+          shadow
+        />
       </div>
 
       {/* ---------- Repeat Password ---------- */}
@@ -60,7 +133,13 @@ const Register = () => {
         <div className='mb-2 block'>
           <Label htmlFor='repeat-password' value='Repeat password' />
         </div>
-        <TextInput id='repeat-password' type='password' placeholder='Confirm Password' required shadow />
+        <TextInput
+          id='repeat-password'
+          type='password'
+          placeholder='Confirm Password'
+          required
+          shadow
+        />
       </div>
 
       {/* ---------- Terms and conditions ---------- */}
@@ -79,7 +158,7 @@ const Register = () => {
 
       {/* ---------- Button ---------- */}
       <Button type='submit'>Register new account</Button>
-      
+
       {/* ---------- Already got account? ---------- */}
       <p className='text-gray-600'>
         Already have an account? Please{' '}
@@ -95,3 +174,7 @@ const Register = () => {
 };
 
 export default Register;
+
+/**
+ * hanjiyaFour@doodle.com 123456
+ */
