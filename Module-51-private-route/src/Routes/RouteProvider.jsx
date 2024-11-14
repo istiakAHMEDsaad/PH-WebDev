@@ -12,19 +12,23 @@ export const AuthContext = createContext(null);
 const RouteProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const name = 'Hanjiya';
+  const [loading, setLoading] = useState(true);
 
   // ---------- Create User ----------
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // ---------- Signin User ----------
   const signInUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // ---------- SignOut User ----------
   const signOutUser = () => {
+    setLoading(true);
     return signOut(auth);
   }
   
@@ -32,6 +36,7 @@ const RouteProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     // Cleanup funciton
     return () => {
@@ -45,7 +50,8 @@ const RouteProvider = ({ children }) => {
     createUser,
     signInUser,
     user,
-    signOutUser
+    signOutUser,
+    loading
   };
   return (
     <AuthContext.Provider value={personalInfo}>{children}</AuthContext.Provider>

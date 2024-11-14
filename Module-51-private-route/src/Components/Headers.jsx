@@ -3,8 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Routes/RouteProvider';
 import { toast, Slide } from 'react-toastify';
 
-
 const Headers = () => {
+  const { user, signOutUser } = useContext(AuthContext);
+
   const links = (
     <>
       <NavLink
@@ -31,41 +32,56 @@ const Headers = () => {
       >
         Register
       </NavLink>
+      {user && (
+        <NavLink
+          to='/orders'
+          className={({ isActive, isPending }) =>
+            isActive
+              ? 'btn btn-accent'
+              : isPending
+              ? 'pending'
+              : 'btn btn-ghost'
+          }
+        >
+          Orders
+        </NavLink>
+      )}
     </>
   );
-  const { user, signOutUser } = useContext(AuthContext);
 
   const handleSignOut = () => {
-    signOutUser().then(()=>{
-      // Notification
-      toast.success('Sign Out!', {
-        position: 'top-center',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored',
-        transition: Slide,
+    signOutUser()
+      .then(() => {
+        // Notification
+        toast.success('Sign Out!', {
+          position: 'top-center',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+          transition: Slide,
+        });
+        // Notification
+      })
+      .catch((error) => {
+        // Notification
+        toast.error('Somethins wrong!', {
+          position: 'top-center',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+          transition: Slide,
+        });
+        // Notification
       });
-      // Notification
-    }).catch(error => {
-      // Notification
-      toast.error('Somethins wrong!', {
-        position: 'top-center',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored',
-        transition: Slide,
-      });
-      // Notification
-    })
-  }
+  };
 
   return (
     <div className='navbar bg-base-100'>

@@ -4,6 +4,8 @@ import Home from '../Pages/Home';
 import ErrorPage from './error-page';
 import Login from '../Components/Login';
 import Register from '../Components/Register';
+import PrivateRoutes from './PrivateRoutes';
+import Order from '../Pages/Order';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/orders',
+        element: <PrivateRoutes><Order></Order></PrivateRoutes>
       }
     ]
   },
