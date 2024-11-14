@@ -1,12 +1,14 @@
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Routes/RouteProvider';
 import { toast, Slide } from 'react-toastify';
+import { BsGoogle } from 'react-icons/bs';
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { signInUser, signInWithGoogle } = useContext(AuthContext);
 
   // Handle Login Function
   const handleLogin = (e) => {
@@ -27,6 +29,9 @@ const Login = () => {
           theme: 'colored',
           transition: Slide,
         });
+        // Reset login form
+        e.target.reset();
+        navigate('/');
         console.log(result);
       })
       .catch((error) => {
@@ -44,6 +49,17 @@ const Login = () => {
         console.log(error);
       });
     // console.log('info:', email, password);
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result);
+        navigate('/');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -110,6 +126,14 @@ const Login = () => {
           Register
         </Link>
       </p>
+      <div>
+        <button
+          onClick={handleGoogleSignIn}
+          className='active:scale-90 hover:text-gray-600 transition-all'
+        >
+          <BsGoogle></BsGoogle>
+        </button>
+      </div>
     </form>
   );
 };
