@@ -23,10 +23,19 @@
 
 
 #Switch branch
-git branch --{check main branch}
-git branch [branch-name]
-git checkout [branch-name]
-git branch -d [branch-name]  --{first Switch to main or another branch then delete it}
+1. git branch --{check main branch}
+2. git checkout -b [branch-name] --{create a new branch}
+3. git branch -d [branch-name]  --{first Switch to main or another branch then delete it}
+4. git switch [branch-name]  --{switch to another branch}
+
+
+#Fork repository
+1. create a new branch to edit the repository
+2. git checkout -b [branch-name]
+3. git add .  --{add all content to local repository}
+4. git commit -m "your edited comment"
+5. git push --set-upstream origin [branch-name] --{first time initial to branch next time just add [git push]}
+
 
 # clone specific commit with zip file
 https://github.com/{username}/{projectname}/archive/{sha}.zip
