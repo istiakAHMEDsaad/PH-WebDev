@@ -172,7 +172,7 @@ const Signup = () => {
         {/* show password conditional rendering */}
         <button
           onClick={() => setShowPass(!showPass)}
-          className='btn btn-ghost btn-sm absolute right-2 top-9'
+          className='btn btn-ghost btn-sm absolute right-5 top-9'
         >
           {/* <LiaEyeSolid></LiaEyeSolid> */}
           {showPass ? (

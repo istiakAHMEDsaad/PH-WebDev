@@ -74,44 +74,46 @@ const Login = () => {
   const handleForgetPassword = () => {
     // console.log('Forget password', emailRef.current.value);
     const email = emailRef.current.value;
-    if(!email){
+    if (!email) {
       toast.warn('Please provide a valid mail!', {
-        position: "top-center",
+        position: 'top-center',
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "colored",
+        theme: 'colored',
         transition: Bounce,
+      });
+    } else {
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          toast.success('Password reset email sent!', {
+            position: 'top-center',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+            transition: Bounce,
+          });
+        })
+        .catch((error) => {
+          toast.error('Something wrong!', {
+            position: 'top-center',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+            transition: Bounce,
+          });
         });
-    }else{
-      sendPasswordResetEmail(auth, email).then(()=>{
-        toast.success('Password reset email sent!', {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-          transition: Bounce,
-          });
-      }).catch(error => {
-        toast.error('Something wrong!', {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-          transition: Bounce,
-          });
-      })
     }
   };
 

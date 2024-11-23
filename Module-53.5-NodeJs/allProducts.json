@@ -1,0 +1,208 @@
+[
+  {
+    "product_id": "P001",
+    "product_title": "Apple iPhone 15 Pro Max",
+    "product_image": "https://m.media-amazon.com/images/I/61qV17Px4NL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
+    "category": "Phones",
+    "price": "1299",
+    "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+    "specification": [
+      "6.7 inch Super Retina XDR display",
+      "A17 Bionic chip",
+      "Triple camera system (48MP Main, 12MP Telephoto, 12MP Ultrawide)",
+      "LiDar Scanner",
+      "Up to 2TB Storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "L001",
+    "product_title": "MacBook Pro 14-inch",
+    "product_image": "https://m.media-amazon.com/images/I/61IGpeq9QEL._AC_SX522_.jpg",
+    "category": "Laptops",
+    "price": "1999",
+    "description": "Powerful performance and stunning display.",
+    "specification": [
+      "14-inch Liquid Retina XDR display",
+      "M2 Pro chip",
+      "Up to 32GB unified memory",
+      "Up to 2TB SSD storage"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "S001",
+    "product_title": "Apple Watch Series 8",
+    "product_image": "https://m.media-amazon.com/images/I/71ulah9iIwL._AC_SX385_.jpg",
+    "category": "Smart-Watches",
+    "price": "399",
+    "description": "Advanced health and fitness tracking.",
+    "specification": [
+      "Always-On Retina display",
+      "Crash Detection",
+      "Temperature sensing",
+      "ECG app"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "A001",
+    "product_title": "AirPods Pro (2nd Generation)",
+    "product_image": "https://m.media-amazon.com/images/I/419yjKznzbL._AC_SY355_.jpg",
+    "category": "Accessories",
+    "price": "249",
+    "description": "Immersive sound with Active Noise Cancellation.",
+    "specification": [
+      "Adaptive Transparency",
+      "Personalized Spatial Audio",
+      "Up to 30 hours of listening time"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P002",
+    "product_title": "Samsung Galaxy S23 Ultra",
+    "product_image": "https://m.media-amazon.com/images/I/51mXHdm9jHL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+    "category": "Phones",
+    "price": "1199",
+    "description": "The ultimate Samsung smartphone with a powerful camera.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED 2X display",
+      "Snapdragon 8 Gen 2 processor",
+      "200MP Main camera",
+      "100X Space Zoom"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "L002",
+    "product_title": "Dell XPS 13 Plus",
+    "product_image": "https://m.media-amazon.com/images/I/710EGJBdIML._AC_SX522_.jpg",
+    "category": "Laptops",
+    "price": "1499",
+    "description": "Sleek and powerful laptop with a stunning display.",
+    "specification": [
+      "13.4-inch OLED display",
+      "12th Gen Intel Core processor",
+      "Up to 32GB LPDDR5 RAM",
+      "Up to 2TB SSD storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "S002",
+    "product_title": "Xiaomi Watch S1 Pro",
+    "product_image": "https://m.media-amazon.com/images/I/71dULhE3rvL._AC_SY355_.jpg",
+    "category": "Smart-Watches",
+    "price": "299",
+    "description": "Stylish and feature-rich smartwatch.",
+    "specification": [
+      "1.47-inch AMOLED display",
+      "14-day battery life",
+      "Blood oxygen monitoring",
+      "Built-in GPS"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "A002",
+    "product_title": "Bose QuietComfort Earbuds II",
+    "product_image": "https://m.media-amazon.com/images/I/61lnVQLanjL._AC_SY355_.jpg",
+    "category": "Accessories",
+    "price": "299",
+    "description": "Industry-leading noise cancellation.",
+    "specification": [
+      "Custom-tuned drivers",
+      "Up to 6 hours of listening time",
+      "IPX4 water resistance"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P003",
+    "product_title": "Google Pixel 7 Pro",
+    "product_image": "https://m.media-amazon.com/images/I/51yh3V5taFL._AC_SX466_.jpg",
+    "category": "Phones",
+    "price": "899",
+    "description": "The ultimate Pixel experience with amazing camera capabilities.",
+    "specification": [
+      "6.7-inch LTPO OLED display",
+      "Google Tensor G2 processor",
+      "48MP Main camera, 48MP Ultrawide camera, 48MP Telephoto camera"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "L003",
+    "product_title": "HP Spectre x360 14",
+    "product_image": "https://m.media-amazon.com/images/I/81L+m0cYQgL._AC_SX425_.jpg",
+    "category": "Laptops",
+    "price": "1299",
+    "description": "Versatile 2-in-1 laptop with a stunning design.",
+    "specification": [
+      "14-inch OLED display",
+      "12th Gen Intel Core processor",
+      "Up to 32GB LPDDR5 RAM",
+      "Up to 2TB SSD storage"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "L004",
+    "product_title": "MacBook Air 15-inch",
+    "product_image": "https://m.media-amazon.com/images/I/61vl7MbV3DL._AC_SY450_.jpg",
+    "category": "Laptops",
+    "price": "1299",
+    "description": "Thin, light, and powerful.",
+    "specification": [
+      "15-inch Liquid Retina display",
+      "M2 chip",
+      "Up to 24GB unified memory",
+      "Up to 2TB SSD storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "L005",
+    "product_title": "MacBook Pro 16-inch",
+    "product_image": "https://m.media-amazon.com/images/I/61aUBxqc5PL._AC_SX385_.jpg",
+    "category": "Laptops",
+    "price": "2499",
+    "description": "Ultimate performance for creative professionals.",
+    "specification": [
+      "16-inch Liquid Retina XDR display",
+      "M2 Max chip",
+      "Up to 96GB unified memory",
+      "Up to 8TB SSD storage"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "L006",
+    "product_title": "MacBook Air 13-inch",
+    "product_image": "https://m.media-amazon.com/images/I/51FJlZmqO8L._AC_SX355_.jpg",
+    "category": "Laptops",
+    "price": "999",
+    "description": "The most affordable MacBook ever.",
+    "specification": [
+      "13.3-inch Liquid Retina display",
+      "M2 chip",
+      "Up to 24GB unified memory",
+      "Up to 2TB SSD storage"
+    ],
+    "availability": true,
+    "rating": 4.7
+  }
+]
