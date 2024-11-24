@@ -29,16 +29,20 @@ const user = [
         name: 'budur',
         email: 'budur-udding@gmail.com',
     }
-]
+];
 
 app.get('/', (req, res) => {
     res.send('My server is running 😀');
-})
+});
 
-app.get('/user', (req, res)=>{
+app.get('/user', (req, res) => {
     res.send(user);
+});
+
+app.post('/user', (req, res)=>{
+    console.log('hit')
 })
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
