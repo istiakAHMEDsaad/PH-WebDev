@@ -8,8 +8,9 @@ const app = express();
 // If one port is using it set another dynamic port
 const port = process.env.PORT || 3000;
 
-// Using cors middleware
+// Using Middleware
 app.use(cors());
+app.use(express.json());
 
 
 // Hardcorded Data
@@ -40,7 +41,12 @@ app.get('/user', (req, res) => {
 });
 
 app.post('/user', (req, res)=>{
-    console.log('hit')
+    console.log(req.body);
+    // console.log('post api hit man')
+    const newUser = req.body;
+    newUser.id = user.length + 1;
+    user.push(newUser);
+    res.send(newUser);
 })
 
 app.listen(port, () => {

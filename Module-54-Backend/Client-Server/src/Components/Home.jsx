@@ -1,24 +1,24 @@
 // @ts-nocheck
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { serverProvider } from '../Provider/MyProvider';
 import PropTypes from 'prop-types';
 
 
 const Home = () => {
-  const { handleAddUser, users, setUsers } = useContext(serverProvider);
+  const { handleAddUser, userObj } = useContext(serverProvider);
 
-
+  const[userData, setUserData] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/user')
       .then((res) => res.json())
-      .then((data) => setUsers(data))
+      .then((data) => setUserData(data))
       .catch((err) => console.error(err));
-  }, [setUsers]);
+  }, [setUserData]);
 
   return (
     <div>
-      <h4>The number of user is {users?.length}</h4>
+      <h4>The number of user is {userData?.length}</h4>
       <form
         onSubmit={handleAddUser}
         
@@ -36,7 +36,7 @@ const Home = () => {
           padding: '1.2rem',
         }}
       >
-        {users?.map((data) => (
+        {userData?.map((data) => (
           <div key={data.id}>
             <h2>Name: {data.name}</h2>
             <p>Email: {data.email}</p>
