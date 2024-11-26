@@ -5,13 +5,16 @@ import { toast, Slide } from 'react-toastify';
 
 export const ContextAPI = createContext(null);
 const ContexProvider = ({ children }) => {
-  const { dbData, setDbData } = useState([]);
+  const [dbData, setDbData] = useState([]);
+
   useEffect(() => {
     fetch('http://localhost:3000/users/')
-      .then((result) => result.json())
+      .then((res) => res.json())
       .then((data) => setDbData(data))
-      .catch((error) => console.error(error));
+      .catch((err) => console.error(err));
   }, [setDbData]);
+
+  
 
   const handleAddUser = (event) => {
     event.preventDefault();
@@ -48,9 +51,36 @@ const ContexProvider = ({ children }) => {
       });
   };
 
+  const handleDelteUser = (_id) => {
+    console.log(`Delete: ${_id}`);
+    fetch(`http://localhost:3000/users/${_id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.deletedCount>0){
+          toast.success('User Deleted Successfully!', {
+            position: 'top-center',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+            transition: Slide,
+          });
+          const remaining = dbData.filter(user => user._id !== _id);
+          setDbData(remaining);
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+
   const value = {
     handleAddUser,
     dbData,
+    handleDelteUser,
   };
 
   return <ContextAPI.Provider value={value}>{children}</ContextAPI.Provider>;
