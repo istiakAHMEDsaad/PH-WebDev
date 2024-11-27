@@ -31,27 +31,59 @@ async function run() {
     const database = client.db("userDB");
     const usersCollection = database.collection("users");
 
-    app.get('/users', async(req, res)=>{
+    //! Get All Users
+    app.get('/users', async (req, res) => {
       const cursor = usersCollection.find();
       const result = await cursor.toArray();
       res.send(result);
-    })
+    });
 
-    app.post('/users', async(req, res) => {
+    //! Get Single User
+    app.get('/users/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const user = await usersCollection.findOne(query);
+      res.send(user);
+    });
+
+    //! Craete Users
+    app.post('/users', async (req, res) => {
       const user = req.body;
       console.log(`${user}`);
-      const result =await usersCollection.insertOne(user);
+      const result = await usersCollection.insertOne(user);
       res.send(result);
     });
 
-    app.delete('/users/:id', async(req, res)=>{
+
+    //! Delete User
+    app.delete('/users/:id', async (req, res) => {
       const id = req.params.id;
       console.log(`Please delete from database ${id}`);
-      const query = {_id: new ObjectId(id)};
-      const result= await usersCollection.deleteOne(query);
+      const query = { _id: new ObjectId(id) };
+      const result = await usersCollection.deleteOne(query);
       res.send(result);
-    })
+    });
 
+
+    //! Put & Pathc (not a same things) (put if a value not exist its create that value) (patch only value is exist)
+    app.put('/users/:id', async (req, res) => {
+      const id = req.params.id;
+      const user = req.body;
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      // Specify the update to set a value for the plot field
+      const updatedUser = {
+        $set: {
+          name: user.name,
+          email: user.email,
+        }
+      };
+
+      const result = await usersCollection.updateOne(filter, updatedUser, options);
+      res.send(result);
+
+      console.log(id, user);
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });

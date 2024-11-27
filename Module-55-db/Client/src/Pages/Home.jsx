@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { useContext } from "react";
 import { ContextAPI } from "../Provider/ContexProvider";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -12,24 +13,24 @@ const Home = () => {
         <form onSubmit={handleAddUser} className='card-body'>
           <div className='form-control'>
             <label className='label'>
-              <span className='label-text'>Email</span>
+              <span className='label-text'>Name</span>
             </label>
             <input
-              type='email'
-              placeholder='email'
-              name="email"
+              type='text'
+              placeholder='Name'
+              name="name"
               className='input input-bordered'
               required
             />
           </div>
           <div className='form-control'>
             <label className='label'>
-              <span className='label-text'>Password</span>
+              <span className='label-text'>Email</span>
             </label>
             <input
-              type='password'
-              name="password"
-              placeholder='password'
+              type='email'
+              name="email"
+              placeholder='Email'
               className='input input-bordered'
               required
             />
@@ -40,10 +41,11 @@ const Home = () => {
             </label>
           </div>
           <div className='form-control mt-6'>
-            <button className='btn btn-primary'>Login</button>
+            <button className='btn btn-primary'>Submit</button>
           </div>
         </form>
       </div>
+      <Link to={'/users'}><button className="btn  btn-xs btn-warning text-slate-700 font-bold">Show Users</button></Link>
     </div>
   );
 };

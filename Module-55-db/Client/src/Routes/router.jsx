@@ -3,6 +3,7 @@ import MainLayout from '../Layout/MainLayout';
 import ErrorPage from './error-page';
 import Home from '../Pages/Home';
 import Users from '../Pages/Users';
+import UpdateUsers from '../Pages/UpdateUsers';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,12 @@ const router = createBrowserRouter([
       {
         path: '/users',
         element: <Users></Users>,
+      },
+      {
+        path: '/users/:id',
+        element: <UpdateUsers></UpdateUsers>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/users/${params.id}`),
       },
     ],
   },

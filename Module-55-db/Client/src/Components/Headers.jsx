@@ -14,7 +14,7 @@ const Headers = () => {
               : 'btn btn-ghost'
           }
         >
-          Home
+          Add User
         </NavLink>
       </li>
       <li>
@@ -28,12 +28,12 @@ const Headers = () => {
               : 'btn btn-ghost'
           }
         >
-          Users
+          Show Users
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink
-          to={'/about-us'}
+          to={'/users'}
           className={({ isActive, isPending }) =>
             isActive
               ? 'btn btn-success'
@@ -42,9 +42,9 @@ const Headers = () => {
               : 'btn btn-ghost'
           }
         >
-          About Us
+          Update Users
         </NavLink>
-      </li>
+      </li> */}
     </>
   );
 

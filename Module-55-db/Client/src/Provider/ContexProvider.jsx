@@ -7,6 +7,7 @@ export const ContextAPI = createContext(null);
 const ContexProvider = ({ children }) => {
   const [dbData, setDbData] = useState([]);
 
+  //? ------------------------ Fetch API ------------------------
   useEffect(() => {
     fetch('http://localhost:3000/users/')
       .then((res) => res.json())
@@ -14,15 +15,15 @@ const ContexProvider = ({ children }) => {
       .catch((err) => console.error(err));
   }, [setDbData]);
 
-  
 
+  //? ------------------------ Add User ------------------------
   const handleAddUser = (event) => {
     event.preventDefault();
     const form = new FormData(event.target);
+    const name = form.get('name');
     const email = form.get('email');
-    const password = form.get('password');
 
-    const user = { email, password };
+    const user = { name, email };
     console.log(user);
     fetch('http://localhost:3000/users', {
       method: 'POST',
@@ -51,6 +52,8 @@ const ContexProvider = ({ children }) => {
       });
   };
 
+  //? ------------------------ Delete User ------------------------
+
   const handleDelteUser = (_id) => {
     console.log(`Delete: ${_id}`);
     fetch(`http://localhost:3000/users/${_id}`, {
@@ -58,7 +61,7 @@ const ContexProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.deletedCount>0){
+        if (data.deletedCount > 0) {
           toast.success('User Deleted Successfully!', {
             position: 'top-center',
             autoClose: 2000,
@@ -70,17 +73,20 @@ const ContexProvider = ({ children }) => {
             theme: 'light',
             transition: Slide,
           });
-          const remaining = dbData.filter(user => user._id !== _id);
+          const remaining = dbData.filter((user) => user._id !== _id);
           setDbData(remaining);
         }
       })
       .catch((err) => console.error(err));
   };
 
+  
+
   const value = {
     handleAddUser,
     dbData,
     handleDelteUser,
+
   };
 
   return <ContextAPI.Provider value={value}>{children}</ContextAPI.Provider>;
