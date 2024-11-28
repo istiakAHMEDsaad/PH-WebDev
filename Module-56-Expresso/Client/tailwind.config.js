@@ -10,7 +10,11 @@ export default {
       'rancho': ['Rancho', 'serif'],
       'raleway': ['Raleway', 'serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'brown': '#331A15',
+      }
+    },
   },
   plugins: [daisyui],
   daisyui: {
