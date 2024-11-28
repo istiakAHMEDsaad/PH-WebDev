@@ -44,3 +44,4 @@ ignore-glob
 .upignore
 .vercelignore
 .yarnignore
+.env

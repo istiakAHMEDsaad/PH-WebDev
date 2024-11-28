@@ -11,7 +11,7 @@ app.use(express.json());
 
 //saadAhmed
 /* ================================================ Mongo DB ================================================ */
-const uri = "mongodb+srv://saadAhmed:urVOHnwEHEDyZ4Jl@my-mongodb.2rdes.mongodb.net/?retryWrites=true&w=majority&appName=My-MongoDB";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@my-mongodb.2rdes.mongodb.net/?retryWrites=true&w=majority&appName=My-MongoDB`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
