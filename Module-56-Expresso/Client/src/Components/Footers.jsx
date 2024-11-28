@@ -12,9 +12,9 @@ import footerBanner from '../assets/footer.png';
 const Footers = () => {
   return (
     <>
-      <footer className='footer bg-stone-100 text-base-content p-10 flex flex-col md:flex-row justify-around items-center'>
+      <footer className=' bg-stone-100 text-base-content p-10 flex flex-col md:flex-row '>
         {/* --> Left Side <-- */}
-        <div className=''>
+        <div className='basis-[65%]'>
           <div className='space-y-4'>
             {/* Logo */}
             <img className='w-10' src='/expresso.png' alt='logo' />
@@ -23,7 +23,7 @@ const Footers = () => {
               Espresso Emporium
             </h2>
             {/* Paragraph */}
-            <p className='lg:w-3/5 leading-7 antialiased'>
+            <p className='lg:w-3/4 leading-7 antialiased'>
               Always ready to be your friend. Come & Contact with us to share
               your memorable moments, to share with your best companion.
             </p>
@@ -62,7 +62,7 @@ const Footers = () => {
         </div>
 
         {/* --> Right Side <-- */}
-        <div className=''>
+        <div className='basis-[35%]'>
           <form className='flex flex-col gap-3'>
             <h6 className='font-rancho text-3xl text-brown font-bold'>
               Connect with Us
@@ -70,16 +70,16 @@ const Footers = () => {
             <input
               type='text'
               placeholder='Name'
-              className='input w-full max-w-xs'
+              className='input w-full'
             />
             <input
               type='text'
               placeholder='Email'
-              className='input w-full max-w-xs'
+              className='input w-full'
             />
             <textarea
               placeholder='Message'
-              className='textarea textarea-bordered textarea-lg w-full max-w-xs'
+              className='textarea textarea-bordered textarea-lg w-full'
             ></textarea>
             <button className='w-32 py-3 border border-brown rounded-full text-brown hover:bg-brown hover:text-white active:scale-95 transition-all'>Send Message</button>
           </form>
