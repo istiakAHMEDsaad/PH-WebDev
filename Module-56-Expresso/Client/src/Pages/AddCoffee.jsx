@@ -1,15 +1,19 @@
+// @ts-nocheck
 import { FaLongArrowAltLeft } from 'react-icons/fa';
 import { ContexAPI } from '../Provider/ContexProviderAPI';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const AddCoffee = () => {
-  const {handleAddCoffee} = useContext(ContexAPI);
-  
+  const { handleAddCoffee } = useContext(ContexAPI);
+
   return (
     <div className='my-10'>
-      <button className='font-rancho text-2xl flex items-center gap-1 hover:scale-105 transition-all active:scale-95'>
-        <FaLongArrowAltLeft></FaLongArrowAltLeft>Back to home
-      </button>
+      <Link to={'/'}>
+        <button className='font-rancho text-2xl flex items-center gap-1 hover:scale-105 transition-all active:scale-95'>
+          <FaLongArrowAltLeft></FaLongArrowAltLeft>Back to home
+        </button>
+      </Link>
       {/* Text */}
       <div className='bg-stone-100 mt-8 space-y-5'>
         <h2 className='font-rancho text-3xl text-center'>Add New Coffee</h2>
@@ -120,10 +124,11 @@ const AddCoffee = () => {
 
           {/* Add new coffee button */}
           <div className='form-control mt-6'>
-            <input type="submit" value="Add Coffee" className='border border-brown rounded-md py-2 font-rancho text-xl text-brown bg-[#D2B48C] hover:bg-brown hover:text-white active:scale-95 transition-all cursor-pointer' />
-            {/* <button className='border border-brown rounded-md py-2 font-rancho text-xl text-brown bg-[#D2B48C] hover:bg-brown hover:text-white active:scale-95 transition-all'>
-              Add Coffee
-            </button> */}
+            <input
+              type='submit'
+              value='Add Coffee'
+              className='border border-brown rounded-md py-2 font-rancho text-xl text-brown bg-[#D2B48C] hover:bg-brown hover:text-white active:scale-95 transition-all cursor-pointer'
+            />
           </div>
         </form>
       </div>
@@ -132,3 +137,33 @@ const AddCoffee = () => {
 };
 
 export default AddCoffee;
+
+/* 
+1:
+https://raw.githubusercontent.com/istiakAHMEDsaad/PH-WebDev/refs/heads/main/Module-56-Expresso/Client/src/assets/1.png
+*/
+
+/* 
+2:
+https://raw.githubusercontent.com/istiakAHMEDsaad/PH-WebDev/refs/heads/main/Module-56-Expresso/Client/src/assets/2.png
+*/
+
+/*
+3:
+https://raw.githubusercontent.com/istiakAHMEDsaad/PH-WebDev/refs/heads/main/Module-56-Expresso/Client/src/assets/3.png
+*/
+
+/*
+4:
+https://raw.githubusercontent.com/istiakAHMEDsaad/PH-WebDev/refs/heads/main/Module-56-Expresso/Client/src/assets/4.png
+*/
+
+/*
+5:
+https://raw.githubusercontent.com/istiakAHMEDsaad/PH-WebDev/refs/heads/main/Module-56-Expresso/Client/src/assets/5.png
+*/
+
+/*
+6:
+https://raw.githubusercontent.com/istiakAHMEDsaad/PH-WebDev/refs/heads/main/Module-56-Expresso/Client/src/assets/6.png
+*/

@@ -81,7 +81,7 @@ const Footers = () => {
               placeholder='Message'
               className='textarea textarea-bordered textarea-lg w-full'
             ></textarea>
-            <button className='w-32 py-3 border border-brown rounded-full text-brown hover:bg-brown hover:text-white active:scale-95 transition-all'>Send Message</button>
+            <button className='w-[9rem] py-3 border border-brown rounded-full text-brown hover:bg-brown hover:text-white active:scale-95 transition-all'>Send Message</button>
           </form>
         </div>
       </footer>

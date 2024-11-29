@@ -13,6 +13,9 @@ export default {
     extend: {
       colors: {
         'brown': '#331A15',
+      },
+      backgroundImage: {
+        'home-banner': "url('./assets/more/3.png')",
       }
     },
   },
