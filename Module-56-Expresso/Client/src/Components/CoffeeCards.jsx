@@ -1,7 +1,8 @@
 import { FaEye, FaPen, FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const CoffeeCards = ({ singleCoffee }) => {
-  const { name, photo, chef, price } = singleCoffee || {};
+  const { _id, name, photo, chef, price } = singleCoffee || {};
   return (
     <div className='border p-2 flex flex-col md:flex-row items-center justify-center md:justify-around gap-3 md:gap-0 bg-[#F5F4F1] rounded-md shadow-sm'>
       {/* Image */}
@@ -26,11 +27,13 @@ const CoffeeCards = ({ singleCoffee }) => {
       </div>
       {/* Button */}
       <div className='flex flex-row md:flex-col gap-3'>
-        <button className='bg-[#D2B48C] p-2 rounded-[6px]'>
-          <span className='text-white'>
-            <FaEye></FaEye>
-          </span>
-        </button>
+        <Link to={`add-coffee/${_id}`}>
+          <button className='bg-[#D2B48C] p-2 rounded-[6px]'>
+            <span className='text-white'>
+              <FaEye></FaEye>
+            </span>
+          </button>
+        </Link>
         <button className='bg-[#3C393B] p-2 rounded-[6px]'>
           <span className='text-white'>
             <FaPen></FaPen>
