@@ -1,10 +1,19 @@
 // @ts-nocheck
-import { createContext } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast, Bounce } from 'react-toastify';
 
 export const ContexAPI = createContext(null);
 const ContexProviderAPI = ({ children }) => {
+  // Fetch All Data
+  const [coffee, setCoffee] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:3000/add-coffee/')
+      .then(res=>res.json())
+      .then(data=>setCoffee(data))
+      .catch((err) => console.error(err));
+  }, []);
+
   // Add data Function
   const handleAddCoffee = (event) => {
     event.preventDefault();
@@ -64,6 +73,7 @@ const ContexProviderAPI = ({ children }) => {
 
   const value = {
     handleAddCoffee,
+    coffee,
   };
 
   return <ContexAPI.Provider value={value}>{children}</ContexAPI.Provider>;

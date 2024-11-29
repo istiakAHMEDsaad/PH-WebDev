@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TiCoffee } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
 import coffeeIcon from '../assets/icons/1.png';
@@ -5,8 +6,13 @@ import badgeIcon from '../assets/icons/2.png';
 import beansIcon from '../assets/icons/3.png';
 import cupIcon from '../assets/icons/4.png';
 import bgImageOne from '../assets/more/1.png';
+import { useContext } from 'react';
+import { ContexAPI } from '../Provider/ContexProviderAPI';
+import CoffeeCards from '../Components/CoffeeCards';
 
 const Home = () => {
+  const { coffee } = useContext(ContexAPI);
+
   return (
     <div>
       {/* --> Hero Section <-- */}
@@ -28,7 +34,11 @@ const Home = () => {
 
       {/* 2 background image */}
       <div className='relative'>
-        <img className='absolute inset-0 -z-10' src={bgImageOne} alt="bg image" />
+        <img
+          className='absolute top-[20rem] -z-10'
+          src={bgImageOne}
+          alt='bg image'
+        />
         {/* --> Brand Section <-- */}
         <div className='bg-[#ECEAE3] flex flex-col md:flex-row gap-4 items-center justify-around lg:px-16 py-14'>
           {/* 1 */}
@@ -85,9 +95,14 @@ const Home = () => {
         </div>
 
         {/* Coffee Cards */}
-        <div>
-          
-        </div>
+        <div></div>
+      </div>
+
+      {/* Coffee Card */}
+      <div className='md:grid md:grid-cols-2 md:gap-4 lg:mx-40'>
+        {
+          coffee.map(singleCoffee => <CoffeeCards key={singleCoffee._id} singleCoffee={singleCoffee}></CoffeeCards>)
+        }
       </div>
     </div>
   );
