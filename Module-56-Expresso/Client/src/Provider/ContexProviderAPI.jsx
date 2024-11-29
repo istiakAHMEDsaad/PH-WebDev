@@ -11,12 +11,12 @@ const ContexProviderAPI = ({ children }) => {
     const form = new FormData(event.target);
     const name = form.get('name');
     const chef = form.get('chef');
-    const supplier = form.get('supplier');
+    const price = form.get('price');
     const taste = form.get('taste');
     const category = form.get('category');
     const details = form.get('details');
     const photo = form.get('photo');
-    const newCoffee = { name, chef, supplier, taste, category, details, photo };
+    const newCoffee = { name, chef, price, taste, category, details, photo };
     console.log(newCoffee);
 
     // Send Data to the server
@@ -44,6 +44,7 @@ const ContexProviderAPI = ({ children }) => {
         }
 
         console.log(data);
+        // form.reset();
       })
       .catch((err) => {
         toast.warn('Something Wrong!', {

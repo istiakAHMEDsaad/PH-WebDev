@@ -31,12 +31,19 @@ async function run() {
         // Database And Collection
         const coffeeCollection = client.db('coffeeDB').collection('coffee');
 
-        // Post Data
+        // Get Data from db
+        app.get('/add-coffee', async(req, res)=>{
+            const cursor = coffeeCollection.find();
+            const result = await cursor.toArray();
+            res.send(result);
+        })
+        
+        // Create data on db
         app.post('/add-coffee', async(req, res)=>{
             const newCoffee = req.body;
             console.log(newCoffee);
             const result = await coffeeCollection.insertOne(newCoffee);
-            res.send(result);
+            res.send(result); 
         })
 
 

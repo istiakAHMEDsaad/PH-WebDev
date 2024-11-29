@@ -4,6 +4,7 @@ import coffeeIcon from '../assets/icons/1.png';
 import badgeIcon from '../assets/icons/2.png';
 import beansIcon from '../assets/icons/3.png';
 import cupIcon from '../assets/icons/4.png';
+import bgImageOne from '../assets/more/1.png';
 
 const Home = () => {
   return (
@@ -25,53 +26,69 @@ const Home = () => {
         </div>
       </div>
 
-      {/* --> Brand Section <-- */}
-      <div className='bg-[#ECEAE3] flex flex-col md:flex-row gap-4 items-center justify-around lg:px-16 py-14'>
-        {/* 1 */}
-        <div className='lg:w-60 md:w-48'>
-          <img className='w-12' src={coffeeIcon} alt='Coffee Icon' />
-          <h2 className='font-rancho text-2xl text-brown'>Awesome Aroma</h2>
-          <p className='text-[12px] font-semibold text-brown'>
-            You will definitely be a fan of the design & aroma of your coffee
-          </p>
+      {/* 2 background image */}
+      <div className='relative'>
+        <img className='absolute inset-0 -z-10' src={bgImageOne} alt="bg image" />
+        {/* --> Brand Section <-- */}
+        <div className='bg-[#ECEAE3] flex flex-col md:flex-row gap-4 items-center justify-around lg:px-16 py-14'>
+          {/* 1 */}
+          <div className='lg:w-60 md:w-48'>
+            <img className='w-12' src={coffeeIcon} alt='Coffee Icon' />
+            <h2 className='font-rancho text-2xl text-brown'>Awesome Aroma</h2>
+            <p className='text-[12px] font-semibold text-brown'>
+              You will definitely be a fan of the design & aroma of your coffee
+            </p>
+          </div>
+
+          {/* 2 */}
+          <div className='lg:w-60 md:w-48'>
+            <img className='w-12' src={badgeIcon} alt='Coffee Icon' />
+            <h2 className='font-rancho text-2xl text-brown'>High Quality</h2>
+            <p className='text-[12px] font-semibold text-brown'>
+              We served the coffee to you maintaining the best quality
+            </p>
+          </div>
+
+          {/* 3 */}
+          <div className='lg:w-60 md:w-48'>
+            <img className='w-12' src={beansIcon} alt='Coffee Icon' />
+            <h2 className='font-rancho text-2xl text-brown'>Pure Grades</h2>
+            <p className='text-[12px] font-semibold text-brown'>
+              The coffee is made of the green coffee beans which you will love
+            </p>
+          </div>
+
+          {/* 4 */}
+          <div className='lg:w-60 md:w-48'>
+            <img className='w-12' src={cupIcon} alt='Coffee Icon' />
+            <h2 className='font-rancho text-2xl text-brown'>Proper Roasting</h2>
+            <p className='text-[12px] font-semibold text-brown'>
+              Your coffee is brewed by first roasting the green coffee beans
+            </p>
+          </div>
         </div>
 
-        {/* 2 */}
-        <div className='lg:w-60 md:w-48'>
-          <img className='w-12' src={badgeIcon} alt='Coffee Icon' />
-          <h2 className='font-rancho text-2xl text-brown'>High Quality</h2>
-          <p className='text-[12px] font-semibold text-brown'>
-          We served the coffee to you maintaining the best quality
-          </p>
+        {/* Add more Coffee Button */}
+        <div className='flex flex-col items-center my-10 gap-3'>
+          <p className='text-sm'>--- Sip & Savor ---</p>
+          <h2 className='font-rancho md:text-4xl text-3xl'>
+            Our Popular Products
+          </h2>
+          <Link to={'/add-coffee'}>
+            <button className='border border-1 border-brown bg-[#E3B577] px-4 py-1 rounded-md flex items-center gap-1 font-rancho text-xl hover:bg-brown hover:text-white active:scale-95 transition-all'>
+              <span className='text-xl'>
+                <TiCoffee></TiCoffee>
+              </span>
+              Add Coffee
+            </button>
+          </Link>
         </div>
 
-        {/* 3 */}
-        <div className='lg:w-60 md:w-48'>
-          <img className='w-12' src={beansIcon} alt='Coffee Icon' />
-          <h2 className='font-rancho text-2xl text-brown'>Pure Grades</h2>
-          <p className='text-[12px] font-semibold text-brown'>
-          The coffee is made of the green coffee beans which you will love
-          </p>
-        </div>
-
-        {/* 4 */}
-        <div className='lg:w-60 md:w-48'>
-          <img className='w-12' src={cupIcon} alt='Coffee Icon' />
-          <h2 className='font-rancho text-2xl text-brown'>Proper Roasting</h2>
-          <p className='text-[12px] font-semibold text-brown'>
-          Your coffee is brewed by first roasting the green coffee beans
-          </p>
+        {/* Coffee Cards */}
+        <div>
+          
         </div>
       </div>
-
-      <Link to={'/add-coffee'}>
-        <button className='border border-1 border-brown bg-[#E3B577] px-4 py-1 rounded-md flex items-center gap-1 font-rancho text-xl'>
-          <span className='text-xl'>
-            <TiCoffee></TiCoffee>
-          </span>
-          Add Coffee
-        </button>
-      </Link>
     </div>
   );
 };

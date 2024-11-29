@@ -45,12 +45,12 @@ const AddCoffee = () => {
               {/* 2 */}
               <div className='form-control'>
                 <label className='label'>
-                  <span className='label-text font-bold'>Supplier</span>
+                  <span className='label-text font-bold'>Price</span>
                 </label>
                 <input
                   type='text'
-                  name='supplier'
-                  placeholder='Enter coffee supplier'
+                  name='price'
+                  placeholder='Enter coffee price'
                   className='input input-bordered'
                 />
               </div>
