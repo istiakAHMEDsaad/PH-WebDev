@@ -2,6 +2,7 @@
 import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast, Bounce } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 export const ContexAPI = createContext(null);
 const ContexProviderAPI = ({ children }) => {
@@ -9,8 +10,8 @@ const ContexProviderAPI = ({ children }) => {
   const [coffee, setCoffee] = useState([]);
   useEffect(() => {
     fetch('http://localhost:3000/add-coffee/')
-      .then(res=>res.json())
-      .then(data=>setCoffee(data))
+      .then((res) => res.json())
+      .then((data) => setCoffee(data))
       .catch((err) => console.error(err));
   }, []);
 
@@ -71,9 +72,47 @@ const ContexProviderAPI = ({ children }) => {
       });
   };
 
+  // Handle Delete Coffee Data
+  const handleCoffeeDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        /* Swal.fire({
+          title: 'Deleted!',
+          text: 'Your file has been deleted.',
+          icon: 'success',
+        }); */
+        fetch(`http://localhost:3000/add-coffee/${_id}`,{
+          method: 'DELETE',
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if(data.deletedCount > 0){
+              Swal.fire({
+                title: 'Deleted!',
+                text: 'Your coffee has been deleted.',
+                icon: 'success',
+              });
+            }
+          })
+          .catch((err) => console.error(err));
+      }
+    });
+  };
+
   const value = {
     handleAddCoffee,
     coffee,
+    handleCoffeeDelete,
   };
 
   return <ContexAPI.Provider value={value}>{children}</ContexAPI.Provider>;
