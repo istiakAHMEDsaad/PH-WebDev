@@ -6,7 +6,7 @@ import badgeIcon from '../assets/icons/2.png';
 import beansIcon from '../assets/icons/3.png';
 import cupIcon from '../assets/icons/4.png';
 import bgImageOne from '../assets/more/1.png';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ContexAPI } from '../Provider/ContexProviderAPI';
 import CoffeeCards from '../Components/CoffeeCards';
 
@@ -29,6 +29,10 @@ const Home = () => {
           <button className='font-rancho text-xl text-brown bg-[#E3B577] px-4 py-1 hover:rotate-2 hover:bg-[#E3B577]/90 active:scale-95 transition-all'>
             Learn More
           </button>
+          <div className='flex gap-2'>
+            <Link to={'/signup'}><button className='text-white border px-4 py-2 rounded-md bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all'>Sign Up</button></Link>
+            <Link to={'/login'}><button className='text-white border px-6 py-2 rounded-md bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all'>Login</button></Link>
+          </div>
         </div>
       </div>
 
@@ -93,16 +97,16 @@ const Home = () => {
             </button>
           </Link>
         </div>
-
-        {/* Coffee Cards */}
-        <div></div>
       </div>
 
       {/* Coffee Card */}
       <div className='md:grid md:grid-cols-2 md:gap-4 lg:mx-40'>
-        {
-          coffee.map(singleCoffee => <CoffeeCards key={singleCoffee._id} singleCoffee={singleCoffee}></CoffeeCards>)
-        }
+        {coffee.map((singleCoffee) => (
+          <CoffeeCards
+            key={singleCoffee._id}
+            singleCoffee={singleCoffee}
+          ></CoffeeCards>
+        ))}
       </div>
     </div>
   );

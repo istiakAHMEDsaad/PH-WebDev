@@ -8,6 +8,8 @@ export const ContexAPI = createContext(null);
 const ContexProviderAPI = ({ children }) => {
   // Fetch All Data
   const [coffee, setCoffee] = useState([]);
+  const [removeCoffee, setRemoveCoffee] = useState(coffee);
+  
   useEffect(() => {
     fetch('http://localhost:3000/add-coffee/')
       .then((res) => res.json())
@@ -27,7 +29,7 @@ const ContexProviderAPI = ({ children }) => {
     const details = form.get('details');
     const photo = form.get('photo');
     const newCoffee = { name, chef, price, taste, category, details, photo };
-    console.log(newCoffee);
+    // console.log(newCoffee);
 
     // Send Data to the server
     fetch('http://localhost:3000/add-coffee', {
@@ -85,11 +87,6 @@ const ContexProviderAPI = ({ children }) => {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        /* Swal.fire({
-          title: 'Deleted!',
-          text: 'Your file has been deleted.',
-          icon: 'success',
-        }); */
         fetch(`http://localhost:3000/add-coffee/${_id}`,{
           method: 'DELETE',
         })
@@ -102,12 +99,16 @@ const ContexProviderAPI = ({ children }) => {
                 text: 'Your coffee has been deleted.',
                 icon: 'success',
               });
+              const remaining = removeCoffee.filter(cof=>cof._id !== _id);
+              setRemoveCoffee(remaining);
             }
           })
           .catch((err) => console.error(err));
       }
     });
   };
+
+
 
   const value = {
     handleAddCoffee,

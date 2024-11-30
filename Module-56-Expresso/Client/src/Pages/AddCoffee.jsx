@@ -15,7 +15,7 @@ const AddCoffee = () => {
         </button>
       </Link>
       {/* Text */}
-      <div className='bg-stone-100 mt-8 space-y-5'>
+      <div className='bg-stone-100 mt-8 space-y-5 py-10 rounded-md'>
         <h2 className='font-rancho text-3xl text-center'>Add New Coffee</h2>
         <p className='text-center md:w-3/5 mx-auto'>
           It is a long established fact that a reader will be distraceted by the

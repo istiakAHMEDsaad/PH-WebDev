@@ -49,10 +49,10 @@ const Footers = () => {
 
             <div className='flex flex-col gap-y-2'>
               <p className='flex items-center gap-2 text-brown'>
-                <FaPhoneAlt></FaPhoneAlt>+88 01533 333 333
+                <FaPhoneAlt></FaPhoneAlt>+88 01950382372
               </p>
               <p className='flex items-center gap-2 text-brown'>
-                <IoMdMail></IoMdMail>info@gmail.com
+                <IoMdMail></IoMdMail>istiakahmedsaad.official@gmail.com
               </p>
               <p className='flex items-center gap-2 text-brown'>
                 <FaLocationDot></FaLocationDot>72, Wall street, King Road, Dhaka
@@ -95,7 +95,7 @@ const Footers = () => {
         />
         {/*  left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] */}
         <p className='absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-white w-full text-center'>
-          Copyright Espresso Emporium ! All Rights Reserved
+          Copyright Istiak Ahmed Saad ! All Rights Reserved
         </p>
       </div>
     </>

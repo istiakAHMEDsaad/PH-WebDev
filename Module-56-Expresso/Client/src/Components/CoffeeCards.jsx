@@ -3,7 +3,7 @@ import { FaEye, FaPen, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { ContexAPI } from '../Provider/ContexProviderAPI';
 
-const CoffeeCards = ({ singleCoffee }) => {
+const CoffeeCards = ({ singleCoffee}) => {
   const { _id, name, photo, chef, price } = singleCoffee || {};
   const {handleCoffeeDelete} = useContext(ContexAPI);
   
@@ -18,6 +18,7 @@ const CoffeeCards = ({ singleCoffee }) => {
           alt='coffee image'
         />
       </div>
+      
       {/* Text */}
       <div className='space-y-2'>
         <p className='font-semibold text-brown'>
@@ -30,6 +31,7 @@ const CoffeeCards = ({ singleCoffee }) => {
           Price: <span className='font-normal text-gray-500'>{price} Taka</span>
         </p>
       </div>
+      
       {/* Button */}
       <div className='flex flex-row md:flex-col gap-3'>
         <Link to={`/add-coffee/${_id}`}>

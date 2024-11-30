@@ -32,35 +32,57 @@ async function run() {
         const coffeeCollection = client.db('coffeeDB').collection('coffee');
 
         // Get Data from db
-        app.get('/add-coffee', async(req, res)=>{
+        app.get('/add-coffee', async (req, res) => {
             const cursor = coffeeCollection.find();
             const result = await cursor.toArray();
             res.send(result);
-        })
+        });
 
         // Get single data from db
-        app.get(`/add-coffee/:id`, async(req, res)=>{
+        app.get(`/add-coffee/:id`, async (req, res) => {
             const id = req.params.id;
-            const query = {_id: new ObjectId(id)};
+            const query = { _id: new ObjectId(id) };
             const result = await coffeeCollection.findOne(query);
             res.send(result);
-        })
-        
+        });
+
         // Create data on db
-        app.post('/add-coffee', async(req, res)=>{
+        app.post('/add-coffee', async (req, res) => {
             const newCoffee = req.body;
             console.log(newCoffee);
             const result = await coffeeCollection.insertOne(newCoffee);
-            res.send(result); 
-        })
+            res.send(result);
+        });
+
+        // Update data from db
+        app.put(`/add-coffee/:id`, async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) };
+            const options = { upsert: true };
+            const updatedCoffee = req.body;
+            const updatedCoffeeDetails = {
+                $set: {
+                    name: updatedCoffee.name,
+                    chef: updatedCoffee.chef,
+                    price: updatedCoffee.price,
+                    taste: updatedCoffee.taste,
+                    category: updatedCoffee.category,
+                    details: updatedCoffee.details,
+                    photo: updatedCoffee.photo,
+                },
+            };
+
+            const result = await coffeeCollection.updateOne(filter, updatedCoffeeDetails, options);
+            res.send(result);
+        });
 
         // Delete data from db
-        app.delete(`/add-coffee/:id`, async(req, res)=>{
+        app.delete(`/add-coffee/:id`, async (req, res) => {
             const id = req.params.id;
-            const query = {_id: new ObjectId(id)}
+            const query = { _id: new ObjectId(id) };
             const result = await coffeeCollection.deleteOne(query);
             res.send(result);
-        })
+        });
 
 
         // Send a ping to confirm a successful connection
@@ -75,7 +97,7 @@ run().catch(console.dir);
 // ====================================================================================
 
 app.get('/', (req, res) => {
-    res.send('Espresso Emporium server is running');
+    res.send({'response': 'Espresso Emporium data is connected successfully'});
 });
 
 app.listen(port, () => {
