@@ -59,7 +59,7 @@ const Header = () => {
           <ul className='menu menu-horizontal px-1'>{navLink}</ul>
         </div>
         <div className='navbar-end'>
-          <button className='btn btn-ghost underline'>Register</button>
+          <Link to={'/register'} className='btn btn-ghost underline'>Register</Link>
           <Link to={'/login'} className='btn bg-blue-500 text-white'>Login</Link>
         </div>
       </div>

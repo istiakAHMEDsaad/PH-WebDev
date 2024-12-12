@@ -2,17 +2,17 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
   return (
-    <>
-      {/* Login Text */}
-      <h2 className='my-2 text-3xl italic text-blue-400 underline font-semibold text-center'>
-        Login
+    <div className='mt-5 mb-20'>
+      {/* Title */}
+      <h2 className='mb-5 text-3xl font-semibold text-red-400 italic underline text-center'>
+        Register
       </h2>
 
-      <div className='flex flex-col md:flex-row justify-center items-center mb-16'>
-        {/* Form Card */}
-        <div className='order-2 card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl'>
+      {/* Form container */}
+      <div className='flex flex-col md:flex-row items-center justify-center'>
+        <div className='lg:order-1 order-2 card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl'>
           <form className='card-body'>
             <div className='form-control'>
               <label className='label'>
@@ -35,35 +35,26 @@ const Login = () => {
                 className='input input-bordered'
                 required
               />
-              <label className='label'>
-                <a href='#' className='label-text-alt link link-hover'>
-                  Forgot password?
-                </a>
-              </label>
             </div>
-
-            {/* Login Button */}
+            
+            {/* Register Button */}
             <div className='form-control mt-6'>
-              <button className='btn bg-blue-500 text-gray-100'>Login</button>
+              <button className='btn bg-blue-500 text-gray-100'>Register</button>
             </div>
-            <small className='text-gray-500'>
-              New to this website?{' '}
-              <Link to={'/register'} className='text-violet-700 font-bold hover:underline cursor-pointer'>
-                Register
-              </Link>
-            </small>
+            <small>Already have account? <Link to={'/login'} className='text-violet-700 font-bold hover:underline cursor-pointer'>Login</Link></small>
           </form>
         </div>
 
+        {/* Lottie */}
         <DotLottieReact
-          className='order-1 lg:w-96'
-          src='https://assets-v2.lottiefiles.com/a/bb54d73c-1176-11ee-b97c-7f390a4ae5dc/hyATkYpEVL.lottie'
+          className='lg:order-2 lg:w-96 md:w-80'
+          src='https://assets-v2.lottiefiles.com/a/6beb774c-1166-11ee-a6f1-4788c8724adf/hCt60059mY.lottie'
           loop
           autoplay
         />
       </div>
-    </>
+    </div>
   );
 };
 
-export default Login;
+export default Register;
