@@ -1,8 +1,61 @@
 // @ts-nocheck
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthContext from '../provider/AuthContext';
+import { toast, Slide } from 'react-toastify';
+
 
 const Login = () => {
+  const {loginUser} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = new FormData(event.target);
+    const email = form.get('email');
+    const password = form.get('password');
+    const userInfo = {email, password};
+
+    loginUser(email,password)
+    .then(userCredential=>{
+      const user = userCredential.user;
+      if(user){
+        toast.success('Login Successfully!', {
+          position: 'top-center',
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+          transition: Slide,
+        });
+        navigate('/');
+      }
+    })
+    .catch(error=>{
+      const errorCode = error.code;
+      if(errorCode){
+        toast.error('Something Wrong!', {
+          position: 'top-center',
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+          transition: Slide,
+        });
+      }
+      const errorMessage = error.message;
+      console.error(errorMessage);
+    })
+  }
+  
   return (
     <>
       {/* Login Text */}
@@ -13,13 +66,14 @@ const Login = () => {
       <div className='flex flex-col md:flex-row justify-center items-center mb-16'>
         {/* Form Card */}
         <div className='order-2 card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl'>
-          <form className='card-body'>
+          <form onSubmit={handleLogin} className='card-body'>
             <div className='form-control'>
               <label className='label'>
                 <span className='label-text'>Email</span>
               </label>
               <input
                 type='email'
+                name='email'
                 placeholder='email'
                 className='input input-bordered'
                 required
@@ -31,6 +85,7 @@ const Login = () => {
               </label>
               <input
                 type='password'
+                name='password'
                 placeholder='password'
                 className='input input-bordered'
                 required

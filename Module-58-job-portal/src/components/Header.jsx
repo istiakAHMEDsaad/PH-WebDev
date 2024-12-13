@@ -1,25 +1,76 @@
 // @ts-nocheck
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import AuthContext from '../provider/AuthContext';
+import { toast, Slide } from 'react-toastify';
 
 const Header = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        toast.success('Logout Successfull!', {
+          position: 'top-center',
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+          transition: Slide,
+        });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        if (errorCode) {
+          toast.error('Something Wrong!', {
+            position: 'top-center',
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+            transition: Slide,
+          });
+        }
+        const errorMessage = error.message;
+        console.error(errorMessage);
+      });
+  };
+
   const navLink = (
     <>
       <li>
         <NavLink
           to={'/'}
           className={({ isActive, isPending }) =>
-            isActive ? 'btn bg-blue-500 text-white' : isPending ? 'pending' : 'btn btn-ghost'
+            isActive
+              ? 'btn bg-blue-500 text-white'
+              : isPending
+              ? 'pending'
+              : 'btn btn-ghost'
           }
         >
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to={'/findJob'}
-        className={({ isActive, isPending }) =>
-            isActive ? 'btn bg-blue-500 text-white' : isPending ? 'pending' : 'btn btn-ghost'
+        <NavLink
+          to={'/findJob'}
+          className={({ isActive, isPending }) =>
+            isActive
+              ? 'btn bg-blue-500 text-white'
+              : isPending
+              ? 'pending'
+              : 'btn btn-ghost'
           }
-        >Find a Job</NavLink>
+        >
+          Find a Job
+        </NavLink>
       </li>
     </>
   );
@@ -52,15 +103,36 @@ const Header = () => {
               {navLink}
             </ul>
           </div>
-          <img src="https://jobbox-nextjs-v3.vercel.app/assets/imgs/template/jobhub-logo.svg" className='lg:w-28 w-20 object-cover' alt="" />
+          <img
+            src='https://jobbox-nextjs-v3.vercel.app/assets/imgs/template/jobhub-logo.svg'
+            className='lg:w-28 w-20 object-cover'
+            alt=''
+          />
         </div>
 
         <div className='navbar-center hidden lg:flex'>
           <ul className='menu menu-horizontal px-1'>{navLink}</ul>
         </div>
         <div className='navbar-end'>
-          <Link to={'/register'} className='btn btn-ghost underline'>Register</Link>
-          <Link to={'/login'} className='btn bg-blue-500 text-white'>Login</Link>
+          {user ? (
+            <>
+              <button
+                onClick={handleLogout}
+                className='btn bg-blue-500 text-gray-100'
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to={'/register'} className='btn btn-ghost underline'>
+                Register
+              </Link>
+              <Link to={'/login'} className='btn bg-blue-500 text-white'>
+                Login
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

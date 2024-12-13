@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../provider/AuthContext';
 import { toast, Slide } from 'react-toastify';
 import Swal from 'sweetalert2';
@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -18,7 +19,6 @@ const Register = () => {
     const userInfo = { email, password };
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    console.log(userInfo);
 
     if(password.length < 6){
       toast.warn('Password Must Contain 6 Character!', {
@@ -57,6 +57,7 @@ const Register = () => {
           theme: 'colored',
           transition: Slide,
         });
+        navigate('/login');
       }
     })
     .catch(error=>{
@@ -87,7 +88,7 @@ const Register = () => {
         });
       }
       const errorMessage = error.message;
-      console.log(errorMessage);
+      console.error(errorMessage);
     })
   };
 
