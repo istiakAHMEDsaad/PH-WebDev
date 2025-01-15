@@ -34,6 +34,7 @@ async function run() {
     /* --> Job Related API <-- */
     const database = client.db("job_portal");
     const jobsCollection = database.collection("jobs");
+    const jobsApplicationCollection = database.collection("jobsApplication");
 
     //get jobs data 
     app.get('/jobs', async (req, res) => {
@@ -43,12 +44,42 @@ async function run() {
     });
 
     // get jobs id
-    app.get(`/jobs/:id`, async(req, res)=>{
+    app.get(`/jobs/:id`, async (req, res) => {
       const id = req.params.id;
-      const query = {_id: new ObjectId(id)};
+      const query = { _id: new ObjectId(id) };
       const result = await jobsCollection.findOne(query);
       res.send(result);
-    })
+    });
+
+    // job application data 
+    app.post(`/job-applications`, async (req, res) => {
+      const application = req.body;
+      const result = await jobsApplicationCollection.insertOne(application);
+      res.send(result);
+    });
+
+    // (one data, get some data, [0, 1, many])
+    app.get(`/job-application`, async (req, res) => {
+      const email = req.query.email;
+      const query = { applicant_email: email };
+      const result = await jobsApplicationCollection.find(query).toArray();
+
+      // fokira way to aggregate
+      for(const application of result){
+        // console.log(application.job_id);
+        const query1 = {_id: new ObjectId(application.job_id)}
+        const job = await jobsCollection.findOne(query1);
+        if(job){
+          application.title = job.title;
+          application.location = job.location;
+          application.company = job.company;
+          application.company_logo = job.company_logo;
+        }
+      }
+
+      res.send(result);
+    });
+    // http://localhost:3000/job-application?email=testdev1234@google.com
 
 
 
