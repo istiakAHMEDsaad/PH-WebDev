@@ -31,7 +31,7 @@ async function run() {
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
-    /* --> Job Related API <-- */
+    /* ********************** --> Job Related API <-- ********************** */
     const database = client.db("job_portal");
     const jobsCollection = database.collection("jobs");
     const jobsApplicationCollection = database.collection("jobsApplication");
@@ -65,11 +65,11 @@ async function run() {
       const result = await jobsApplicationCollection.find(query).toArray();
 
       // fokira way to aggregate
-      for(const application of result){
+      for (const application of result) {
         // console.log(application.job_id);
-        const query1 = {_id: new ObjectId(application.job_id)}
+        const query1 = { _id: new ObjectId(application.job_id) };
         const job = await jobsCollection.findOne(query1);
-        if(job){
+        if (job) {
           application.title = job.title;
           application.location = job.location;
           application.company = job.company;
@@ -80,6 +80,13 @@ async function run() {
       res.send(result);
     });
     // http://localhost:3000/job-application?email=testdev1234@google.com
+
+    // send chunk of object to database
+    app.post('/jobs', async(req, res)=>{
+      const formValue = req.body;
+      const result = await jobsCollection.insertOne(formValue);
+      res.send(result);
+    })
 
 
 
