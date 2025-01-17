@@ -38,7 +38,13 @@ async function run() {
 
     //get jobs data 
     app.get('/jobs', async (req, res) => {
-      const cursor = jobsCollection.find();
+      const email = req.query.email;
+      let query = {};
+      if (email) {
+        query = { hr_email: email };
+      }
+
+      const cursor = jobsCollection.find(query);
       const result = await cursor.toArray();
       res.send(result);
     });
@@ -55,6 +61,30 @@ async function run() {
     app.post(`/job-applications`, async (req, res) => {
       const application = req.body;
       const result = await jobsApplicationCollection.insertOne(application);
+
+      // not the best way (use aggregate)
+      const id = application.job_id;
+      const query = { _id: new ObjectId(id) };
+      const job = await jobsCollection.findOne(query);
+
+      let newCount = 0;
+      if (job.applicationCount) {
+        newCount = job.applicationCount + 1;
+      } else {
+        newCount = 1;
+      }
+
+      //update the job info
+      const filter = { _id: new ObjectId(id) };
+
+      const updateDoc = {
+        $set: {
+          applicationCount: newCount,
+        }
+      }
+
+      const updateResult = await jobsCollection.updateOne(filter, updateDoc);
+
       res.send(result);
     });
 
@@ -82,11 +112,11 @@ async function run() {
     // http://localhost:3000/job-application?email=testdev1234@google.com
 
     // send chunk of object to database
-    app.post('/jobs', async(req, res)=>{
+    app.post('/jobs', async (req, res) => {
       const formValue = req.body;
       const result = await jobsCollection.insertOne(formValue);
       res.send(result);
-    })
+    });
 
 
 
