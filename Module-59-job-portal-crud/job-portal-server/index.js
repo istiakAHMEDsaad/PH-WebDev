@@ -8,7 +8,10 @@ const cookieParser = require('cookie-parser');
 
 /* ---------------------- Cors ---------------------- */
 app.use(cors({
-  origin: ['http://localhost:5173'],
+  origin: [
+    'http://localhost:5173',
+    'http://job-portal-practice-project.surge.sh',
+  ],
   credentials: true,
 }));
 app.use(express.json());
@@ -30,6 +33,7 @@ const verifyToken = (req, res, next) => {
     if (err) {
       return res.status(401).send({ message: 'Unauthorized access' });
     }
+    req.user = decoded;
     next();
   });
 };
@@ -51,10 +55,10 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    // await client.db("admin").command({ ping: 1 });
+    // console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
     /* ********************** --> Job Related API <-- ********************** */
     const database = client.db("job_portal");
@@ -64,17 +68,18 @@ async function run() {
     // ** auth related apis ** //
     app.post('/jwt', async (req, res) => {
       const user = req.body;
-      const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '5h' });
+      const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '10h' });
       res.cookie('token', token, {
         httpOnly: true,
-        secure: false, //for production set true 
+        // secure: false, //for production set true 
+        secure: process.env.NODE_ENV === "production",
       });
       res.send({ success: true });
     });
 
     //------> get jobs data <------
     app.get('/jobs', logger, async (req, res) => {
-      const email = req.query.email;
+      const email = req.query?.email;
       let query = {};
       if (email) {
         query = { hr_email: email };
@@ -124,12 +129,20 @@ async function run() {
       res.send(result);
     });
 
+    // ------> get a specific job application by id  <------
+    app.get('/job-applications/jobs/:job_id', async (req, res) => {
+      const jobId = req.params.job_id;
+      const query = { job_id: jobId };
+      const result = await jobsApplicationCollection.find(query).toArray();
+      res.send(result);
+    });
+
     // ------> (one data, get some data, [0, 1, many]) <------
     app.get(`/job-application`, verifyToken, async (req, res) => {
-      const email = req.query.email;
+      const email = req.query?.email;
       const query = { applicant_email: email };
 
-      if (req.user.email !== req.query.email) {
+      if (req.user?.email !== req.query?.email) {
         return res.status(403).send({ message: 'Forbidden access' });
       }
 
@@ -151,20 +164,12 @@ async function run() {
       }
 
       res.send(result);
-    });// http://localhost:3000/job-application?email=testdev1234@google.com
+    });// https://job-portal-server-sepia-tau.vercel.app/job-application?email=testdev1234@google.com
 
     // ------> send chunk of object to database <------
     app.post('/jobs', async (req, res) => {
       const formValue = req.body;
       const result = await jobsCollection.insertOne(formValue);
-      res.send(result);
-    });
-
-    // ------> get a specific job application by id  <------
-    app.get('/job-applications/jobs/:job_id', async (req, res) => {
-      const jobId = req.params.job_id;
-      const query = { job_id: jobId };
-      const result = await jobsApplicationCollection.find(query).toArray();
       res.send(result);
     });
 
@@ -186,9 +191,10 @@ async function run() {
     app.post('/logout', (req, res) => {
       res.clearCookie('token', {
         httpOnly: true,
-        secure: false
+        // secure: false
+        secure: process.env.NODE_ENV === "production"
       });
-      res.send({success: true});
+      res.send({ success: true });
     });
 
 
