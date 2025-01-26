@@ -73,6 +73,7 @@ async function run() {
         httpOnly: true,
         // secure: false, //for production set true 
         secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
       });
       res.send({ success: true });
     });
@@ -192,7 +193,8 @@ async function run() {
       res.clearCookie('token', {
         httpOnly: true,
         // secure: false
-        secure: process.env.NODE_ENV === "production"
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
       });
       res.send({ success: true });
     });
