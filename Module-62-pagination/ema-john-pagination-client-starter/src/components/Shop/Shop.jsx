@@ -15,8 +15,9 @@ const Shop = () => {
 
   //-> ================== For Pagination ================== <-//
   // Method 1
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(0);
   const { count } = useLoaderData();
-  const itemsPerPage = 10;
   const numberOfPage = Math.ceil(count / itemsPerPage);
   /* const pages = [];
   for (let i = 0; i < numberOfPage; i++) {
@@ -79,6 +80,26 @@ const Shop = () => {
     deleteShoppingCart();
   };
 
+  const handleItemsPerPage = (event) => {
+    event.preventDefault();
+    let parseValue = parseInt(event.target.value);
+    console.log(parseValue);
+    setItemsPerPage(parseValue);
+    setCurrentPage(0);
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handeNext = () => {
+    if (currentPage < pages.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <div className='shop-container'>
       <div className='products-container'>
@@ -99,9 +120,29 @@ const Shop = () => {
       </div>
 
       <div className='pagination'>
+        {/* <p>Current Page: {currentPage + 1}</p> */}
+        <button onClick={handlePrev}>Prev</button>
         {pages.map((page, index) => (
-          <button key={index}>{page}</button>
+          <button
+            key={index}
+            onClick={() => setCurrentPage(page)}
+            className={currentPage === page && 'selected-pag'}
+          >
+            {page + 1}
+          </button>
         ))}
+        <button onClick={handeNext}>Next</button>
+        <select
+          className='page-drop-down'
+          name='pageNum'
+          id=''
+          value={itemsPerPage}
+          onChange={handleItemsPerPage}
+        >
+          <option value='10'>10</option>
+          <option value='20'>20</option>
+          <option value='30'>30</option>
+        </select>
       </div>
     </div>
   );

@@ -27,5 +27,19 @@
 }
 
 .pagination{
-    
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.pagination .selected-pag{
+    background-color: #FF9900;
+}
+
+.page-drop-down{
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
 }
