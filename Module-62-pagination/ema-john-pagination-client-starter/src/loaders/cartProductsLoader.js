@@ -1,11 +1,20 @@
 import { getShoppingCart } from "../utilities/fakedb";
 
 const cartProductsLoader = async () => {
-    const loadedProducts = await fetch('http://localhost:5000/products');
+    // 'http://localhost:5000/products'
+    const storedCart = getShoppingCart();
+    const storeCardId = Object.keys(storedCart);
+    const loadedProducts = await fetch('http://localhost:5000/productByIds', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(storeCardId),
+    });
     const products = await loadedProducts.json();
 
     // if cart data is in database, you have to use async await
-    const storedCart = getShoppingCart();
+
 
     const savedCart = [];
 
@@ -24,6 +33,6 @@ const cartProductsLoader = async () => {
     // return { products, cart: savedCart }
 
     return savedCart;
-}
+};
 
 export default cartProductsLoader;

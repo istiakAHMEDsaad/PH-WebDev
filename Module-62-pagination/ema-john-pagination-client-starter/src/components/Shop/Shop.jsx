@@ -11,13 +11,17 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
+  const cart = useLoaderData();
+  const storedCart = getShoppingCart();
+  // const storedCartIds = Object.keys(storedCart)
 
   //-> ================== For Pagination ================== <-//
   // Method 1
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(0);
-  const { count } = useLoaderData();
+  // const { count } = useLoaderData();
+  const count = 76;
   const numberOfPage = Math.ceil(count / itemsPerPage);
   /* const pages = [];
   for (let i = 0; i < numberOfPage; i++) {
@@ -30,13 +34,14 @@ const Shop = () => {
   //-> ==================================================== <-//
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products?page=${currentPage}&size=${itemsPerPage}`)
+    fetch(
+      `http://localhost:5000/products?page=${currentPage + 1}&size=${itemsPerPage}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [currentPage, itemsPerPage]);
 
   useEffect(() => {
-    const storedCart = getShoppingCart();
+    
     const savedCart = [];
     // step 1: get id of the addedProduct
     for (const id in storedCart) {
@@ -119,14 +124,15 @@ const Shop = () => {
         </Cart>
       </div>
 
+      {/* <p>Current Page: {currentPage + 1}</p> */}
       <div className='pagination'>
-        {/* <p>Current Page: {currentPage + 1}</p> */}
+        
         <button onClick={handlePrev}>Prev</button>
         {pages.map((page, index) => (
           <button
             key={index}
             onClick={() => setCurrentPage(page)}
-            className={currentPage === page && 'selected-pag'}
+            className={currentPage === page ? 'selected-pag' : undefined}
           >
             {page + 1}
           </button>

@@ -1,4 +1,4 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -32,17 +32,33 @@ async function run() {
 
     //******************************************** All Api ******************************************** */
     app.get('/products', async (req, res) => {
-      console.log('pagination:', req.query);
-      const result = await productCollection.find().toArray();
+      const page = parseInt(req.query.page);
+      const size = parseInt(req.query.size);
+      // console.log(`Pagination = page(${page}) limit(${size})`);
+
+      const result = await productCollection.find().skip(page * size).limit(size).toArray();
+
       res.send(result);
     });
 
-    app.get('/productsCount', async(req, res)=>{
+    app.get('/productsCount', async (req, res) => {
       const count = await productCollection.estimatedDocumentCount();
-      res.send({count});
-    })
+      res.send({ count });
+    });
 
     //**************************************************************************************** */
+
+    app.post('/productByIds', async (req, res) => {
+      const ids = req.body;
+      const idsWithObjId = ids.map(id => new ObjectId(id));
+      const query = {
+        _id: {
+          $in: idsWithObjId,
+        }
+      };
+      const result = await productCollection.find(query).toArray();
+      res.send(result);
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
