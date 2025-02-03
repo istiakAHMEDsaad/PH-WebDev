@@ -37,6 +37,7 @@
 3. git add .  --{add all content to local repository}
 4. git commit -m "your edited comment"
 5. git push --set-upstream origin [branch-name] --{first time initial to branch next time just add [git push]}
+6. git pull origin [sub branch name]  --{get updated code from another branch}
 
 
 # clone specific commit with zip file
