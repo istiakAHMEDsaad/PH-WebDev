@@ -27,6 +27,8 @@
 2. git checkout -b [branch-name] --{create a new branch}
 3. git branch -d [branch-name]  --{first Switch to main or another branch then delete it}
 4. git switch [branch-name]  --{switch to another branch}
+5. git push -u origin [branch name]  --{push to sub branch}
+6. git push --set-upstream [main branch name] [switched branch name]  --{switch main branch to another sub branch}
 
 
 #Fork repository
