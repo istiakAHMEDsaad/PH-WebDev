@@ -1,0 +1,41 @@
+1. For initial git folder
+    ```
+    git init
+    ```
+
+2. Transfer all root item to the git tracking tree
+    ```
+    git add .
+    ```
+
+3. For commit
+    ```
+    git commit -m "first commit"
+    ```
+
+4. Branch
+    * git branch --> check current branch
+    * git branch -M [branch name] --> rename current branch
+    
+    ```
+    git branch -M main
+    ```
+
+5. Add remote repository
+    ```
+    git remote add origin [repo_link.git]
+    ```
+
+6. Check repository current active link
+    ```
+    git remote -v
+    ```
+
+7. Push code to github ('U' is for upstream it's define send all working code on current active branch)
+    ```
+    git push -u origin main
+    ```
+    or
+    ```
+    git push origin [branch name]
+    ```
