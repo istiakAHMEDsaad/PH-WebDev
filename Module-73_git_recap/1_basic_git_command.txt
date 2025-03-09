@@ -39,3 +39,25 @@
     ```
     git push origin [branch name]
     ```
+
+8. Create new branch
+    ```
+    git branch [branch name]
+    ```
+
+9. Switch branch
+    ```
+    git checkout [branch name]
+    ```
+
+10. Delete branch
+    ```
+    git branch -d [branch name]
+    ```
+
+11. Create a new branch & switch that branch
+    ```
+    git checkout -b [branch name]-branch
+    ```
+
+NB: after create a new branch you have to set upstream (git push origin [branch name])
