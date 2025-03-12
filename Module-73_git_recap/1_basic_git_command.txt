@@ -64,3 +64,5 @@ NB: after create a new branch you have to set upstream (git push origin [branch 
 
 12. All about forking
     * first fork your desire repository, then clone it & start your project
+    * git branch --[check branch]
+    *
