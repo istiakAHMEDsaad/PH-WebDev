@@ -64,6 +64,18 @@ NB: after create a new branch you have to set upstream (git push origin [branch 
 
 12. All about forking
     * first fork your desire repository, then clone it & start your project
+      [example link: https://github.com/ProgrammingHero1/quiz-hero-now-zero.git]
     * git branch --[check branch]
-    *
-    *[example link: https://github.com/firstcontributions/first-contributions]
+    * git checkout <branch name> --[going to another branch]
+    * git checkout -b <branch name>  --[create new branch and switch to new branch]
+    * git -d <branch name> --[delete a branch]
+
+    * git add .
+    * git commit -am "comment" --[only for edit existing file]
+    * git push origin <branch name>
+    * git pull --[get the latest code]
+
+    * git log --[check all commit]
+    * git log --oneline --[check all commit in oneline]
+    * git reset <commit id> --hard --[switch to previous commit incase some wrong commit are made]
+    * git push -f --[force commit]
