@@ -1,7 +1,14 @@
+import Image from 'next/image';
+import loadingImg from '../assets/loading_spinner/gear-spinner.svg';
 const Loading = () => {
   return (
     <div className='h-screen flex items-center justify-center'>
-      <p className="lg:text-4xl md:text-3xl text-2xl text-red-500">Loading...</p>
+      {/* <p className="lg:text-4xl md:text-3xl text-2xl text-red-500">Loading...</p> */}
+      <Image
+        src={loadingImg}
+        alt='loading image'
+        style={{ height: '5rem', width: '5rem', objectFit: 'cover' }}
+      />
     </div>
   );
 };

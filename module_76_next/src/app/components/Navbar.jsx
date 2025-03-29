@@ -42,12 +42,12 @@ const Navbar = ({ params }) => {
             </li>
             <li>
               <Link
-                href={'/about'}
+                href={'/foods'}
                 className={`block border border-gray-400 rounded-md py-1 px-4 hover:bg-black/95 hover:text-white transition-colors cursor-pointer ${isActive(
-                  '/about'
+                  '/foods'
                 )}`}
               >
-                About
+                Foods
               </Link>
             </li>
             <li>
@@ -82,8 +82,8 @@ const Navbar = ({ params }) => {
             <Link href={`/shop`} className={`${isActive('/shop')}`}>
               Shop
             </Link>
-            <Link href={`/about`} className={`${isActive('/about')}`}>
-              About
+            <Link href={`/foods`} className={`${isActive('/foods')}`}>
+              Foods
             </Link>
             <Link href={`/contact`} className={`${isActive('/contact')}`}>
               Contact
@@ -92,8 +92,8 @@ const Navbar = ({ params }) => {
         </div>
       </>
     );
-  }else{
-    return <></>
+  } else {
+    return <></>;
   }
 };
 
