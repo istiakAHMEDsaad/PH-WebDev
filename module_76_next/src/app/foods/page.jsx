@@ -1,21 +1,51 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-export const getFood = async () => {
-  const res = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=`
-  );
-  const data = await res.json();
-  return data;
-};
+import { useEffect, useState } from 'react';
 
-const FoodPage = async () => {
-  const apiData = await getFood();
-  const food = apiData.meals;
-  //   console.log(food.meals);
+/* export const metadata = {
+  title: 'Foods | Next Meal',
+  description: 'See your favourite foods recipe',
+}; */
+
+const FoodPage = () => {
+  const [food, setFood] = useState([]);
+  const [search, setSearch] = useState('');
+
+  const fetchFood = async () => {
+    try {
+      const res = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+      );
+      const data = await res.json();
+      setFood(data?.meals || []);
+      return data.meals;
+    } catch (error) {
+      alert('Something is wrong!');
+      return [];
+    }
+  };
+
+  useEffect(() => {
+    fetchFood();
+  }, [search]);
+
+  // const apiData = await getFood();
+  // const food = apiData.meals;
 
   return (
     <div className='container mx-auto'>
-      <h1 className='my-4'>All Food Items</h1>
+      <div className='my-4'>
+        <h1 className='text-3xl'>All Food Items</h1>
+        <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className='border p-1 rounded-md'
+          type='text'
+          placeholder='search food'
+        />
+      </div>
       <section className='flex items-center justify-center'>
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
           {food.map((item) => (
@@ -27,8 +57,8 @@ const FoodPage = async () => {
                 <Image
                   src={item?.strMealThumb}
                   alt={item?.idMeal}
-                  width={280}
-                  height={280}
+                  width={623}
+                  height={623}
                   style={{
                     borderRadius: '1rem',
                   }}

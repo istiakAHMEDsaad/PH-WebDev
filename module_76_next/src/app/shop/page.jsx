@@ -1,5 +1,10 @@
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Shop | Next Meal',
+  description: 'Shop your favourite cloth',
+};
+
 const Shop = () => {
   const shopData = [
     {
@@ -20,7 +25,8 @@ const Shop = () => {
       <h2 className='text-2xl mt-3 mb-10'>Choose products for:</h2>
       <figure className='flex flex-col md:flex-row gap-4 items-center'>
         {shopData.map((item) => (
-          <Link href={`/shop/${item?._id}`}
+          <Link
+            href={`/shop/${item?._id}`}
             className='border w-70 border-gray-200 rounded-md shadow-md p-2 flex flex-col gap-2 
             lg:hover:scale-105 transition-transform'
             key={item?._id}
