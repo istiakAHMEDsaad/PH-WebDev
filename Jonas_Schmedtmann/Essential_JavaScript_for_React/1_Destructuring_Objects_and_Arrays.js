@@ -1,3 +1,4 @@
+// @ts-nocheck
 const data = [
   {
     id: 1,
@@ -143,13 +144,14 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-// Destructring
+// <--------------- Topic: Destructring --------------->
 const book = getBook(2);
 
 // const title = book.title;
 
 // -------> Object Destructuring <-------
-const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = book;
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+  book;
 console.log(author, title, genres);
 
 // const primaryGenre = author[0];
@@ -157,4 +159,4 @@ console.log(author, title, genres);
 
 // -------> Array Destructuring <-------
 const [primaryGenre, secondaryGenre] = genres;
-console.log(primaryGenre, secondaryGenre)
+console.log(primaryGenre, secondaryGenre);
