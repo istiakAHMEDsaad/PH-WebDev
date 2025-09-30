@@ -110,7 +110,7 @@ const data = [
       },
     },
   },
-  
+
   {
     id: 5,
     title: 'A Game of Thrones',
@@ -148,7 +148,7 @@ function getBook(id) {
   return data.find((item) => item.id === id);
 }
 
-const book = getBook(2);
+const book = getBook(3);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
@@ -170,30 +170,11 @@ const updateBook = {
   pages: '1210',
 };
 
-const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
-console.log(pagesRange);
-console.log(`The book has ${pagesRange} pages`);
 
-console.log(true && "Some string");
-console.log(false && "Some string");
-console.log(hasMovieAdaptation && "This book has a movie");
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount ?? 0;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
 
-// falsy: 0, '', null, undefined
-console.log("jonas" && "Some string");
-console.log(0 && "Some string");
-
-console.log(true || "Some string");
-console.log(false || "Some string");
-
-
-const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
-console.log(book.translations.spanish);
-console.log(spanishTranslation);
-
-const countWrong = book.reviews.librarything.reviewsCount || "no data";
-console.log(book.reviews.librarything.reviewsCount);
-console.log(countWrong);
-
-// '??' nullish coalescing operator
-const count = book.reviews.librarything.reviewsCount ?? "no data";
-console.log(count);
+console.log(getTotalReviewCount(book));
