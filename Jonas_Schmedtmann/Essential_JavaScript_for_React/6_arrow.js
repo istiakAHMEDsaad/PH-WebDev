@@ -33,7 +33,6 @@ const data = [
       },
     },
   },
-
   {
     id: 2,
     title: 'The Cyberiad',
@@ -62,7 +61,6 @@ const data = [
       },
     },
   },
-
   {
     id: 3,
     title: 'Dune',
@@ -82,7 +80,6 @@ const data = [
       },
     },
   },
-
   {
     id: 4,
     title: "Harry Potter and the Philosopher's Stone",
@@ -110,7 +107,6 @@ const data = [
       },
     },
   },
-  
   {
     id: 5,
     title: 'A Game of Thrones',
@@ -148,49 +144,22 @@ function getBook(id) {
   return data.find((item) => item.id === id);
 }
 
-const book = getBook(2);
+const book = getBook(1);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
 
-// rest operator
-const [firstGenres, secondGenres, ...otherGenres] = genres;
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+const getYear = (str) => str.split('-')[0];
+console.log(getYear(publicationDate));
 
-// spread operator -> take all the value out of the array & place here one by one
-const newGenres = [...genres, 'epic fantasy'];
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${getYear(
+  publicationDate
+)}. The book has ${hasMovieAdaptation ? '' : 'not'} been adapted as a movie`;
+summary;
 
-// new update the books
-const updateBook = {
-  ...book,
-
-  // adding a new poperty
-  moviePublicationDate: '2001-12-19',
-
-  // overwriting
-  pages: '1210',
-};
-
-
-console.log(true && "Some string");
-console.log(false && "Some string");
-console.log(hasMovieAdaptation && "This book has a movie");
-
-// falsy: 0, '', null, undefined
-console.log("jonas" && "Some string");
-console.log(0 && "Some string");
-
-console.log(true || "Some string");
-console.log(false || "Some string");
-
-
-const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
-console.log(book.translations.spanish);
-console.log(spanishTranslation);
-
-const countWrong = book.reviews.librarything.reviewsCount || "no data";
-console.log(book.reviews.librarything.reviewsCount);
-console.log(countWrong);
-
-// '??' nullish coalescing operator
-const count = book.reviews.librarything.reviewsCount ?? "no data";
-console.log(count);
+const pagesRange = pages > 1000 ? 'over a thousand' : 'less than 1000';
+pagesRange;
+console.log(`The book has ${pagesRange} pages`);

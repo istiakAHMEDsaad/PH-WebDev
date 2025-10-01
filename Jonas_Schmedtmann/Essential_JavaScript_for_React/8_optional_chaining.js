@@ -170,7 +170,6 @@ const updateBook = {
   pages: '1210',
 };
 
-
 function getTotalReviewCount(book) {
   const goodreads = book.reviews?.goodreads?.reviewsCount ?? 0;
   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;

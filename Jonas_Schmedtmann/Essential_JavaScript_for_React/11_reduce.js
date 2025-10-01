@@ -33,6 +33,7 @@ const data = [
       },
     },
   },
+
   {
     id: 2,
     title: 'The Cyberiad',
@@ -61,6 +62,7 @@ const data = [
       },
     },
   },
+
   {
     id: 3,
     title: 'Dune',
@@ -80,6 +82,7 @@ const data = [
       },
     },
   },
+
   {
     id: 4,
     title: "Harry Potter and the Philosopher's Stone",
@@ -107,6 +110,7 @@ const data = [
       },
     },
   },
+
   {
     id: 5,
     title: 'A Game of Thrones',
@@ -144,26 +148,8 @@ function getBook(id) {
   return data.find((item) => item.id === id);
 }
 
-const book = getBook(1);
+const books = getBooks();
 
-const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
-  book;
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
 
-// rest operator
-const [firstGenres, secondGenres, ...otherGenres] = genres;
-
-// spread operator -> take all the value out of the array & place here one by one
-const newGenres = [...genres, 'epic fantasy'];
-
-// new update the books
-const updateBook = {
-  ...book,
-
-  // adding a new poperty
-  moviePublicationDate: '2001-12-19',
-
-  // overwriting
-  pages: '1210',
-};
-
-const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate.split('-')[0]}`;
+console.log(pagesAllBooks)

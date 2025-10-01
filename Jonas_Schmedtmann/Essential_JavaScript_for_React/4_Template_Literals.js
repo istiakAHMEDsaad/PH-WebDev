@@ -33,7 +33,6 @@ const data = [
       },
     },
   },
-
   {
     id: 2,
     title: 'The Cyberiad',
@@ -62,7 +61,6 @@ const data = [
       },
     },
   },
-
   {
     id: 3,
     title: 'Dune',
@@ -82,7 +80,6 @@ const data = [
       },
     },
   },
-
   {
     id: 4,
     title: "Harry Potter and the Philosopher's Stone",
@@ -110,7 +107,6 @@ const data = [
       },
     },
   },
-  
   {
     id: 5,
     title: 'A Game of Thrones',
@@ -148,7 +144,7 @@ function getBook(id) {
   return data.find((item) => item.id === id);
 }
 
-const book = getBook(2);
+const book = getBook(1);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
@@ -171,26 +167,7 @@ const updateBook = {
 };
 
 
-console.log(true && "Some string");
-console.log(false && "Some string");
-console.log(hasMovieAdaptation && "This book has a movie");
-
-// falsy: 0, '', null, undefined
-console.log("jonas" && "Some string");
-console.log(0 && "Some string");
-
-console.log(true || "Some string");
-console.log(false || "Some string");
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate.split('-')[0]}`;
+console.log(summary)
 
 
-const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
-console.log(book.translations.spanish);
-console.log(spanishTranslation);
-
-const countWrong = book.reviews.librarything.reviewsCount || "no data";
-console.log(book.reviews.librarything.reviewsCount);
-console.log(countWrong);
-
-// '??' nullish coalescing operator
-const count = book.reviews.librarything.reviewsCount ?? "no data";
-console.log(count);
