@@ -150,17 +150,22 @@ function getBook(id) {
 
 const books = getBooks();
 
-const x = [3, 7, 1, 9, 6];
-const y = [3, 7, 1, 9, 6];
+// 1) Add book object to array
+const newBook = {
+  id: 6,
+  title: 'Harry Potter and the Chamber of Secrets',
+  author: 'J. K. Rowling',
+};
 
-//ascending
-// const asc = x.sort((a, b) => a - b); //mutable
-// const asc = [...x].sort((a, b) => a - b); //immutable
-const asc = x.slice().sort((a, b) => a - b);
+const booksAfterAdd = [...books, newBook];
+console.log(booksAfterAdd);
 
-//descending
-const des = y.sort((a, b) => b - a);
-console.log(asc, x);
+// 2) Delete book object from array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+console.log(booksAfterDelete);
 
-const sortedByPage = books.slice().sort((a, b) => a.pages - b.pages);
-console.log(sortedByPage)
+// 3) Update book object in the array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? {...book, pages: 12} : book
+);
+console.log(booksAfterUpdate)
